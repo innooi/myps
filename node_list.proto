@@ -1,0 +1,11 @@
+package nodeList;
+
+message Node{
+	required int32 id = 1;
+	required string type = 2;
+	required string ip = 3;
+}
+
+message NodeList {
+	repeated Node list= 1;
+}

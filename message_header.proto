@@ -1,0 +1,34 @@
+syntax  = "proto2";
+
+package PS;
+
+message MessageHeader {
+	required int64 msg_id = 1;
+
+	optional int32 from_id = 2;
+	optional string from_ip = 3;
+	optional int32 from_port = 4;
+
+	required int32 to_id = 5;
+	required string to_ip = 6;
+	required int32 to_port = 7;
+
+	//actually, above information can be obtained from socket
+
+	//something useful	
+	enum PkgType {
+		SEND = 0;
+		ACK = 1;
+	}
+
+	required PkgType pkg_type = 8;
+
+	enum MsgLevel {
+		USER = 0;
+		SYS = 1;
+	}
+
+	required MsgLevel msg_level = 9;
+
+	optional int32 priority = 10;
+}
