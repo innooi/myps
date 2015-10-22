@@ -55,28 +55,3 @@
 
 //yaml-cpp
 #include "yaml-cpp/yaml.h"
-
-#include "message_header.pb.h"
-
-const uint32_t QUEUE_LEVEL = 10;
-
-using SPMsg = std::shared_ptr<Message>;
-
-enum class NodeType {
-	Worker,
-	Server,
-	NameNode
-};
-
-struct NodeInfo {
-	uint32_t id;
-	std::string ip;
-	uint32_t port;
-	NodeType node_type;
-};
-
-struct Message {
-	MessageHeader msg_header; // to fill up with source data
-	using DataSlice = std::pair<std::unique_ptr<char>, size_t>;
-	std::list<DataSlice> dataSliceList;	
-};
