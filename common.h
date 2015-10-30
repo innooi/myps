@@ -17,7 +17,8 @@
 #include <arpa/inet.h>
 #include <netinet/in.h>
 #include <netdb.h>
-
+//function
+#include <functional>
 // smart pointers
 #include <memory>
 // stream
@@ -49,9 +50,16 @@
 #include <boost/thread/lock_factories.hpp>
 #include <boost/lockfree/queue.hpp>
 #include <boost/shared_ptr.hpp>
+#include <boost/serialization/singleton.hpp>
+#include <boost/archive/binary_oarchive.hpp>
+#include <boost/archive/binary_iarchive.hpp>
 
 //zmq
 #include <zmq.h>
 
 //yaml-cpp
 #include "yaml-cpp/yaml.h"
+
+using NodeId = std::string;
+const int PRIORITY_LEVEL = 10;
+const unsigned int REGISTER_WAIT_TIME_IN_SEC = 10;

@@ -1,0 +1,49 @@
+syntax  = "proto2";
+
+message MessageHeader {
+	enum ObjType{
+		NODE = 0;
+		FILED = 1;
+		CACHE = 2;
+		ENGINE = 3;
+	}
+
+	optional string from_id = 1;
+	optional string from_ip = 2;
+	optional int32 from_port = 3;
+	optional ObjType from_obj_type = 4;
+
+	//fill up these in bus::send_msg based on the NodeId
+	required string to_id = 5;
+	required string to_ip = 6;
+	required int32 to_port = 7;
+	required ObjType to_obj_type = 8;
+
+	enum MsgLevel {
+		SYS_MSG = 0;
+		USR_MSG = 1;
+	}
+	required MsgLevel msg_level = 9;
+
+	enum PkgType {
+		REQ = 0; 	//need a reply
+		RPL = 1; 	//reply the request
+		PUSH = 2; 	//just push
+	}
+	required PkgType pkg_type = 10;
+
+	//if the msg is a sys message
+	enum SysMsgType {
+		REGISTER_NODE = 0;
+		NODE_LIST_DATA = 1;
+		NODE_LIST_ACK = 2;
+		STARTUP_READY = 3;
+	}
+	required SysMsgType sys_msg_type = 11;
+
+	optional int32 priority = 12;
+
+	optional int64 tracker_id = 13;
+	
+	optional int64 rpl_tracker_id = 14;
+}
