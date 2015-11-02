@@ -48,28 +48,36 @@ public:
 };
 
 class Worker:   public NodeInfo, 
-                public Node, 
-                public boost::serialization::singleton<Worker> {
+    public Node, 
+    public boost::serialization::singleton<Worker> {
+private:
+    std::shared_ptr<NodeInfo> sp_name_node_info;
 public:
     virtual void process_msg(SPMsg);
     virtual void process_sys_msg(SPMsg);
     virtual void process_usr_msg(SPMsg);
-    virtual void init(NodeId, const std::string &, uint32_t);
+    virtual void init(NodeId, const std::string &, uint32_t, NodeId, const std::string &, uint32_t);
     virtual void run();
     virtual ~Worker();
 };
 
-class Server : public Node, public boost::serialization::singleton<Server> {
+class Server : public NodeInfo, 
+    public Node, 
+    public boost::serialization::singleton<Server> {
+private:
+    std::shared_ptr<NodeInfo> sp_name_node_info;
 public:
     virtual void process_msg(SPMsg);
     virtual void process_sys_msg(SPMsg);
     virtual void process_usr_msg(SPMsg);
-    virtual void init(NodeId, const std::string &, uint32_t);
+    virtual void init(NodeId, const std::string &, uint32_t, NodeId, const std::string &, uint32_t);
     virtual void run();
     virtual ~Server();
 };
 
-class NameNode : public Node, public boost::serialization::singleton<NameNode> {
+class NameNode : public NodeInfo, 
+    public Node, 
+    public boost::serialization::singleton<NameNode> {
 private:
     uint32_t num_got_node_list_ack;
     std::mutex mtx_node_list_ack;

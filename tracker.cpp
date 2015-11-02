@@ -5,14 +5,11 @@ void Tracker::process_thread(SPMsg msg) {
 		case MessageHeader::NODE:
 			if (Role::WORKER == node->role) {
 				WORKER::process_msg(msg);
-			}
-			else if (Role::SERVER == node->role) {
+			} else if (Role::SERVER == node->role) {
 				//SERVER::process_msg(msg);	
-			}
-			else if (Role::NAMENODE == node->role) {
+			} else if (Role::NAMENODE == node->role) {
 				//NAMENODE::process_msg(msg);		
-			}
-			else {
+			} else {
 				LOG(ERROR) << "[Tracker::dispatch_thread]: unknown node role";
 				return;
 			}
@@ -107,8 +104,7 @@ int Tracker::run() {
 		dispatch_thread_t->detach();
 		LOG(INFO) << "[Tracker::run]: do_dispatch thread has started successfully.";
 		return 0;
-	}
-	else {
+	} else {
 		LOG(ERROR)
 			<< "[Tracker::run]: do_dispatch thread has not been started.";
 		return 2;
@@ -123,7 +119,8 @@ int Tracker::send_msg(SPMsg msg) {
 	++tracker_id;
 	msg->msg_header.set_tracker_id(tracker_id);
 	if (false == bus->send_msg(msg)) {
-		bus->connect(msg->msg_header.to_id());
+		//bus->connect(msg->msg_header.to_id());
+		bus->connect( *( node->id_map_to_info[msg->msg_header.to_id()] ) );
 		bus->send_msg(msg);
 	}
 	return 0;
@@ -138,7 +135,7 @@ int Tracker::send_msg(SPMsg msg, std::function<void(void)> callback_function) {
 	msg->msg_header.set_tracker_id(tracker_id);
 	msg_id_map_to_callback[tracker_id] = callback_function;
 	if (false == bus->send_msg(msg)) {
-		bus->connect(msg->msg_header.to_id());
+		bus->connect( *( node->id_map_to_info[msg->msg_header.to_id()] ) );
 		bus->send_msg(msg);
 	}
 	return 0;

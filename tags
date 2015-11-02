@@ -4,373 +4,426 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
-Bus	./bus.h	/^class Bus : public boost::serialization::singleton<Bus> {$/;"	c
-ByteSize	./message_header.pb.cc	/^int MessageHeader::ByteSize() const {$/;"	f	class:MessageHeader
-CACHE	./message_header.pb.cc	/^const MessageHeader_ObjType MessageHeader::CACHE;$/;"	m	class:MessageHeader	file:
-CACHE	./message_header.pb.h	/^  static const ObjType CACHE = MessageHeader_ObjType_CACHE;$/;"	m	class:MessageHeader
-CC	./makefile	/^CC = g++$/;"	m
-CFLAGS	./makefile	/^CFLAGS = -Wall -std=c++11 -O2$/;"	m
-Clear	./message_header.pb.cc	/^void MessageHeader::Clear() {$/;"	f	class:MessageHeader
-CopyFrom	./message_header.pb.cc	/^void MessageHeader::CopyFrom(const ::google::protobuf::Message& from) {$/;"	f	class:MessageHeader
-CopyFrom	./message_header.pb.cc	/^void MessageHeader::CopyFrom(const MessageHeader& from) {$/;"	f	class:MessageHeader
-DO_	./message_header.pb.cc	354;"	d	file:
-DO_	./message_header.pb.cc	619;"	d	file:
-ENGINE	./message_header.pb.cc	/^const MessageHeader_ObjType MessageHeader::ENGINE;$/;"	m	class:MessageHeader	file:
-ENGINE	./message_header.pb.h	/^  static const ObjType ENGINE = MessageHeader_ObjType_ENGINE;$/;"	m	class:MessageHeader
-EXE	./makefile	/^EXE = main$/;"	m
-FILED	./message_header.pb.cc	/^const MessageHeader_ObjType MessageHeader::FILED;$/;"	m	class:MessageHeader	file:
-FILED	./message_header.pb.h	/^  static const ObjType FILED = MessageHeader_ObjType_FILED;$/;"	m	class:MessageHeader
-GetCachedSize	./message_header.pb.h	/^  int GetCachedSize() const { return _cached_size_; }$/;"	f	class:MessageHeader
-GetEnumDescriptor	./message_header.pb.h	/^inline const EnumDescriptor* GetEnumDescriptor< ::MessageHeader_MsgLevel>() {$/;"	f	namespace:google::protobuf
-GetEnumDescriptor	./message_header.pb.h	/^inline const EnumDescriptor* GetEnumDescriptor< ::MessageHeader_ObjType>() {$/;"	f	namespace:google::protobuf
-GetEnumDescriptor	./message_header.pb.h	/^inline const EnumDescriptor* GetEnumDescriptor< ::MessageHeader_PkgType>() {$/;"	f	namespace:google::protobuf
-GetEnumDescriptor	./message_header.pb.h	/^inline const EnumDescriptor* GetEnumDescriptor< ::MessageHeader_SysMsgType>() {$/;"	f	namespace:google::protobuf
-GetMetadata	./message_header.pb.cc	/^::google::protobuf::Metadata MessageHeader::GetMetadata() const {$/;"	f	class:MessageHeader
-INCLUDE_PATH	./makefile	/^INCLUDE_PATH = -I.\/ -I\/usr\/local\/boost_1_58_0\/boost \\$/;"	m
-INTERNAL_SUPPRESS_PROTOBUF_FIELD_DEPRECATION	./message_header.pb.cc	4;"	d	file:
-InitAsDefaultInstance	./message_header.pb.cc	/^void MessageHeader::InitAsDefaultInstance() {$/;"	f	class:MessageHeader
-IsInitialized	./message_header.pb.cc	/^bool MessageHeader::IsInitialized() const {$/;"	f	class:MessageHeader
-LDFLAGS	./makefile	/^LDFLAGS = -L\/usr\/local\/lib -lzmq -lglog -lprotobuf -lboost_system \\$/;"	m
-MergeFrom	./message_header.pb.cc	/^void MessageHeader::MergeFrom(const ::google::protobuf::Message& from) {$/;"	f	class:MessageHeader
-MergeFrom	./message_header.pb.cc	/^void MessageHeader::MergeFrom(const MessageHeader& from) {$/;"	f	class:MessageHeader
-MergePartialFromCodedStream	./message_header.pb.cc	/^bool MessageHeader::MergePartialFromCodedStream($/;"	f	class:MessageHeader
-Message	./message.h	/^class Message {$/;"	c
-MessageHeader	./message_header.pb.cc	/^MessageHeader::MessageHeader()$/;"	f	class:MessageHeader
-MessageHeader	./message_header.pb.cc	/^MessageHeader::MessageHeader(const MessageHeader& from)$/;"	f	class:MessageHeader
-MessageHeader	./message_header.pb.h	/^class MessageHeader : public ::google::protobuf::Message {$/;"	c
-MessageHeader_MsgLevel	./message_header.pb.h	/^enum MessageHeader_MsgLevel {$/;"	g
-MessageHeader_MsgLevel_IsValid	./message_header.pb.cc	/^bool MessageHeader_MsgLevel_IsValid(int value) {$/;"	f
-MessageHeader_MsgLevel_MsgLevel_ARRAYSIZE	./message_header.pb.h	/^const int MessageHeader_MsgLevel_MsgLevel_ARRAYSIZE = MessageHeader_MsgLevel_MsgLevel_MAX + 1;$/;"	v
-MessageHeader_MsgLevel_MsgLevel_MAX	./message_header.pb.h	/^const MessageHeader_MsgLevel MessageHeader_MsgLevel_MsgLevel_MAX = MessageHeader_MsgLevel_USR;$/;"	v
-MessageHeader_MsgLevel_MsgLevel_MIN	./message_header.pb.h	/^const MessageHeader_MsgLevel MessageHeader_MsgLevel_MsgLevel_MIN = MessageHeader_MsgLevel_SYS;$/;"	v
-MessageHeader_MsgLevel_Name	./message_header.pb.h	/^inline const ::std::string& MessageHeader_MsgLevel_Name(MessageHeader_MsgLevel value) {$/;"	f
-MessageHeader_MsgLevel_Parse	./message_header.pb.h	/^inline bool MessageHeader_MsgLevel_Parse($/;"	f
-MessageHeader_MsgLevel_SYS	./message_header.pb.h	/^  MessageHeader_MsgLevel_SYS = 0,$/;"	e	enum:MessageHeader_MsgLevel
-MessageHeader_MsgLevel_USR	./message_header.pb.h	/^  MessageHeader_MsgLevel_USR = 1$/;"	e	enum:MessageHeader_MsgLevel
-MessageHeader_MsgLevel_descriptor	./message_header.pb.cc	/^const ::google::protobuf::EnumDescriptor* MessageHeader_MsgLevel_descriptor() {$/;"	f
-MessageHeader_MsgLevel_descriptor_	./message_header.pb.cc	/^const ::google::protobuf::EnumDescriptor* MessageHeader_MsgLevel_descriptor_ = NULL;$/;"	m	namespace:__anon1	file:
-MessageHeader_ObjType	./message_header.pb.h	/^enum MessageHeader_ObjType {$/;"	g
-MessageHeader_ObjType_CACHE	./message_header.pb.h	/^  MessageHeader_ObjType_CACHE = 2,$/;"	e	enum:MessageHeader_ObjType
-MessageHeader_ObjType_ENGINE	./message_header.pb.h	/^  MessageHeader_ObjType_ENGINE = 3$/;"	e	enum:MessageHeader_ObjType
-MessageHeader_ObjType_FILED	./message_header.pb.h	/^  MessageHeader_ObjType_FILED = 1,$/;"	e	enum:MessageHeader_ObjType
-MessageHeader_ObjType_IsValid	./message_header.pb.cc	/^bool MessageHeader_ObjType_IsValid(int value) {$/;"	f
-MessageHeader_ObjType_NODE	./message_header.pb.h	/^  MessageHeader_ObjType_NODE = 0,$/;"	e	enum:MessageHeader_ObjType
-MessageHeader_ObjType_Name	./message_header.pb.h	/^inline const ::std::string& MessageHeader_ObjType_Name(MessageHeader_ObjType value) {$/;"	f
-MessageHeader_ObjType_ObjType_ARRAYSIZE	./message_header.pb.h	/^const int MessageHeader_ObjType_ObjType_ARRAYSIZE = MessageHeader_ObjType_ObjType_MAX + 1;$/;"	v
-MessageHeader_ObjType_ObjType_MAX	./message_header.pb.h	/^const MessageHeader_ObjType MessageHeader_ObjType_ObjType_MAX = MessageHeader_ObjType_ENGINE;$/;"	v
-MessageHeader_ObjType_ObjType_MIN	./message_header.pb.h	/^const MessageHeader_ObjType MessageHeader_ObjType_ObjType_MIN = MessageHeader_ObjType_NODE;$/;"	v
-MessageHeader_ObjType_Parse	./message_header.pb.h	/^inline bool MessageHeader_ObjType_Parse($/;"	f
-MessageHeader_ObjType_descriptor	./message_header.pb.cc	/^const ::google::protobuf::EnumDescriptor* MessageHeader_ObjType_descriptor() {$/;"	f
-MessageHeader_ObjType_descriptor_	./message_header.pb.cc	/^const ::google::protobuf::EnumDescriptor* MessageHeader_ObjType_descriptor_ = NULL;$/;"	m	namespace:__anon1	file:
-MessageHeader_PkgType	./message_header.pb.h	/^enum MessageHeader_PkgType {$/;"	g
-MessageHeader_PkgType_IsValid	./message_header.pb.cc	/^bool MessageHeader_PkgType_IsValid(int value) {$/;"	f
-MessageHeader_PkgType_Name	./message_header.pb.h	/^inline const ::std::string& MessageHeader_PkgType_Name(MessageHeader_PkgType value) {$/;"	f
-MessageHeader_PkgType_PUSH	./message_header.pb.h	/^  MessageHeader_PkgType_PUSH = 2$/;"	e	enum:MessageHeader_PkgType
-MessageHeader_PkgType_Parse	./message_header.pb.h	/^inline bool MessageHeader_PkgType_Parse($/;"	f
-MessageHeader_PkgType_PkgType_ARRAYSIZE	./message_header.pb.h	/^const int MessageHeader_PkgType_PkgType_ARRAYSIZE = MessageHeader_PkgType_PkgType_MAX + 1;$/;"	v
-MessageHeader_PkgType_PkgType_MAX	./message_header.pb.h	/^const MessageHeader_PkgType MessageHeader_PkgType_PkgType_MAX = MessageHeader_PkgType_PUSH;$/;"	v
-MessageHeader_PkgType_PkgType_MIN	./message_header.pb.h	/^const MessageHeader_PkgType MessageHeader_PkgType_PkgType_MIN = MessageHeader_PkgType_REQ;$/;"	v
-MessageHeader_PkgType_REQ	./message_header.pb.h	/^  MessageHeader_PkgType_REQ = 0,$/;"	e	enum:MessageHeader_PkgType
-MessageHeader_PkgType_RPL	./message_header.pb.h	/^  MessageHeader_PkgType_RPL = 1,$/;"	e	enum:MessageHeader_PkgType
-MessageHeader_PkgType_descriptor	./message_header.pb.cc	/^const ::google::protobuf::EnumDescriptor* MessageHeader_PkgType_descriptor() {$/;"	f
-MessageHeader_PkgType_descriptor_	./message_header.pb.cc	/^const ::google::protobuf::EnumDescriptor* MessageHeader_PkgType_descriptor_ = NULL;$/;"	m	namespace:__anon1	file:
-MessageHeader_SysMsgType	./message_header.pb.h	/^enum MessageHeader_SysMsgType {$/;"	g
-MessageHeader_SysMsgType_IsValid	./message_header.pb.cc	/^bool MessageHeader_SysMsgType_IsValid(int value) {$/;"	f
-MessageHeader_SysMsgType_NODE_LIST_DATA	./message_header.pb.h	/^  MessageHeader_SysMsgType_NODE_LIST_DATA = 2,$/;"	e	enum:MessageHeader_SysMsgType
-MessageHeader_SysMsgType_Name	./message_header.pb.h	/^inline const ::std::string& MessageHeader_SysMsgType_Name(MessageHeader_SysMsgType value) {$/;"	f
-MessageHeader_SysMsgType_PARA_DATA	./message_header.pb.h	/^  MessageHeader_SysMsgType_PARA_DATA = 0,$/;"	e	enum:MessageHeader_SysMsgType
-MessageHeader_SysMsgType_Parse	./message_header.pb.h	/^inline bool MessageHeader_SysMsgType_Parse($/;"	f
-MessageHeader_SysMsgType_REGIST	./message_header.pb.h	/^  MessageHeader_SysMsgType_REGIST = 1,$/;"	e	enum:MessageHeader_SysMsgType
-MessageHeader_SysMsgType_STARTUP_READY	./message_header.pb.h	/^  MessageHeader_SysMsgType_STARTUP_READY = 3$/;"	e	enum:MessageHeader_SysMsgType
-MessageHeader_SysMsgType_SysMsgType_ARRAYSIZE	./message_header.pb.h	/^const int MessageHeader_SysMsgType_SysMsgType_ARRAYSIZE = MessageHeader_SysMsgType_SysMsgType_MAX + 1;$/;"	v
-MessageHeader_SysMsgType_SysMsgType_MAX	./message_header.pb.h	/^const MessageHeader_SysMsgType MessageHeader_SysMsgType_SysMsgType_MAX = MessageHeader_SysMsgType_STARTUP_READY;$/;"	v
-MessageHeader_SysMsgType_SysMsgType_MIN	./message_header.pb.h	/^const MessageHeader_SysMsgType MessageHeader_SysMsgType_SysMsgType_MIN = MessageHeader_SysMsgType_PARA_DATA;$/;"	v
-MessageHeader_SysMsgType_descriptor	./message_header.pb.cc	/^const ::google::protobuf::EnumDescriptor* MessageHeader_SysMsgType_descriptor() {$/;"	f
-MessageHeader_SysMsgType_descriptor_	./message_header.pb.cc	/^const ::google::protobuf::EnumDescriptor* MessageHeader_SysMsgType_descriptor_ = NULL;$/;"	m	namespace:__anon1	file:
-MessageHeader_descriptor_	./message_header.pb.cc	/^const ::google::protobuf::Descriptor* MessageHeader_descriptor_ = NULL;$/;"	m	namespace:__anon1	file:
-MessageHeader_reflection_	./message_header.pb.cc	/^  MessageHeader_reflection_ = NULL;$/;"	m	namespace:__anon1	file:
-MsgLevel	./message_header.pb.h	/^  typedef MessageHeader_MsgLevel MsgLevel;$/;"	t	class:MessageHeader
-MsgLevel_ARRAYSIZE	./message_header.pb.cc	/^const int MessageHeader::MsgLevel_ARRAYSIZE;$/;"	m	class:MessageHeader	file:
-MsgLevel_ARRAYSIZE	./message_header.pb.h	/^  static const int MsgLevel_ARRAYSIZE =$/;"	m	class:MessageHeader
-MsgLevel_IsValid	./message_header.pb.h	/^  static inline bool MsgLevel_IsValid(int value) {$/;"	f	class:MessageHeader
-MsgLevel_MAX	./message_header.pb.cc	/^const MessageHeader_MsgLevel MessageHeader::MsgLevel_MAX;$/;"	m	class:MessageHeader	file:
-MsgLevel_MAX	./message_header.pb.h	/^  static const MsgLevel MsgLevel_MAX =$/;"	m	class:MessageHeader
-MsgLevel_MIN	./message_header.pb.cc	/^const MessageHeader_MsgLevel MessageHeader::MsgLevel_MIN;$/;"	m	class:MessageHeader	file:
-MsgLevel_MIN	./message_header.pb.h	/^  static const MsgLevel MsgLevel_MIN =$/;"	m	class:MessageHeader
-MsgLevel_Name	./message_header.pb.h	/^  static inline const ::std::string& MsgLevel_Name(MsgLevel value) {$/;"	f	class:MessageHeader
-MsgLevel_Parse	./message_header.pb.h	/^  static inline bool MsgLevel_Parse(const ::std::string& name,$/;"	f	class:MessageHeader
-MsgLevel_descriptor	./message_header.pb.h	/^  MsgLevel_descriptor() {$/;"	f	class:MessageHeader
-NODE	./message_header.pb.cc	/^const MessageHeader_ObjType MessageHeader::NODE;$/;"	m	class:MessageHeader	file:
-NODE	./message_header.pb.h	/^  static const ObjType NODE = MessageHeader_ObjType_NODE;$/;"	m	class:MessageHeader
-NODE_LIST_DATA	./message_header.pb.cc	/^const MessageHeader_SysMsgType MessageHeader::NODE_LIST_DATA;$/;"	m	class:MessageHeader	file:
-NODE_LIST_DATA	./message_header.pb.h	/^  static const SysMsgType NODE_LIST_DATA = MessageHeader_SysMsgType_NODE_LIST_DATA;$/;"	m	class:MessageHeader
-New	./message_header.pb.cc	/^MessageHeader* MessageHeader::New() const {$/;"	f	class:MessageHeader
-Node	./node.h	/^class Node {$/;"	c
-NodeInfo	./node.h	/^struct NodeInfo{$/;"	s
-OBJ	./makefile	/^OBJ = node.o worker.o main.o node_info.o$/;"	m
-OFFSET_OF_FIELD_	./message_header.pb.cc	317;"	d	file:
-OFFSET_OF_FIELD_	./message_header.pb.cc	345;"	d	file:
-ObjType	./message_header.pb.h	/^  typedef MessageHeader_ObjType ObjType;$/;"	t	class:MessageHeader
-ObjType_ARRAYSIZE	./message_header.pb.cc	/^const int MessageHeader::ObjType_ARRAYSIZE;$/;"	m	class:MessageHeader	file:
-ObjType_ARRAYSIZE	./message_header.pb.h	/^  static const int ObjType_ARRAYSIZE =$/;"	m	class:MessageHeader
-ObjType_IsValid	./message_header.pb.h	/^  static inline bool ObjType_IsValid(int value) {$/;"	f	class:MessageHeader
-ObjType_MAX	./message_header.pb.cc	/^const MessageHeader_ObjType MessageHeader::ObjType_MAX;$/;"	m	class:MessageHeader	file:
-ObjType_MAX	./message_header.pb.h	/^  static const ObjType ObjType_MAX =$/;"	m	class:MessageHeader
-ObjType_MIN	./message_header.pb.cc	/^const MessageHeader_ObjType MessageHeader::ObjType_MIN;$/;"	m	class:MessageHeader	file:
-ObjType_MIN	./message_header.pb.h	/^  static const ObjType ObjType_MIN =$/;"	m	class:MessageHeader
-ObjType_Name	./message_header.pb.h	/^  static inline const ::std::string& ObjType_Name(ObjType value) {$/;"	f	class:MessageHeader
-ObjType_Parse	./message_header.pb.h	/^  static inline bool ObjType_Parse(const ::std::string& name,$/;"	f	class:MessageHeader
-ObjType_descriptor	./message_header.pb.h	/^  ObjType_descriptor() {$/;"	f	class:MessageHeader
-PARA_DATA	./message_header.pb.cc	/^const MessageHeader_SysMsgType MessageHeader::PARA_DATA;$/;"	m	class:MessageHeader	file:
-PARA_DATA	./message_header.pb.h	/^  static const SysMsgType PARA_DATA = MessageHeader_SysMsgType_PARA_DATA;$/;"	m	class:MessageHeader
-PQ_	./bus.h	/^	std::queue<SPMsg> PQ_[QUEUE_LEVEL];$/;"	m	class:Bus
-PROTOBUF_message_5fheader_2eproto__INCLUDED	./message_header.pb.h	5;"	d
-PROTOC	./makefile	/^PROTOC = protoc -I=.\/ --cpp_out=.\/ $/;"	m
-PUSH	./message_header.pb.cc	/^const MessageHeader_PkgType MessageHeader::PUSH;$/;"	m	class:MessageHeader	file:
-PUSH	./message_header.pb.h	/^  static const PkgType PUSH = MessageHeader_PkgType_PUSH;$/;"	m	class:MessageHeader
-PkgType	./message_header.pb.h	/^  typedef MessageHeader_PkgType PkgType;$/;"	t	class:MessageHeader
-PkgType_ARRAYSIZE	./message_header.pb.cc	/^const int MessageHeader::PkgType_ARRAYSIZE;$/;"	m	class:MessageHeader	file:
-PkgType_ARRAYSIZE	./message_header.pb.h	/^  static const int PkgType_ARRAYSIZE =$/;"	m	class:MessageHeader
-PkgType_IsValid	./message_header.pb.h	/^  static inline bool PkgType_IsValid(int value) {$/;"	f	class:MessageHeader
-PkgType_MAX	./message_header.pb.cc	/^const MessageHeader_PkgType MessageHeader::PkgType_MAX;$/;"	m	class:MessageHeader	file:
-PkgType_MAX	./message_header.pb.h	/^  static const PkgType PkgType_MAX =$/;"	m	class:MessageHeader
-PkgType_MIN	./message_header.pb.cc	/^const MessageHeader_PkgType MessageHeader::PkgType_MIN;$/;"	m	class:MessageHeader	file:
-PkgType_MIN	./message_header.pb.h	/^  static const PkgType PkgType_MIN =$/;"	m	class:MessageHeader
-PkgType_Name	./message_header.pb.h	/^  static inline const ::std::string& PkgType_Name(PkgType value) {$/;"	f	class:MessageHeader
-PkgType_Parse	./message_header.pb.h	/^  static inline bool PkgType_Parse(const ::std::string& name,$/;"	f	class:MessageHeader
-PkgType_descriptor	./message_header.pb.h	/^  PkgType_descriptor() {$/;"	f	class:MessageHeader
-REGIST	./message_header.pb.cc	/^const MessageHeader_SysMsgType MessageHeader::REGIST;$/;"	m	class:MessageHeader	file:
-REGIST	./message_header.pb.h	/^  static const SysMsgType REGIST = MessageHeader_SysMsgType_REGIST;$/;"	m	class:MessageHeader
-REQ	./message_header.pb.cc	/^const MessageHeader_PkgType MessageHeader::REQ;$/;"	m	class:MessageHeader	file:
-REQ	./message_header.pb.h	/^  static const PkgType REQ = MessageHeader_PkgType_REQ;$/;"	m	class:MessageHeader
-RPL	./message_header.pb.cc	/^const MessageHeader_PkgType MessageHeader::RPL;$/;"	m	class:MessageHeader	file:
-RPL	./message_header.pb.h	/^  static const PkgType RPL = MessageHeader_PkgType_RPL;$/;"	m	class:MessageHeader
-Role	./node.h	/^enum class Role {$/;"	c
-SERVER	./node.h	/^	SERVER,$/;"	m	class:Role
-SRC	./makefile	/^SRC = node.cpp worker.cpp main.cpp node_info.cpp$/;"	m
-STARTUP_READY	./message_header.pb.cc	/^const MessageHeader_SysMsgType MessageHeader::STARTUP_READY;$/;"	m	class:MessageHeader	file:
-STARTUP_READY	./message_header.pb.h	/^  static const SysMsgType STARTUP_READY = MessageHeader_SysMsgType_STARTUP_READY;$/;"	m	class:MessageHeader
-SYS	./message_header.pb.cc	/^const MessageHeader_MsgLevel MessageHeader::SYS;$/;"	m	class:MessageHeader	file:
-SYS	./message_header.pb.h	/^  static const MsgLevel SYS = MessageHeader_MsgLevel_SYS;$/;"	m	class:MessageHeader
-SerializeWithCachedSizes	./message_header.pb.cc	/^void MessageHeader::SerializeWithCachedSizes($/;"	f	class:MessageHeader
-SerializeWithCachedSizesToArray	./message_header.pb.cc	/^::google::protobuf::uint8* MessageHeader::SerializeWithCachedSizesToArray($/;"	f	class:MessageHeader
-SetCachedSize	./message_header.pb.cc	/^void MessageHeader::SetCachedSize(int size) const {$/;"	f	class:MessageHeader
-SharedCtor	./message_header.pb.cc	/^void MessageHeader::SharedCtor() {$/;"	f	class:MessageHeader
-SharedDtor	./message_header.pb.cc	/^void MessageHeader::SharedDtor() {$/;"	f	class:MessageHeader
-StaticDescriptorInitializer_message_5fheader_2eproto	./message_header.pb.cc	/^  StaticDescriptorInitializer_message_5fheader_2eproto() {$/;"	f	struct:StaticDescriptorInitializer_message_5fheader_2eproto
-StaticDescriptorInitializer_message_5fheader_2eproto	./message_header.pb.cc	/^struct StaticDescriptorInitializer_message_5fheader_2eproto {$/;"	s	file:
-Swap	./message_header.pb.cc	/^void MessageHeader::Swap(MessageHeader* other) {$/;"	f	class:MessageHeader
-SysMsgType	./message_header.pb.h	/^  typedef MessageHeader_SysMsgType SysMsgType;$/;"	t	class:MessageHeader
-SysMsgType_ARRAYSIZE	./message_header.pb.cc	/^const int MessageHeader::SysMsgType_ARRAYSIZE;$/;"	m	class:MessageHeader	file:
-SysMsgType_ARRAYSIZE	./message_header.pb.h	/^  static const int SysMsgType_ARRAYSIZE =$/;"	m	class:MessageHeader
-SysMsgType_IsValid	./message_header.pb.h	/^  static inline bool SysMsgType_IsValid(int value) {$/;"	f	class:MessageHeader
-SysMsgType_MAX	./message_header.pb.cc	/^const MessageHeader_SysMsgType MessageHeader::SysMsgType_MAX;$/;"	m	class:MessageHeader	file:
-SysMsgType_MAX	./message_header.pb.h	/^  static const SysMsgType SysMsgType_MAX =$/;"	m	class:MessageHeader
-SysMsgType_MIN	./message_header.pb.cc	/^const MessageHeader_SysMsgType MessageHeader::SysMsgType_MIN;$/;"	m	class:MessageHeader	file:
-SysMsgType_MIN	./message_header.pb.h	/^  static const SysMsgType SysMsgType_MIN =$/;"	m	class:MessageHeader
-SysMsgType_Name	./message_header.pb.h	/^  static inline const ::std::string& SysMsgType_Name(SysMsgType value) {$/;"	f	class:MessageHeader
-SysMsgType_Parse	./message_header.pb.h	/^  static inline bool SysMsgType_Parse(const ::std::string& name,$/;"	f	class:MessageHeader
-SysMsgType_descriptor	./message_header.pb.h	/^  SysMsgType_descriptor() {$/;"	f	class:MessageHeader
-Tracker	./tracker.cpp	/^Tracker::Tracker() {$/;"	f	class:Tracker
-Tracker	./tracker.h	/^class Tracker : public boost::serialization::singleton<Tracker> {$/;"	c
-USR	./message_header.pb.cc	/^const MessageHeader_MsgLevel MessageHeader::USR;$/;"	m	class:MessageHeader	file:
-USR	./message_header.pb.h	/^  static const MsgLevel USR = MessageHeader_MsgLevel_USR;$/;"	m	class:MessageHeader
-WORKER	./node.h	/^	WORKER,$/;"	m	class:Role
-Worker	./node.h	/^class Worker: public Node, public boost::serialization::singleton<Worker> {$/;"	c
-ZR_	./message_header.pb.cc	321;"	d	file:
-ZR_	./message_header.pb.cc	346;"	d	file:
-_cached_size_	./message_header.pb.h	/^  mutable int _cached_size_;$/;"	m	class:MessageHeader
-_has_bits_	./message_header.pb.h	/^  ::google::protobuf::uint32 _has_bits_[1];$/;"	m	class:MessageHeader
-_node_id	./node.h	/^    uint32_t _node_id;$/;"	m	struct:NodeInfo
-_node_info	./node.h	/^    NodeInfo _node_info;$/;"	m	class:Node
-_rank	./node.h	/^    uint32_t _rank;$/;"	m	struct:NodeInfo
-_role	./node.h	/^    Role _role;$/;"	m	struct:NodeInfo
-_unknown_fields_	./message_header.pb.h	/^  ::google::protobuf::UnknownFieldSet _unknown_fields_;$/;"	m	class:MessageHeader
-clear_from_id	./message_header.pb.h	/^inline void MessageHeader::clear_from_id() {$/;"	f	class:MessageHeader
-clear_from_ip	./message_header.pb.h	/^inline void MessageHeader::clear_from_ip() {$/;"	f	class:MessageHeader
-clear_from_obj_type	./message_header.pb.h	/^inline void MessageHeader::clear_from_obj_type() {$/;"	f	class:MessageHeader
-clear_from_port	./message_header.pb.h	/^inline void MessageHeader::clear_from_port() {$/;"	f	class:MessageHeader
-clear_has_from_id	./message_header.pb.h	/^inline void MessageHeader::clear_has_from_id() {$/;"	f	class:MessageHeader
-clear_has_from_ip	./message_header.pb.h	/^inline void MessageHeader::clear_has_from_ip() {$/;"	f	class:MessageHeader
-clear_has_from_obj_type	./message_header.pb.h	/^inline void MessageHeader::clear_has_from_obj_type() {$/;"	f	class:MessageHeader
-clear_has_from_port	./message_header.pb.h	/^inline void MessageHeader::clear_has_from_port() {$/;"	f	class:MessageHeader
-clear_has_msg_level	./message_header.pb.h	/^inline void MessageHeader::clear_has_msg_level() {$/;"	f	class:MessageHeader
-clear_has_pkg_type	./message_header.pb.h	/^inline void MessageHeader::clear_has_pkg_type() {$/;"	f	class:MessageHeader
-clear_has_priority	./message_header.pb.h	/^inline void MessageHeader::clear_has_priority() {$/;"	f	class:MessageHeader
-clear_has_rpl_tracker_id	./message_header.pb.h	/^inline void MessageHeader::clear_has_rpl_tracker_id() {$/;"	f	class:MessageHeader
-clear_has_sys_msg_type	./message_header.pb.h	/^inline void MessageHeader::clear_has_sys_msg_type() {$/;"	f	class:MessageHeader
-clear_has_to_id	./message_header.pb.h	/^inline void MessageHeader::clear_has_to_id() {$/;"	f	class:MessageHeader
-clear_has_to_ip	./message_header.pb.h	/^inline void MessageHeader::clear_has_to_ip() {$/;"	f	class:MessageHeader
-clear_has_to_obj_type	./message_header.pb.h	/^inline void MessageHeader::clear_has_to_obj_type() {$/;"	f	class:MessageHeader
-clear_has_to_port	./message_header.pb.h	/^inline void MessageHeader::clear_has_to_port() {$/;"	f	class:MessageHeader
-clear_has_tracker_id	./message_header.pb.h	/^inline void MessageHeader::clear_has_tracker_id() {$/;"	f	class:MessageHeader
-clear_msg_level	./message_header.pb.h	/^inline void MessageHeader::clear_msg_level() {$/;"	f	class:MessageHeader
-clear_pkg_type	./message_header.pb.h	/^inline void MessageHeader::clear_pkg_type() {$/;"	f	class:MessageHeader
-clear_priority	./message_header.pb.h	/^inline void MessageHeader::clear_priority() {$/;"	f	class:MessageHeader
-clear_rpl_tracker_id	./message_header.pb.h	/^inline void MessageHeader::clear_rpl_tracker_id() {$/;"	f	class:MessageHeader
-clear_sys_msg_type	./message_header.pb.h	/^inline void MessageHeader::clear_sys_msg_type() {$/;"	f	class:MessageHeader
-clear_to_id	./message_header.pb.h	/^inline void MessageHeader::clear_to_id() {$/;"	f	class:MessageHeader
-clear_to_ip	./message_header.pb.h	/^inline void MessageHeader::clear_to_ip() {$/;"	f	class:MessageHeader
-clear_to_obj_type	./message_header.pb.h	/^inline void MessageHeader::clear_to_obj_type() {$/;"	f	class:MessageHeader
-clear_to_port	./message_header.pb.h	/^inline void MessageHeader::clear_to_port() {$/;"	f	class:MessageHeader
-clear_tracker_id	./message_header.pb.h	/^inline void MessageHeader::clear_tracker_id() {$/;"	f	class:MessageHeader
-cond_exist_elem_queue_	./bus.h	/^	std::condition_variable cond_exist_elem_queue_; $/;"	m	class:Bus
-context_	./bus.h	/^	void *context_; \/\/zmq context$/;"	m	class:Bus
-default_instance	./message_header.pb.cc	/^const MessageHeader& MessageHeader::default_instance() {$/;"	f	class:MessageHeader
-default_instance_	./message_header.pb.cc	/^MessageHeader* MessageHeader::default_instance_ = NULL;$/;"	m	class:MessageHeader	file:
-default_instance_	./message_header.pb.h	/^  static MessageHeader* default_instance_;$/;"	m	class:MessageHeader
-descriptor	./message_header.pb.cc	/^const ::google::protobuf::Descriptor* MessageHeader::descriptor() {$/;"	f	class:MessageHeader
-dispatch_thread	./tracker.h	/^    std::thread *dispatch_thread;$/;"	m	class:Tracker
-do_dispatch	./tracker.cpp	/^int do_dispatch() {$/;"	f
-from_id	./message_header.pb.h	/^inline ::google::protobuf::int32 MessageHeader::from_id() const {$/;"	f	class:MessageHeader
-from_id_	./message_header.pb.h	/^  ::google::protobuf::int32 from_id_;$/;"	m	class:MessageHeader
-from_ip	./message_header.pb.h	/^inline const ::std::string& MessageHeader::from_ip() const {$/;"	f	class:MessageHeader
-from_ip_	./message_header.pb.h	/^  ::std::string* from_ip_;$/;"	m	class:MessageHeader
-from_obj_type	./message_header.pb.h	/^inline ::MessageHeader_ObjType MessageHeader::from_obj_type() const {$/;"	f	class:MessageHeader
-from_obj_type_	./message_header.pb.h	/^  int from_obj_type_;$/;"	m	class:MessageHeader
-from_port	./message_header.pb.h	/^inline ::google::protobuf::int32 MessageHeader::from_port() const {$/;"	f	class:MessageHeader
-from_port_	./message_header.pb.h	/^  ::google::protobuf::int32 from_port_;$/;"	m	class:MessageHeader
-google	./message_header.pb.h	/^namespace google {$/;"	n
-has_from_id	./message_header.pb.h	/^inline bool MessageHeader::has_from_id() const {$/;"	f	class:MessageHeader
-has_from_ip	./message_header.pb.h	/^inline bool MessageHeader::has_from_ip() const {$/;"	f	class:MessageHeader
-has_from_obj_type	./message_header.pb.h	/^inline bool MessageHeader::has_from_obj_type() const {$/;"	f	class:MessageHeader
-has_from_port	./message_header.pb.h	/^inline bool MessageHeader::has_from_port() const {$/;"	f	class:MessageHeader
-has_msg_level	./message_header.pb.h	/^inline bool MessageHeader::has_msg_level() const {$/;"	f	class:MessageHeader
-has_pkg_type	./message_header.pb.h	/^inline bool MessageHeader::has_pkg_type() const {$/;"	f	class:MessageHeader
-has_priority	./message_header.pb.h	/^inline bool MessageHeader::has_priority() const {$/;"	f	class:MessageHeader
-has_rpl_tracker_id	./message_header.pb.h	/^inline bool MessageHeader::has_rpl_tracker_id() const {$/;"	f	class:MessageHeader
-has_sys_msg_type	./message_header.pb.h	/^inline bool MessageHeader::has_sys_msg_type() const {$/;"	f	class:MessageHeader
-has_to_id	./message_header.pb.h	/^inline bool MessageHeader::has_to_id() const {$/;"	f	class:MessageHeader
-has_to_ip	./message_header.pb.h	/^inline bool MessageHeader::has_to_ip() const {$/;"	f	class:MessageHeader
-has_to_obj_type	./message_header.pb.h	/^inline bool MessageHeader::has_to_obj_type() const {$/;"	f	class:MessageHeader
-has_to_port	./message_header.pb.h	/^inline bool MessageHeader::has_to_port() const {$/;"	f	class:MessageHeader
-has_tracker_id	./message_header.pb.h	/^inline bool MessageHeader::has_tracker_id() const {$/;"	f	class:MessageHeader
-init	./bus.cpp	/^void Bus::init() {$/;"	f	class:Bus
-init	./node_info.cpp	/^void NodeInfo::init(Role p_role, uint32_t p_node_id, uint32_t p_rank) {$/;"	f	class:NodeInfo
-init	./tracker.cpp	/^int init(Bus *p_bus) {$/;"	f
-init	./worker.cpp	/^void Worker::init(Role p_role, uint32_t p_node_id, uint32_t p_rank) {$/;"	f	class:Worker
-is_proto_enum	./message_header.pb.h	/^template <> struct is_proto_enum< ::MessageHeader_MsgLevel> : ::google::protobuf::internal::true_type {};$/;"	s	namespace:google::protobuf
-is_proto_enum	./message_header.pb.h	/^template <> struct is_proto_enum< ::MessageHeader_ObjType> : ::google::protobuf::internal::true_type {};$/;"	s	namespace:google::protobuf
-is_proto_enum	./message_header.pb.h	/^template <> struct is_proto_enum< ::MessageHeader_PkgType> : ::google::protobuf::internal::true_type {};$/;"	s	namespace:google::protobuf
-is_proto_enum	./message_header.pb.h	/^template <> struct is_proto_enum< ::MessageHeader_SysMsgType> : ::google::protobuf::internal::true_type {};$/;"	s	namespace:google::protobuf
-kFromIdFieldNumber	./message_header.pb.cc	/^const int MessageHeader::kFromIdFieldNumber;$/;"	m	class:MessageHeader	file:
-kFromIdFieldNumber	./message_header.pb.h	/^  static const int kFromIdFieldNumber = 1;$/;"	m	class:MessageHeader
-kFromIpFieldNumber	./message_header.pb.cc	/^const int MessageHeader::kFromIpFieldNumber;$/;"	m	class:MessageHeader	file:
-kFromIpFieldNumber	./message_header.pb.h	/^  static const int kFromIpFieldNumber = 2;$/;"	m	class:MessageHeader
-kFromObjTypeFieldNumber	./message_header.pb.cc	/^const int MessageHeader::kFromObjTypeFieldNumber;$/;"	m	class:MessageHeader	file:
-kFromObjTypeFieldNumber	./message_header.pb.h	/^  static const int kFromObjTypeFieldNumber = 4;$/;"	m	class:MessageHeader
-kFromPortFieldNumber	./message_header.pb.cc	/^const int MessageHeader::kFromPortFieldNumber;$/;"	m	class:MessageHeader	file:
-kFromPortFieldNumber	./message_header.pb.h	/^  static const int kFromPortFieldNumber = 3;$/;"	m	class:MessageHeader
-kMsgLevelFieldNumber	./message_header.pb.cc	/^const int MessageHeader::kMsgLevelFieldNumber;$/;"	m	class:MessageHeader	file:
-kMsgLevelFieldNumber	./message_header.pb.h	/^  static const int kMsgLevelFieldNumber = 9;$/;"	m	class:MessageHeader
-kPkgTypeFieldNumber	./message_header.pb.cc	/^const int MessageHeader::kPkgTypeFieldNumber;$/;"	m	class:MessageHeader	file:
-kPkgTypeFieldNumber	./message_header.pb.h	/^  static const int kPkgTypeFieldNumber = 11;$/;"	m	class:MessageHeader
-kPriorityFieldNumber	./message_header.pb.cc	/^const int MessageHeader::kPriorityFieldNumber;$/;"	m	class:MessageHeader	file:
-kPriorityFieldNumber	./message_header.pb.h	/^  static const int kPriorityFieldNumber = 12;$/;"	m	class:MessageHeader
-kRplTrackerIdFieldNumber	./message_header.pb.cc	/^const int MessageHeader::kRplTrackerIdFieldNumber;$/;"	m	class:MessageHeader	file:
-kRplTrackerIdFieldNumber	./message_header.pb.h	/^  static const int kRplTrackerIdFieldNumber = 14;$/;"	m	class:MessageHeader
-kSysMsgTypeFieldNumber	./message_header.pb.cc	/^const int MessageHeader::kSysMsgTypeFieldNumber;$/;"	m	class:MessageHeader	file:
-kSysMsgTypeFieldNumber	./message_header.pb.h	/^  static const int kSysMsgTypeFieldNumber = 10;$/;"	m	class:MessageHeader
-kToIdFieldNumber	./message_header.pb.cc	/^const int MessageHeader::kToIdFieldNumber;$/;"	m	class:MessageHeader	file:
-kToIdFieldNumber	./message_header.pb.h	/^  static const int kToIdFieldNumber = 5;$/;"	m	class:MessageHeader
-kToIpFieldNumber	./message_header.pb.cc	/^const int MessageHeader::kToIpFieldNumber;$/;"	m	class:MessageHeader	file:
-kToIpFieldNumber	./message_header.pb.h	/^  static const int kToIpFieldNumber = 6;$/;"	m	class:MessageHeader
-kToObjTypeFieldNumber	./message_header.pb.cc	/^const int MessageHeader::kToObjTypeFieldNumber;$/;"	m	class:MessageHeader	file:
-kToObjTypeFieldNumber	./message_header.pb.h	/^  static const int kToObjTypeFieldNumber = 8;$/;"	m	class:MessageHeader
-kToPortFieldNumber	./message_header.pb.cc	/^const int MessageHeader::kToPortFieldNumber;$/;"	m	class:MessageHeader	file:
-kToPortFieldNumber	./message_header.pb.h	/^  static const int kToPortFieldNumber = 7;$/;"	m	class:MessageHeader
-kTrackerIdFieldNumber	./message_header.pb.cc	/^const int MessageHeader::kTrackerIdFieldNumber;$/;"	m	class:MessageHeader	file:
-kTrackerIdFieldNumber	./message_header.pb.h	/^  static const int kTrackerIdFieldNumber = 13;$/;"	m	class:MessageHeader
-main	./main.cpp	/^int main() {$/;"	f
-msg_header	./message.h	/^	MessageHeader msg_header;$/;"	m	class:Message
-msg_id_map_to_callback	./tracker.h	/^    std::unordered_map<uint64_t, std::function<void(void)> > msg_id_map_to_callback;$/;"	m	class:Tracker
-msg_level	./message_header.pb.h	/^inline ::MessageHeader_MsgLevel MessageHeader::msg_level() const {$/;"	f	class:MessageHeader
-msg_level_	./message_header.pb.h	/^  int msg_level_;$/;"	m	class:MessageHeader
-mutable_from_ip	./message_header.pb.h	/^inline ::std::string* MessageHeader::mutable_from_ip() {$/;"	f	class:MessageHeader
-mutable_to_ip	./message_header.pb.h	/^inline ::std::string* MessageHeader::mutable_to_ip() {$/;"	f	class:MessageHeader
-mutable_unknown_fields	./message_header.pb.h	/^  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {$/;"	f	class:MessageHeader
-mutex_queue_	./bus.h	/^	std::mutex mutex_queue_; \/\/prevent the queue$/;"	m	class:Bus
-node_id	./node.cpp	/^uint32_t Node::node_id() {$/;"	f	class:Node
-node_id	./node_info.cpp	/^uint32_t NodeInfo::node_id() {$/;"	f	class:NodeInfo
-num_elem_in_queue_	./bus.h	/^	uint32_t num_elem_in_queue_;$/;"	m	class:Bus
-operator =	./message_header.pb.h	/^  inline MessageHeader& operator=(const MessageHeader& from) {$/;"	f	class:MessageHeader
-pkg_type	./message_header.pb.h	/^inline ::MessageHeader_PkgType MessageHeader::pkg_type() const {$/;"	f	class:MessageHeader
-pkg_type_	./message_header.pb.h	/^  int pkg_type_;$/;"	m	class:MessageHeader
-priority	./message_header.pb.h	/^inline ::google::protobuf::int32 MessageHeader::priority() const {$/;"	f	class:MessageHeader
-priority_	./message_header.pb.h	/^  ::google::protobuf::int32 priority_;$/;"	m	class:MessageHeader
-process_msg	./worker.cpp	/^void Worker::process_msg(SPMsg) {$/;"	f	class:Worker
-protobuf	./message_header.pb.h	/^namespace protobuf {$/;"	n	namespace:google
-protobuf_AddDesc_message_5fheader_2eproto	./message_header.pb.cc	/^void protobuf_AddDesc_message_5fheader_2eproto() {$/;"	f
-protobuf_AssignDesc_message_5fheader_2eproto	./message_header.pb.cc	/^void protobuf_AssignDesc_message_5fheader_2eproto() {$/;"	f
-protobuf_AssignDescriptorsOnce	./message_header.pb.cc	/^inline void protobuf_AssignDescriptorsOnce() {$/;"	f	namespace:__anon2
-protobuf_RegisterTypes	./message_header.pb.cc	/^void protobuf_RegisterTypes(const ::std::string&) {$/;"	f	namespace:__anon2
-protobuf_ShutdownFile_message_5fheader_2eproto	./message_header.pb.cc	/^void protobuf_ShutdownFile_message_5fheader_2eproto() {$/;"	f
-rank	./node.cpp	/^uint32_t Node::rank() {$/;"	f	class:Node
-rank	./node_info.cpp	/^uint32_t NodeInfo::rank() {$/;"	f	class:NodeInfo
-receiver_	./bus.h	/^	void *receiver_;$/;"	m	class:Bus
-recvQueue	./bus.h	/^	boost::lockfree::queue< SPMsg > recvQueue;$/;"	m	class:Bus
-recvThread	./bus.h	/^	std::thread *sendThread, *recvThread;$/;"	m	class:Bus
-release_from_ip	./message_header.pb.h	/^inline ::std::string* MessageHeader::release_from_ip() {$/;"	f	class:MessageHeader
-release_to_ip	./message_header.pb.h	/^inline ::std::string* MessageHeader::release_to_ip() {$/;"	f	class:MessageHeader
-role	./node.cpp	/^Role Node::role() {$/;"	f	class:Node
-role	./node_info.cpp	/^Role NodeInfo::role() {$/;"	f	class:NodeInfo
-rpl_tracker_id	./message_header.pb.h	/^inline ::google::protobuf::int64 MessageHeader::rpl_tracker_id() const {$/;"	f	class:MessageHeader
-rpl_tracker_id_	./message_header.pb.h	/^  ::google::protobuf::int64 rpl_tracker_id_;$/;"	m	class:MessageHeader
-run	./tracker.cpp	/^int Tracker::run() {$/;"	f	class:Tracker
-run	./worker.cpp	/^void Worker::run() {$/;"	f	class:Worker
-sendThread	./bus.h	/^	std::thread *sendThread, *recvThread;$/;"	m	class:Bus
-send_msg	./tracker.cpp	/^int Tracker::send_msg(SPMsg msg, std::function<void(void)> callback_function) {$/;"	f	class:Tracker
-senders	./bus.h	/^	std::unordered_map<uint32_t, void *> senders;$/;"	m	class:Bus
-set_allocated_from_ip	./message_header.pb.h	/^inline void MessageHeader::set_allocated_from_ip(::std::string* from_ip) {$/;"	f	class:MessageHeader
-set_allocated_to_ip	./message_header.pb.h	/^inline void MessageHeader::set_allocated_to_ip(::std::string* to_ip) {$/;"	f	class:MessageHeader
-set_from_id	./message_header.pb.h	/^inline void MessageHeader::set_from_id(::google::protobuf::int32 value) {$/;"	f	class:MessageHeader
-set_from_ip	./message_header.pb.h	/^inline void MessageHeader::set_from_ip(const ::std::string& value) {$/;"	f	class:MessageHeader
-set_from_ip	./message_header.pb.h	/^inline void MessageHeader::set_from_ip(const char* value) {$/;"	f	class:MessageHeader
-set_from_ip	./message_header.pb.h	/^inline void MessageHeader::set_from_ip(const char* value, size_t size) {$/;"	f	class:MessageHeader
-set_from_obj_type	./message_header.pb.h	/^inline void MessageHeader::set_from_obj_type(::MessageHeader_ObjType value) {$/;"	f	class:MessageHeader
-set_from_port	./message_header.pb.h	/^inline void MessageHeader::set_from_port(::google::protobuf::int32 value) {$/;"	f	class:MessageHeader
-set_has_from_id	./message_header.pb.h	/^inline void MessageHeader::set_has_from_id() {$/;"	f	class:MessageHeader
-set_has_from_ip	./message_header.pb.h	/^inline void MessageHeader::set_has_from_ip() {$/;"	f	class:MessageHeader
-set_has_from_obj_type	./message_header.pb.h	/^inline void MessageHeader::set_has_from_obj_type() {$/;"	f	class:MessageHeader
-set_has_from_port	./message_header.pb.h	/^inline void MessageHeader::set_has_from_port() {$/;"	f	class:MessageHeader
-set_has_msg_level	./message_header.pb.h	/^inline void MessageHeader::set_has_msg_level() {$/;"	f	class:MessageHeader
-set_has_pkg_type	./message_header.pb.h	/^inline void MessageHeader::set_has_pkg_type() {$/;"	f	class:MessageHeader
-set_has_priority	./message_header.pb.h	/^inline void MessageHeader::set_has_priority() {$/;"	f	class:MessageHeader
-set_has_rpl_tracker_id	./message_header.pb.h	/^inline void MessageHeader::set_has_rpl_tracker_id() {$/;"	f	class:MessageHeader
-set_has_sys_msg_type	./message_header.pb.h	/^inline void MessageHeader::set_has_sys_msg_type() {$/;"	f	class:MessageHeader
-set_has_to_id	./message_header.pb.h	/^inline void MessageHeader::set_has_to_id() {$/;"	f	class:MessageHeader
-set_has_to_ip	./message_header.pb.h	/^inline void MessageHeader::set_has_to_ip() {$/;"	f	class:MessageHeader
-set_has_to_obj_type	./message_header.pb.h	/^inline void MessageHeader::set_has_to_obj_type() {$/;"	f	class:MessageHeader
-set_has_to_port	./message_header.pb.h	/^inline void MessageHeader::set_has_to_port() {$/;"	f	class:MessageHeader
-set_has_tracker_id	./message_header.pb.h	/^inline void MessageHeader::set_has_tracker_id() {$/;"	f	class:MessageHeader
-set_msg_level	./message_header.pb.h	/^inline void MessageHeader::set_msg_level(::MessageHeader_MsgLevel value) {$/;"	f	class:MessageHeader
-set_pkg_type	./message_header.pb.h	/^inline void MessageHeader::set_pkg_type(::MessageHeader_PkgType value) {$/;"	f	class:MessageHeader
-set_priority	./message_header.pb.h	/^inline void MessageHeader::set_priority(::google::protobuf::int32 value) {$/;"	f	class:MessageHeader
-set_rpl_tracker_id	./message_header.pb.h	/^inline void MessageHeader::set_rpl_tracker_id(::google::protobuf::int64 value) {$/;"	f	class:MessageHeader
-set_sys_msg_type	./message_header.pb.h	/^inline void MessageHeader::set_sys_msg_type(::MessageHeader_SysMsgType value) {$/;"	f	class:MessageHeader
-set_to_id	./message_header.pb.h	/^inline void MessageHeader::set_to_id(::google::protobuf::int32 value) {$/;"	f	class:MessageHeader
-set_to_ip	./message_header.pb.h	/^inline void MessageHeader::set_to_ip(const ::std::string& value) {$/;"	f	class:MessageHeader
-set_to_ip	./message_header.pb.h	/^inline void MessageHeader::set_to_ip(const char* value) {$/;"	f	class:MessageHeader
-set_to_ip	./message_header.pb.h	/^inline void MessageHeader::set_to_ip(const char* value, size_t size) {$/;"	f	class:MessageHeader
-set_to_obj_type	./message_header.pb.h	/^inline void MessageHeader::set_to_obj_type(::MessageHeader_ObjType value) {$/;"	f	class:MessageHeader
-set_to_port	./message_header.pb.h	/^inline void MessageHeader::set_to_port(::google::protobuf::int32 value) {$/;"	f	class:MessageHeader
-set_tracker_id	./message_header.pb.h	/^inline void MessageHeader::set_tracker_id(::google::protobuf::int64 value) {$/;"	f	class:MessageHeader
-static_descriptor_initializer_message_5fheader_2eproto_	./message_header.pb.cc	/^} static_descriptor_initializer_message_5fheader_2eproto_;$/;"	v	typeref:struct:StaticDescriptorInitializer_message_5fheader_2eproto
-sys_msg_type	./message_header.pb.h	/^inline ::MessageHeader_SysMsgType MessageHeader::sys_msg_type() const {$/;"	f	class:MessageHeader
-sys_msg_type_	./message_header.pb.h	/^  int sys_msg_type_;$/;"	m	class:MessageHeader
-to_id	./message_header.pb.h	/^inline ::google::protobuf::int32 MessageHeader::to_id() const {$/;"	f	class:MessageHeader
-to_id_	./message_header.pb.h	/^  ::google::protobuf::int32 to_id_;$/;"	m	class:MessageHeader
-to_ip	./message_header.pb.h	/^inline const ::std::string& MessageHeader::to_ip() const {$/;"	f	class:MessageHeader
-to_ip_	./message_header.pb.h	/^  ::std::string* to_ip_;$/;"	m	class:MessageHeader
-to_obj_type	./message_header.pb.h	/^inline ::MessageHeader_ObjType MessageHeader::to_obj_type() const {$/;"	f	class:MessageHeader
-to_obj_type_	./message_header.pb.h	/^  int to_obj_type_;$/;"	m	class:MessageHeader
-to_port	./message_header.pb.h	/^inline ::google::protobuf::int32 MessageHeader::to_port() const {$/;"	f	class:MessageHeader
-to_port_	./message_header.pb.h	/^  ::google::protobuf::int32 to_port_;$/;"	m	class:MessageHeader
-tracker_id	./message_header.pb.h	/^inline ::google::protobuf::int64 MessageHeader::tracker_id() const {$/;"	f	class:MessageHeader
-tracker_id	./tracker.h	/^	int tracker_id;$/;"	m	class:Tracker
-tracker_id_	./message_header.pb.h	/^  ::google::protobuf::int64 tracker_id_;$/;"	m	class:MessageHeader
-unknown_fields	./message_header.pb.h	/^  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {$/;"	f	class:MessageHeader
-worker_instance	./main.cpp	4;"	d	file:
-~MessageHeader	./message_header.pb.cc	/^MessageHeader::~MessageHeader() {$/;"	f	class:MessageHeader
-~Node	./node.cpp	/^Node::~Node() {$/;"	f	class:Node
-~Worker	./worker.cpp	/^Worker::~Worker() {$/;"	f	class:Worker
+Bus	bus.h	/^class Bus : public boost::serialization::singleton<Bus> {$/;"	c
+ByteSize	message_header.pb.cc	/^int MessageHeader::ByteSize() const {$/;"	f	class:MessageHeader
+CACHE	message_header.pb.cc	/^const MessageHeader_ObjType MessageHeader::CACHE;$/;"	m	class:MessageHeader	file:
+CACHE	message_header.pb.h	/^  static const ObjType CACHE = MessageHeader_ObjType_CACHE;$/;"	m	class:MessageHeader
+CC	makefile	/^CC = g++$/;"	m
+CFLAGS	makefile	/^CFLAGS = -Wall -std=c++11 -O2$/;"	m
+COMPUTING	node.h	/^    COMPUTING,$/;"	m	class:NodeState
+Clear	message_header.pb.cc	/^void MessageHeader::Clear() {$/;"	f	class:MessageHeader
+CopyFrom	message_header.pb.cc	/^void MessageHeader::CopyFrom(const ::google::protobuf::Message& from) {$/;"	f	class:MessageHeader
+CopyFrom	message_header.pb.cc	/^void MessageHeader::CopyFrom(const MessageHeader& from) {$/;"	f	class:MessageHeader
+DO_	message_header.pb.cc	354;"	d	file:
+DO_	message_header.pb.cc	619;"	d	file:
+ENGINE	message_header.pb.cc	/^const MessageHeader_ObjType MessageHeader::ENGINE;$/;"	m	class:MessageHeader	file:
+ENGINE	message_header.pb.h	/^  static const ObjType ENGINE = MessageHeader_ObjType_ENGINE;$/;"	m	class:MessageHeader
+EXE	makefile	/^EXE = main$/;"	m
+FILED	message_header.pb.cc	/^const MessageHeader_ObjType MessageHeader::FILED;$/;"	m	class:MessageHeader	file:
+FILED	message_header.pb.h	/^  static const ObjType FILED = MessageHeader_ObjType_FILED;$/;"	m	class:MessageHeader
+GetCachedSize	message_header.pb.h	/^  int GetCachedSize() const { return _cached_size_; }$/;"	f	class:MessageHeader
+GetEnumDescriptor	message_header.pb.h	/^inline const EnumDescriptor* GetEnumDescriptor< ::MessageHeader_MsgLevel>() {$/;"	f	namespace:google::protobuf
+GetEnumDescriptor	message_header.pb.h	/^inline const EnumDescriptor* GetEnumDescriptor< ::MessageHeader_ObjType>() {$/;"	f	namespace:google::protobuf
+GetEnumDescriptor	message_header.pb.h	/^inline const EnumDescriptor* GetEnumDescriptor< ::MessageHeader_PkgType>() {$/;"	f	namespace:google::protobuf
+GetEnumDescriptor	message_header.pb.h	/^inline const EnumDescriptor* GetEnumDescriptor< ::MessageHeader_SysMsgType>() {$/;"	f	namespace:google::protobuf
+GetMetadata	message_header.pb.cc	/^::google::protobuf::Metadata MessageHeader::GetMetadata() const {$/;"	f	class:MessageHeader
+INCLUDE_PATH	makefile	/^INCLUDE_PATH = -I.\/ -I\/usr\/local\/boost_1_58_0\/boost -I\/usr\/local\/include$/;"	m
+INTERNAL_SUPPRESS_PROTOBUF_FIELD_DEPRECATION	message_header.pb.cc	4;"	d	file:
+InitAsDefaultInstance	message_header.pb.cc	/^void MessageHeader::InitAsDefaultInstance() {$/;"	f	class:MessageHeader
+IsInitialized	message_header.pb.cc	/^bool MessageHeader::IsInitialized() const {$/;"	f	class:MessageHeader
+LDFLAGS	makefile	/^LDFLAGS = -L\/usr\/local\/lib -lzmq -lglog -lgflags -lprotobuf -lboost_system \\$/;"	m
+LISTENING_JOB	node.h	/^    LISTENING_JOB,$/;"	m	class:NodeState
+LISTENING_REGISTER	node.h	/^    LISTENING_REGISTER,$/;"	m	class:NodeState
+MergeFrom	message_header.pb.cc	/^void MessageHeader::MergeFrom(const ::google::protobuf::Message& from) {$/;"	f	class:MessageHeader
+MergeFrom	message_header.pb.cc	/^void MessageHeader::MergeFrom(const MessageHeader& from) {$/;"	f	class:MessageHeader
+MergePartialFromCodedStream	message_header.pb.cc	/^bool MessageHeader::MergePartialFromCodedStream($/;"	f	class:MessageHeader
+Message	message.h	/^struct Message {$/;"	s
+MessageHeader	message_header.pb.cc	/^MessageHeader::MessageHeader()$/;"	f	class:MessageHeader
+MessageHeader	message_header.pb.cc	/^MessageHeader::MessageHeader(const MessageHeader& from)$/;"	f	class:MessageHeader
+MessageHeader	message_header.pb.h	/^class MessageHeader : public ::google::protobuf::Message {$/;"	c
+MessageHeader_MsgLevel	message_header.pb.h	/^enum MessageHeader_MsgLevel {$/;"	g
+MessageHeader_MsgLevel_IsValid	message_header.pb.cc	/^bool MessageHeader_MsgLevel_IsValid(int value) {$/;"	f
+MessageHeader_MsgLevel_MsgLevel_ARRAYSIZE	message_header.pb.h	/^const int MessageHeader_MsgLevel_MsgLevel_ARRAYSIZE = MessageHeader_MsgLevel_MsgLevel_MAX + 1;$/;"	v
+MessageHeader_MsgLevel_MsgLevel_MAX	message_header.pb.h	/^const MessageHeader_MsgLevel MessageHeader_MsgLevel_MsgLevel_MAX = MessageHeader_MsgLevel_USR;$/;"	v
+MessageHeader_MsgLevel_MsgLevel_MIN	message_header.pb.h	/^const MessageHeader_MsgLevel MessageHeader_MsgLevel_MsgLevel_MIN = MessageHeader_MsgLevel_SYS;$/;"	v
+MessageHeader_MsgLevel_Name	message_header.pb.h	/^inline const ::std::string& MessageHeader_MsgLevel_Name(MessageHeader_MsgLevel value) {$/;"	f
+MessageHeader_MsgLevel_Parse	message_header.pb.h	/^inline bool MessageHeader_MsgLevel_Parse($/;"	f
+MessageHeader_MsgLevel_SYS	message_header.pb.h	/^  MessageHeader_MsgLevel_SYS = 0,$/;"	e	enum:MessageHeader_MsgLevel
+MessageHeader_MsgLevel_USR	message_header.pb.h	/^  MessageHeader_MsgLevel_USR = 1$/;"	e	enum:MessageHeader_MsgLevel
+MessageHeader_MsgLevel_descriptor	message_header.pb.cc	/^const ::google::protobuf::EnumDescriptor* MessageHeader_MsgLevel_descriptor() {$/;"	f
+MessageHeader_MsgLevel_descriptor_	message_header.pb.cc	/^const ::google::protobuf::EnumDescriptor* MessageHeader_MsgLevel_descriptor_ = NULL;$/;"	m	namespace:__anon1	file:
+MessageHeader_ObjType	message_header.pb.h	/^enum MessageHeader_ObjType {$/;"	g
+MessageHeader_ObjType_CACHE	message_header.pb.h	/^  MessageHeader_ObjType_CACHE = 2,$/;"	e	enum:MessageHeader_ObjType
+MessageHeader_ObjType_ENGINE	message_header.pb.h	/^  MessageHeader_ObjType_ENGINE = 3$/;"	e	enum:MessageHeader_ObjType
+MessageHeader_ObjType_FILED	message_header.pb.h	/^  MessageHeader_ObjType_FILED = 1,$/;"	e	enum:MessageHeader_ObjType
+MessageHeader_ObjType_IsValid	message_header.pb.cc	/^bool MessageHeader_ObjType_IsValid(int value) {$/;"	f
+MessageHeader_ObjType_NODE	message_header.pb.h	/^  MessageHeader_ObjType_NODE = 0,$/;"	e	enum:MessageHeader_ObjType
+MessageHeader_ObjType_Name	message_header.pb.h	/^inline const ::std::string& MessageHeader_ObjType_Name(MessageHeader_ObjType value) {$/;"	f
+MessageHeader_ObjType_ObjType_ARRAYSIZE	message_header.pb.h	/^const int MessageHeader_ObjType_ObjType_ARRAYSIZE = MessageHeader_ObjType_ObjType_MAX + 1;$/;"	v
+MessageHeader_ObjType_ObjType_MAX	message_header.pb.h	/^const MessageHeader_ObjType MessageHeader_ObjType_ObjType_MAX = MessageHeader_ObjType_ENGINE;$/;"	v
+MessageHeader_ObjType_ObjType_MIN	message_header.pb.h	/^const MessageHeader_ObjType MessageHeader_ObjType_ObjType_MIN = MessageHeader_ObjType_NODE;$/;"	v
+MessageHeader_ObjType_Parse	message_header.pb.h	/^inline bool MessageHeader_ObjType_Parse($/;"	f
+MessageHeader_ObjType_descriptor	message_header.pb.cc	/^const ::google::protobuf::EnumDescriptor* MessageHeader_ObjType_descriptor() {$/;"	f
+MessageHeader_ObjType_descriptor_	message_header.pb.cc	/^const ::google::protobuf::EnumDescriptor* MessageHeader_ObjType_descriptor_ = NULL;$/;"	m	namespace:__anon1	file:
+MessageHeader_PkgType	message_header.pb.h	/^enum MessageHeader_PkgType {$/;"	g
+MessageHeader_PkgType_IsValid	message_header.pb.cc	/^bool MessageHeader_PkgType_IsValid(int value) {$/;"	f
+MessageHeader_PkgType_Name	message_header.pb.h	/^inline const ::std::string& MessageHeader_PkgType_Name(MessageHeader_PkgType value) {$/;"	f
+MessageHeader_PkgType_PUSH	message_header.pb.h	/^  MessageHeader_PkgType_PUSH = 2$/;"	e	enum:MessageHeader_PkgType
+MessageHeader_PkgType_Parse	message_header.pb.h	/^inline bool MessageHeader_PkgType_Parse($/;"	f
+MessageHeader_PkgType_PkgType_ARRAYSIZE	message_header.pb.h	/^const int MessageHeader_PkgType_PkgType_ARRAYSIZE = MessageHeader_PkgType_PkgType_MAX + 1;$/;"	v
+MessageHeader_PkgType_PkgType_MAX	message_header.pb.h	/^const MessageHeader_PkgType MessageHeader_PkgType_PkgType_MAX = MessageHeader_PkgType_PUSH;$/;"	v
+MessageHeader_PkgType_PkgType_MIN	message_header.pb.h	/^const MessageHeader_PkgType MessageHeader_PkgType_PkgType_MIN = MessageHeader_PkgType_REQ;$/;"	v
+MessageHeader_PkgType_REQ	message_header.pb.h	/^  MessageHeader_PkgType_REQ = 0,$/;"	e	enum:MessageHeader_PkgType
+MessageHeader_PkgType_RPL	message_header.pb.h	/^  MessageHeader_PkgType_RPL = 1,$/;"	e	enum:MessageHeader_PkgType
+MessageHeader_PkgType_descriptor	message_header.pb.cc	/^const ::google::protobuf::EnumDescriptor* MessageHeader_PkgType_descriptor() {$/;"	f
+MessageHeader_PkgType_descriptor_	message_header.pb.cc	/^const ::google::protobuf::EnumDescriptor* MessageHeader_PkgType_descriptor_ = NULL;$/;"	m	namespace:__anon1	file:
+MessageHeader_SysMsgType	message_header.pb.h	/^enum MessageHeader_SysMsgType {$/;"	g
+MessageHeader_SysMsgType_IsValid	message_header.pb.cc	/^bool MessageHeader_SysMsgType_IsValid(int value) {$/;"	f
+MessageHeader_SysMsgType_NODE_LIST_DATA	message_header.pb.h	/^  MessageHeader_SysMsgType_NODE_LIST_DATA = 2,$/;"	e	enum:MessageHeader_SysMsgType
+MessageHeader_SysMsgType_Name	message_header.pb.h	/^inline const ::std::string& MessageHeader_SysMsgType_Name(MessageHeader_SysMsgType value) {$/;"	f
+MessageHeader_SysMsgType_PARA_DATA	message_header.pb.h	/^  MessageHeader_SysMsgType_PARA_DATA = 0,$/;"	e	enum:MessageHeader_SysMsgType
+MessageHeader_SysMsgType_Parse	message_header.pb.h	/^inline bool MessageHeader_SysMsgType_Parse($/;"	f
+MessageHeader_SysMsgType_REGIST	message_header.pb.h	/^  MessageHeader_SysMsgType_REGIST = 1,$/;"	e	enum:MessageHeader_SysMsgType
+MessageHeader_SysMsgType_STARTUP_READY	message_header.pb.h	/^  MessageHeader_SysMsgType_STARTUP_READY = 3$/;"	e	enum:MessageHeader_SysMsgType
+MessageHeader_SysMsgType_SysMsgType_ARRAYSIZE	message_header.pb.h	/^const int MessageHeader_SysMsgType_SysMsgType_ARRAYSIZE = MessageHeader_SysMsgType_SysMsgType_MAX + 1;$/;"	v
+MessageHeader_SysMsgType_SysMsgType_MAX	message_header.pb.h	/^const MessageHeader_SysMsgType MessageHeader_SysMsgType_SysMsgType_MAX = MessageHeader_SysMsgType_STARTUP_READY;$/;"	v
+MessageHeader_SysMsgType_SysMsgType_MIN	message_header.pb.h	/^const MessageHeader_SysMsgType MessageHeader_SysMsgType_SysMsgType_MIN = MessageHeader_SysMsgType_PARA_DATA;$/;"	v
+MessageHeader_SysMsgType_descriptor	message_header.pb.cc	/^const ::google::protobuf::EnumDescriptor* MessageHeader_SysMsgType_descriptor() {$/;"	f
+MessageHeader_SysMsgType_descriptor_	message_header.pb.cc	/^const ::google::protobuf::EnumDescriptor* MessageHeader_SysMsgType_descriptor_ = NULL;$/;"	m	namespace:__anon1	file:
+MessageHeader_descriptor_	message_header.pb.cc	/^const ::google::protobuf::Descriptor* MessageHeader_descriptor_ = NULL;$/;"	m	namespace:__anon1	file:
+MessageHeader_reflection_	message_header.pb.cc	/^  MessageHeader_reflection_ = NULL;$/;"	m	namespace:__anon1	file:
+MsgLevel	message_header.pb.h	/^  typedef MessageHeader_MsgLevel MsgLevel;$/;"	t	class:MessageHeader
+MsgLevel_ARRAYSIZE	message_header.pb.cc	/^const int MessageHeader::MsgLevel_ARRAYSIZE;$/;"	m	class:MessageHeader	file:
+MsgLevel_ARRAYSIZE	message_header.pb.h	/^  static const int MsgLevel_ARRAYSIZE =$/;"	m	class:MessageHeader
+MsgLevel_IsValid	message_header.pb.h	/^  static inline bool MsgLevel_IsValid(int value) {$/;"	f	class:MessageHeader
+MsgLevel_MAX	message_header.pb.cc	/^const MessageHeader_MsgLevel MessageHeader::MsgLevel_MAX;$/;"	m	class:MessageHeader	file:
+MsgLevel_MAX	message_header.pb.h	/^  static const MsgLevel MsgLevel_MAX =$/;"	m	class:MessageHeader
+MsgLevel_MIN	message_header.pb.cc	/^const MessageHeader_MsgLevel MessageHeader::MsgLevel_MIN;$/;"	m	class:MessageHeader	file:
+MsgLevel_MIN	message_header.pb.h	/^  static const MsgLevel MsgLevel_MIN =$/;"	m	class:MessageHeader
+MsgLevel_Name	message_header.pb.h	/^  static inline const ::std::string& MsgLevel_Name(MsgLevel value) {$/;"	f	class:MessageHeader
+MsgLevel_Parse	message_header.pb.h	/^  static inline bool MsgLevel_Parse(const ::std::string& name,$/;"	f	class:MessageHeader
+MsgLevel_descriptor	message_header.pb.h	/^  MsgLevel_descriptor() {$/;"	f	class:MessageHeader
+NODE	message_header.pb.cc	/^const MessageHeader_ObjType MessageHeader::NODE;$/;"	m	class:MessageHeader	file:
+NODE	message_header.pb.h	/^  static const ObjType NODE = MessageHeader_ObjType_NODE;$/;"	m	class:MessageHeader
+NODE_LIST_DATA	message_header.pb.cc	/^const MessageHeader_SysMsgType MessageHeader::NODE_LIST_DATA;$/;"	m	class:MessageHeader	file:
+NODE_LIST_DATA	message_header.pb.h	/^  static const SysMsgType NODE_LIST_DATA = MessageHeader_SysMsgType_NODE_LIST_DATA;$/;"	m	class:MessageHeader
+NODE_LIST_REVD	node.h	/^    NODE_LIST_REVD,$/;"	m	class:NodeState
+NODE_LIST_SENT	node.h	/^    NODE_LIST_SENT,$/;"	m	class:NodeState
+NameNode	node.h	/^class NameNode : public NodeInfo, $/;"	c
+New	message_header.pb.cc	/^MessageHeader* MessageHeader::New() const {$/;"	f	class:MessageHeader
+Node	node.h	/^class Node {$/;"	c
+NodeInfo	node.h	/^class NodeInfo {$/;"	c
+NodeInfo	node_info.cpp	/^NodeInfo::NodeInfo() {$/;"	f	class:NodeInfo
+NodeInfo	node_info.cpp	/^NodeInfo::NodeInfo(Role p_role, NodeId p_node_id)$/;"	f	class:NodeInfo
+NodeInfo	node_info.cpp	/^NodeInfo::NodeInfo(Role p_role, NodeId p_node_id, $/;"	f	class:NodeInfo
+NodeState	node.h	/^enum class NodeState {$/;"	c
+OBJ	makefile	/^OBJ = worker.o main.o node_info.o$/;"	m
+OFFSET_OF_FIELD_	message_header.pb.cc	317;"	d	file:
+OFFSET_OF_FIELD_	message_header.pb.cc	345;"	d	file:
+ObjType	message_header.pb.h	/^  typedef MessageHeader_ObjType ObjType;$/;"	t	class:MessageHeader
+ObjType_ARRAYSIZE	message_header.pb.cc	/^const int MessageHeader::ObjType_ARRAYSIZE;$/;"	m	class:MessageHeader	file:
+ObjType_ARRAYSIZE	message_header.pb.h	/^  static const int ObjType_ARRAYSIZE =$/;"	m	class:MessageHeader
+ObjType_IsValid	message_header.pb.h	/^  static inline bool ObjType_IsValid(int value) {$/;"	f	class:MessageHeader
+ObjType_MAX	message_header.pb.cc	/^const MessageHeader_ObjType MessageHeader::ObjType_MAX;$/;"	m	class:MessageHeader	file:
+ObjType_MAX	message_header.pb.h	/^  static const ObjType ObjType_MAX =$/;"	m	class:MessageHeader
+ObjType_MIN	message_header.pb.cc	/^const MessageHeader_ObjType MessageHeader::ObjType_MIN;$/;"	m	class:MessageHeader	file:
+ObjType_MIN	message_header.pb.h	/^  static const ObjType ObjType_MIN =$/;"	m	class:MessageHeader
+ObjType_Name	message_header.pb.h	/^  static inline const ::std::string& ObjType_Name(ObjType value) {$/;"	f	class:MessageHeader
+ObjType_Parse	message_header.pb.h	/^  static inline bool ObjType_Parse(const ::std::string& name,$/;"	f	class:MessageHeader
+ObjType_descriptor	message_header.pb.h	/^  ObjType_descriptor() {$/;"	f	class:MessageHeader
+PARA_DATA	message_header.pb.cc	/^const MessageHeader_SysMsgType MessageHeader::PARA_DATA;$/;"	m	class:MessageHeader	file:
+PARA_DATA	message_header.pb.h	/^  static const SysMsgType PARA_DATA = MessageHeader_SysMsgType_PARA_DATA;$/;"	m	class:MessageHeader
+PQ	bus.h	/^	std::queue<SPMsg> PQ[PRIORITY_LEVEL];$/;"	m	class:Bus
+PRIORITY_LEVEL	common.h	/^const int PRIORITY_LEVEL = 10;$/;"	v
+PROTOBUF_message_5fheader_2eproto__INCLUDED	message_header.pb.h	5;"	d
+PROTOC	makefile	/^PROTOC = protoc -I=.\/ --cpp_out=.\/ $/;"	m
+PUSH	message_header.pb.cc	/^const MessageHeader_PkgType MessageHeader::PUSH;$/;"	m	class:MessageHeader	file:
+PUSH	message_header.pb.h	/^  static const PkgType PUSH = MessageHeader_PkgType_PUSH;$/;"	m	class:MessageHeader
+PkgType	message_header.pb.h	/^  typedef MessageHeader_PkgType PkgType;$/;"	t	class:MessageHeader
+PkgType_ARRAYSIZE	message_header.pb.cc	/^const int MessageHeader::PkgType_ARRAYSIZE;$/;"	m	class:MessageHeader	file:
+PkgType_ARRAYSIZE	message_header.pb.h	/^  static const int PkgType_ARRAYSIZE =$/;"	m	class:MessageHeader
+PkgType_IsValid	message_header.pb.h	/^  static inline bool PkgType_IsValid(int value) {$/;"	f	class:MessageHeader
+PkgType_MAX	message_header.pb.cc	/^const MessageHeader_PkgType MessageHeader::PkgType_MAX;$/;"	m	class:MessageHeader	file:
+PkgType_MAX	message_header.pb.h	/^  static const PkgType PkgType_MAX =$/;"	m	class:MessageHeader
+PkgType_MIN	message_header.pb.cc	/^const MessageHeader_PkgType MessageHeader::PkgType_MIN;$/;"	m	class:MessageHeader	file:
+PkgType_MIN	message_header.pb.h	/^  static const PkgType PkgType_MIN =$/;"	m	class:MessageHeader
+PkgType_Name	message_header.pb.h	/^  static inline const ::std::string& PkgType_Name(PkgType value) {$/;"	f	class:MessageHeader
+PkgType_Parse	message_header.pb.h	/^  static inline bool PkgType_Parse(const ::std::string& name,$/;"	f	class:MessageHeader
+PkgType_descriptor	message_header.pb.h	/^  PkgType_descriptor() {$/;"	f	class:MessageHeader
+REGIST	message_header.pb.cc	/^const MessageHeader_SysMsgType MessageHeader::REGIST;$/;"	m	class:MessageHeader	file:
+REGIST	message_header.pb.h	/^  static const SysMsgType REGIST = MessageHeader_SysMsgType_REGIST;$/;"	m	class:MessageHeader
+REGISTER_SENT	node.h	/^    REGISTER_SENT,$/;"	m	class:NodeState
+REGISTER_WAIT_TIME_IN_SEC	common.h	/^const unsigned int REGISTER_WAIT_TIME_IN_SEC = 10;$/;"	v
+REQ	message_header.pb.cc	/^const MessageHeader_PkgType MessageHeader::REQ;$/;"	m	class:MessageHeader	file:
+REQ	message_header.pb.h	/^  static const PkgType REQ = MessageHeader_PkgType_REQ;$/;"	m	class:MessageHeader
+RPL	message_header.pb.cc	/^const MessageHeader_PkgType MessageHeader::RPL;$/;"	m	class:MessageHeader	file:
+RPL	message_header.pb.h	/^  static const PkgType RPL = MessageHeader_PkgType_RPL;$/;"	m	class:MessageHeader
+Role	node.h	/^enum class Role {$/;"	c
+SERVER	node.h	/^	SERVER,$/;"	m	class:Role
+SRC	makefile	/^SRC = worker.cpp node_info.cpp$/;"	m
+STARTUP_READY	message_header.pb.cc	/^const MessageHeader_SysMsgType MessageHeader::STARTUP_READY;$/;"	m	class:MessageHeader	file:
+STARTUP_READY	message_header.pb.h	/^  static const SysMsgType STARTUP_READY = MessageHeader_SysMsgType_STARTUP_READY;$/;"	m	class:MessageHeader
+SYS	message_header.pb.cc	/^const MessageHeader_MsgLevel MessageHeader::SYS;$/;"	m	class:MessageHeader	file:
+SYS	message_header.pb.h	/^  static const MsgLevel SYS = MessageHeader_MsgLevel_SYS;$/;"	m	class:MessageHeader
+SerializeWithCachedSizes	message_header.pb.cc	/^void MessageHeader::SerializeWithCachedSizes($/;"	f	class:MessageHeader
+SerializeWithCachedSizesToArray	message_header.pb.cc	/^::google::protobuf::uint8* MessageHeader::SerializeWithCachedSizesToArray($/;"	f	class:MessageHeader
+Server	node.h	/^class Server : public NodeInfo, $/;"	c
+SetCachedSize	message_header.pb.cc	/^void MessageHeader::SetCachedSize(int size) const {$/;"	f	class:MessageHeader
+SharedCtor	message_header.pb.cc	/^void MessageHeader::SharedCtor() {$/;"	f	class:MessageHeader
+SharedDtor	message_header.pb.cc	/^void MessageHeader::SharedDtor() {$/;"	f	class:MessageHeader
+StaticDescriptorInitializer_message_5fheader_2eproto	message_header.pb.cc	/^  StaticDescriptorInitializer_message_5fheader_2eproto() {$/;"	f	struct:StaticDescriptorInitializer_message_5fheader_2eproto
+StaticDescriptorInitializer_message_5fheader_2eproto	message_header.pb.cc	/^struct StaticDescriptorInitializer_message_5fheader_2eproto {$/;"	s	file:
+Swap	message_header.pb.cc	/^void MessageHeader::Swap(MessageHeader* other) {$/;"	f	class:MessageHeader
+SysMsgType	message_header.pb.h	/^  typedef MessageHeader_SysMsgType SysMsgType;$/;"	t	class:MessageHeader
+SysMsgType_ARRAYSIZE	message_header.pb.cc	/^const int MessageHeader::SysMsgType_ARRAYSIZE;$/;"	m	class:MessageHeader	file:
+SysMsgType_ARRAYSIZE	message_header.pb.h	/^  static const int SysMsgType_ARRAYSIZE =$/;"	m	class:MessageHeader
+SysMsgType_IsValid	message_header.pb.h	/^  static inline bool SysMsgType_IsValid(int value) {$/;"	f	class:MessageHeader
+SysMsgType_MAX	message_header.pb.cc	/^const MessageHeader_SysMsgType MessageHeader::SysMsgType_MAX;$/;"	m	class:MessageHeader	file:
+SysMsgType_MAX	message_header.pb.h	/^  static const SysMsgType SysMsgType_MAX =$/;"	m	class:MessageHeader
+SysMsgType_MIN	message_header.pb.cc	/^const MessageHeader_SysMsgType MessageHeader::SysMsgType_MIN;$/;"	m	class:MessageHeader	file:
+SysMsgType_MIN	message_header.pb.h	/^  static const SysMsgType SysMsgType_MIN =$/;"	m	class:MessageHeader
+SysMsgType_Name	message_header.pb.h	/^  static inline const ::std::string& SysMsgType_Name(SysMsgType value) {$/;"	f	class:MessageHeader
+SysMsgType_Parse	message_header.pb.h	/^  static inline bool SysMsgType_Parse(const ::std::string& name,$/;"	f	class:MessageHeader
+SysMsgType_descriptor	message_header.pb.h	/^  SysMsgType_descriptor() {$/;"	f	class:MessageHeader
+Tracker	tracker.h	/^class Tracker : public boost::serialization::singleton<Tracker> {$/;"	c
+USR	message_header.pb.cc	/^const MessageHeader_MsgLevel MessageHeader::USR;$/;"	m	class:MessageHeader	file:
+USR	message_header.pb.h	/^  static const MsgLevel USR = MessageHeader_MsgLevel_USR;$/;"	m	class:MessageHeader
+WORKER	node.h	/^	WORKER,$/;"	m	class:Role
+Worker	node.h	/^class Worker:   public NodeInfo, $/;"	c
+ZR_	message_header.pb.cc	321;"	d	file:
+ZR_	message_header.pb.cc	346;"	d	file:
+_cached_size_	message_header.pb.h	/^  mutable int _cached_size_;$/;"	m	class:MessageHeader
+_has_bits_	message_header.pb.h	/^  ::google::protobuf::uint32 _has_bits_[1];$/;"	m	class:MessageHeader
+_unknown_fields_	message_header.pb.h	/^  ::google::protobuf::UnknownFieldSet _unknown_fields_;$/;"	m	class:MessageHeader
+bus	tracker.h	/^    Bus *bus;$/;"	m	class:Tracker
+clear_from_id	message_header.pb.h	/^inline void MessageHeader::clear_from_id() {$/;"	f	class:MessageHeader
+clear_from_ip	message_header.pb.h	/^inline void MessageHeader::clear_from_ip() {$/;"	f	class:MessageHeader
+clear_from_obj_type	message_header.pb.h	/^inline void MessageHeader::clear_from_obj_type() {$/;"	f	class:MessageHeader
+clear_from_port	message_header.pb.h	/^inline void MessageHeader::clear_from_port() {$/;"	f	class:MessageHeader
+clear_has_from_id	message_header.pb.h	/^inline void MessageHeader::clear_has_from_id() {$/;"	f	class:MessageHeader
+clear_has_from_ip	message_header.pb.h	/^inline void MessageHeader::clear_has_from_ip() {$/;"	f	class:MessageHeader
+clear_has_from_obj_type	message_header.pb.h	/^inline void MessageHeader::clear_has_from_obj_type() {$/;"	f	class:MessageHeader
+clear_has_from_port	message_header.pb.h	/^inline void MessageHeader::clear_has_from_port() {$/;"	f	class:MessageHeader
+clear_has_msg_level	message_header.pb.h	/^inline void MessageHeader::clear_has_msg_level() {$/;"	f	class:MessageHeader
+clear_has_pkg_type	message_header.pb.h	/^inline void MessageHeader::clear_has_pkg_type() {$/;"	f	class:MessageHeader
+clear_has_priority	message_header.pb.h	/^inline void MessageHeader::clear_has_priority() {$/;"	f	class:MessageHeader
+clear_has_rpl_tracker_id	message_header.pb.h	/^inline void MessageHeader::clear_has_rpl_tracker_id() {$/;"	f	class:MessageHeader
+clear_has_sys_msg_type	message_header.pb.h	/^inline void MessageHeader::clear_has_sys_msg_type() {$/;"	f	class:MessageHeader
+clear_has_to_id	message_header.pb.h	/^inline void MessageHeader::clear_has_to_id() {$/;"	f	class:MessageHeader
+clear_has_to_ip	message_header.pb.h	/^inline void MessageHeader::clear_has_to_ip() {$/;"	f	class:MessageHeader
+clear_has_to_obj_type	message_header.pb.h	/^inline void MessageHeader::clear_has_to_obj_type() {$/;"	f	class:MessageHeader
+clear_has_to_port	message_header.pb.h	/^inline void MessageHeader::clear_has_to_port() {$/;"	f	class:MessageHeader
+clear_has_tracker_id	message_header.pb.h	/^inline void MessageHeader::clear_has_tracker_id() {$/;"	f	class:MessageHeader
+clear_msg_level	message_header.pb.h	/^inline void MessageHeader::clear_msg_level() {$/;"	f	class:MessageHeader
+clear_pkg_type	message_header.pb.h	/^inline void MessageHeader::clear_pkg_type() {$/;"	f	class:MessageHeader
+clear_priority	message_header.pb.h	/^inline void MessageHeader::clear_priority() {$/;"	f	class:MessageHeader
+clear_rpl_tracker_id	message_header.pb.h	/^inline void MessageHeader::clear_rpl_tracker_id() {$/;"	f	class:MessageHeader
+clear_sys_msg_type	message_header.pb.h	/^inline void MessageHeader::clear_sys_msg_type() {$/;"	f	class:MessageHeader
+clear_to_id	message_header.pb.h	/^inline void MessageHeader::clear_to_id() {$/;"	f	class:MessageHeader
+clear_to_ip	message_header.pb.h	/^inline void MessageHeader::clear_to_ip() {$/;"	f	class:MessageHeader
+clear_to_obj_type	message_header.pb.h	/^inline void MessageHeader::clear_to_obj_type() {$/;"	f	class:MessageHeader
+clear_to_port	message_header.pb.h	/^inline void MessageHeader::clear_to_port() {$/;"	f	class:MessageHeader
+clear_tracker_id	message_header.pb.h	/^inline void MessageHeader::clear_tracker_id() {$/;"	f	class:MessageHeader
+cond_exist_elem_queue	bus.h	/^	std::condition_variable cond_exist_elem_queue; $/;"	m	class:Bus
+cond_exist_pending_msg	tracker.h	/^    std::condition_variable cond_exist_pending_msg;$/;"	m	class:Tracker
+cond_got_all_node_list_ack	node.h	/^    std::condition_variable cond_got_all_node_list_ack;$/;"	m	class:NameNode
+connect	bus.cpp	/^bool Bus::connect(const NodeInfo& node_info) {$/;"	f	class:Bus
+context	bus.h	/^	void *context; \/\/zmq context$/;"	m	class:Bus
+create_sys_msg	tracker.cpp	/^SPMsg Tracker::create_sys_msg(MessagesHeader::ObjType p_from_obj_type,$/;"	f	class:Tracker
+data_slice_list	message.h	/^	std::list<DataSlice> data_slice_list;$/;"	m	struct:Message
+default_instance	message_header.pb.cc	/^const MessageHeader& MessageHeader::default_instance() {$/;"	f	class:MessageHeader
+default_instance_	message_header.pb.cc	/^MessageHeader* MessageHeader::default_instance_ = NULL;$/;"	m	class:MessageHeader	file:
+default_instance_	message_header.pb.h	/^  static MessageHeader* default_instance_;$/;"	m	class:MessageHeader
+descriptor	message_header.pb.cc	/^const ::google::protobuf::Descriptor* MessageHeader::descriptor() {$/;"	f	class:MessageHeader
+dispatch_thread	tracker.cpp	/^void Tracker::dispatch_thread() {$/;"	f	class:Tracker
+dispatch_thread_t	tracker.h	/^    std::thread *dispatch_thread_t;$/;"	m	class:Tracker
+empty_func	tracker.cpp	/^void Tracker::empty_func() {$/;"	f	class:Tracker
+free_data	test_client.cpp	/^void free_data(void *, void *) {$/;"	f
+free_data	test_server.cpp	/^void free_data(void *, void *) {$/;"	f
+from_id	message_header.pb.h	/^inline ::google::protobuf::int32 MessageHeader::from_id() const {$/;"	f	class:MessageHeader
+from_id_	message_header.pb.h	/^  ::google::protobuf::int32 from_id_;$/;"	m	class:MessageHeader
+from_ip	message_header.pb.h	/^inline const ::std::string& MessageHeader::from_ip() const {$/;"	f	class:MessageHeader
+from_ip_	message_header.pb.h	/^  ::std::string* from_ip_;$/;"	m	class:MessageHeader
+from_obj_type	message_header.pb.h	/^inline ::MessageHeader_ObjType MessageHeader::from_obj_type() const {$/;"	f	class:MessageHeader
+from_obj_type_	message_header.pb.h	/^  int from_obj_type_;$/;"	m	class:MessageHeader
+from_port	message_header.pb.h	/^inline ::google::protobuf::int32 MessageHeader::from_port() const {$/;"	f	class:MessageHeader
+from_port_	message_header.pb.h	/^  ::google::protobuf::int32 from_port_;$/;"	m	class:MessageHeader
+google	message_header.pb.h	/^namespace google {$/;"	n
+has_from_id	message_header.pb.h	/^inline bool MessageHeader::has_from_id() const {$/;"	f	class:MessageHeader
+has_from_ip	message_header.pb.h	/^inline bool MessageHeader::has_from_ip() const {$/;"	f	class:MessageHeader
+has_from_obj_type	message_header.pb.h	/^inline bool MessageHeader::has_from_obj_type() const {$/;"	f	class:MessageHeader
+has_from_port	message_header.pb.h	/^inline bool MessageHeader::has_from_port() const {$/;"	f	class:MessageHeader
+has_msg_level	message_header.pb.h	/^inline bool MessageHeader::has_msg_level() const {$/;"	f	class:MessageHeader
+has_pkg_type	message_header.pb.h	/^inline bool MessageHeader::has_pkg_type() const {$/;"	f	class:MessageHeader
+has_priority	message_header.pb.h	/^inline bool MessageHeader::has_priority() const {$/;"	f	class:MessageHeader
+has_rpl_tracker_id	message_header.pb.h	/^inline bool MessageHeader::has_rpl_tracker_id() const {$/;"	f	class:MessageHeader
+has_sys_msg_type	message_header.pb.h	/^inline bool MessageHeader::has_sys_msg_type() const {$/;"	f	class:MessageHeader
+has_to_id	message_header.pb.h	/^inline bool MessageHeader::has_to_id() const {$/;"	f	class:MessageHeader
+has_to_ip	message_header.pb.h	/^inline bool MessageHeader::has_to_ip() const {$/;"	f	class:MessageHeader
+has_to_obj_type	message_header.pb.h	/^inline bool MessageHeader::has_to_obj_type() const {$/;"	f	class:MessageHeader
+has_to_port	message_header.pb.h	/^inline bool MessageHeader::has_to_port() const {$/;"	f	class:MessageHeader
+has_tracker_id	message_header.pb.h	/^inline bool MessageHeader::has_tracker_id() const {$/;"	f	class:MessageHeader
+id_map_to_info	node.h	/^    std::unordered<NodeId, std::shared_ptr<NodeInfo> > id_map_to_info;$/;"	m	class:Node
+init	bus.cpp	/^void Bus::init(const NodeInfo &node_info) {$/;"	f	class:Bus
+init	namenode.cpp	/^void NameNode::init(NodeId p_node_id, const std::string &p_ip, uint32_t p_port) {$/;"	f	class:NameNode
+init	server.cpp	/^void Server::init(NodeId p_node_id, const std::string &p_ip, uint32_t p_port,$/;"	f	class:Server
+init	tracker.cpp	/^int Tracker::init(Node *p_node, Bus *p_bus) {$/;"	f	class:Tracker
+init	worker.cpp	/^void Worker::init(NodeId p_node_id, const std::string &p_ip, uint32_t p_port,$/;"	f	class:Worker
+ip	node.h	/^    std::string ip;$/;"	m	class:NodeInfo
+is_proto_enum	message_header.pb.h	/^template <> struct is_proto_enum< ::MessageHeader_MsgLevel> : ::google::protobuf::internal::true_type {};$/;"	s	namespace:google::protobuf
+is_proto_enum	message_header.pb.h	/^template <> struct is_proto_enum< ::MessageHeader_ObjType> : ::google::protobuf::internal::true_type {};$/;"	s	namespace:google::protobuf
+is_proto_enum	message_header.pb.h	/^template <> struct is_proto_enum< ::MessageHeader_PkgType> : ::google::protobuf::internal::true_type {};$/;"	s	namespace:google::protobuf
+is_proto_enum	message_header.pb.h	/^template <> struct is_proto_enum< ::MessageHeader_SysMsgType> : ::google::protobuf::internal::true_type {};$/;"	s	namespace:google::protobuf
+kFromIdFieldNumber	message_header.pb.cc	/^const int MessageHeader::kFromIdFieldNumber;$/;"	m	class:MessageHeader	file:
+kFromIdFieldNumber	message_header.pb.h	/^  static const int kFromIdFieldNumber = 1;$/;"	m	class:MessageHeader
+kFromIpFieldNumber	message_header.pb.cc	/^const int MessageHeader::kFromIpFieldNumber;$/;"	m	class:MessageHeader	file:
+kFromIpFieldNumber	message_header.pb.h	/^  static const int kFromIpFieldNumber = 2;$/;"	m	class:MessageHeader
+kFromObjTypeFieldNumber	message_header.pb.cc	/^const int MessageHeader::kFromObjTypeFieldNumber;$/;"	m	class:MessageHeader	file:
+kFromObjTypeFieldNumber	message_header.pb.h	/^  static const int kFromObjTypeFieldNumber = 4;$/;"	m	class:MessageHeader
+kFromPortFieldNumber	message_header.pb.cc	/^const int MessageHeader::kFromPortFieldNumber;$/;"	m	class:MessageHeader	file:
+kFromPortFieldNumber	message_header.pb.h	/^  static const int kFromPortFieldNumber = 3;$/;"	m	class:MessageHeader
+kMsgLevelFieldNumber	message_header.pb.cc	/^const int MessageHeader::kMsgLevelFieldNumber;$/;"	m	class:MessageHeader	file:
+kMsgLevelFieldNumber	message_header.pb.h	/^  static const int kMsgLevelFieldNumber = 9;$/;"	m	class:MessageHeader
+kPkgTypeFieldNumber	message_header.pb.cc	/^const int MessageHeader::kPkgTypeFieldNumber;$/;"	m	class:MessageHeader	file:
+kPkgTypeFieldNumber	message_header.pb.h	/^  static const int kPkgTypeFieldNumber = 11;$/;"	m	class:MessageHeader
+kPriorityFieldNumber	message_header.pb.cc	/^const int MessageHeader::kPriorityFieldNumber;$/;"	m	class:MessageHeader	file:
+kPriorityFieldNumber	message_header.pb.h	/^  static const int kPriorityFieldNumber = 12;$/;"	m	class:MessageHeader
+kRplTrackerIdFieldNumber	message_header.pb.cc	/^const int MessageHeader::kRplTrackerIdFieldNumber;$/;"	m	class:MessageHeader	file:
+kRplTrackerIdFieldNumber	message_header.pb.h	/^  static const int kRplTrackerIdFieldNumber = 14;$/;"	m	class:MessageHeader
+kSysMsgTypeFieldNumber	message_header.pb.cc	/^const int MessageHeader::kSysMsgTypeFieldNumber;$/;"	m	class:MessageHeader	file:
+kSysMsgTypeFieldNumber	message_header.pb.h	/^  static const int kSysMsgTypeFieldNumber = 10;$/;"	m	class:MessageHeader
+kToIdFieldNumber	message_header.pb.cc	/^const int MessageHeader::kToIdFieldNumber;$/;"	m	class:MessageHeader	file:
+kToIdFieldNumber	message_header.pb.h	/^  static const int kToIdFieldNumber = 5;$/;"	m	class:MessageHeader
+kToIpFieldNumber	message_header.pb.cc	/^const int MessageHeader::kToIpFieldNumber;$/;"	m	class:MessageHeader	file:
+kToIpFieldNumber	message_header.pb.h	/^  static const int kToIpFieldNumber = 6;$/;"	m	class:MessageHeader
+kToObjTypeFieldNumber	message_header.pb.cc	/^const int MessageHeader::kToObjTypeFieldNumber;$/;"	m	class:MessageHeader	file:
+kToObjTypeFieldNumber	message_header.pb.h	/^  static const int kToObjTypeFieldNumber = 8;$/;"	m	class:MessageHeader
+kToPortFieldNumber	message_header.pb.cc	/^const int MessageHeader::kToPortFieldNumber;$/;"	m	class:MessageHeader	file:
+kToPortFieldNumber	message_header.pb.h	/^  static const int kToPortFieldNumber = 7;$/;"	m	class:MessageHeader
+kTrackerIdFieldNumber	message_header.pb.cc	/^const int MessageHeader::kTrackerIdFieldNumber;$/;"	m	class:MessageHeader	file:
+kTrackerIdFieldNumber	message_header.pb.h	/^  static const int kTrackerIdFieldNumber = 13;$/;"	m	class:MessageHeader
+main	namenode_ins.cpp	/^int main(int argc, char **argv) {$/;"	f
+main	server_ins.cpp	/^int main(int argc, char **argv) {$/;"	f
+main	test_client.cpp	/^int main() {$/;"	f
+main	test_server.cpp	/^int main() {$/;"	f
+main	test_thread.cpp	/^int main() {$/;"	f
+main	worker_ins.cpp	/^int main(int argc, char **argv) {$/;"	f
+msg_header	message.h	/^	MessageHeader msg_header;$/;"	m	struct:Message
+msg_id_map_to_callback	tracker.h	/^    std::unordered_map<uint64_t, std::function<void(void)> > msg_id_map_to_callback;$/;"	m	class:Tracker
+msg_level	message_header.pb.h	/^inline ::MessageHeader_MsgLevel MessageHeader::msg_level() const {$/;"	f	class:MessageHeader
+msg_level_	message_header.pb.h	/^  int msg_level_;$/;"	m	class:MessageHeader
+mtx_node_list_ack	node.h	/^    std::mutex mtx_node_list_ack;$/;"	m	class:NameNode
+mutable_from_ip	message_header.pb.h	/^inline ::std::string* MessageHeader::mutable_from_ip() {$/;"	f	class:MessageHeader
+mutable_to_ip	message_header.pb.h	/^inline ::std::string* MessageHeader::mutable_to_ip() {$/;"	f	class:MessageHeader
+mutable_unknown_fields	message_header.pb.h	/^  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {$/;"	f	class:MessageHeader
+mutex_queue	bus.h	/^	std::mutex mutex_queue; \/\/prevent the queue$/;"	m	class:Bus
+my_node_id	bus.h	/^    NodeId my_node_id;$/;"	m	class:Bus
+node	tracker.h	/^    Node *node;$/;"	m	class:Tracker
+node_id	node.h	/^    NodeId node_id;$/;"	m	class:NodeInfo
+node_list	node.h	/^    std::vector< std::shared_ptr<NodeInfo> > node_list;$/;"	m	class:Node
+num_elem_in_queue	bus.h	/^	uint32_t num_elem_in_queue;$/;"	m	class:Bus
+num_got_node_list_ack	node.h	/^    uint32_t num_got_node_list_ack;$/;"	m	class:NameNode
+num_pending_msg	tracker.h	/^	uint32_t num_pending_msg;$/;"	m	class:Tracker
+operator =	message_header.pb.h	/^  inline MessageHeader& operator=(const MessageHeader& from) {$/;"	f	class:MessageHeader
+pending_msg	tracker.h	/^    std::queue<SPMsg> pending_msg;$/;"	m	class:Tracker
+pending_msg_mutex	tracker.h	/^	std::mutex pending_msg_mutex;$/;"	m	class:Tracker
+pkg_type	message_header.pb.h	/^inline ::MessageHeader_PkgType MessageHeader::pkg_type() const {$/;"	f	class:MessageHeader
+pkg_type_	message_header.pb.h	/^  int pkg_type_;$/;"	m	class:MessageHeader
+port	node.h	/^    uint32_t port;$/;"	m	class:NodeInfo
+priority	message_header.pb.h	/^inline ::google::protobuf::int32 MessageHeader::priority() const {$/;"	f	class:MessageHeader
+priority_	message_header.pb.h	/^  ::google::protobuf::int32 priority_;$/;"	m	class:MessageHeader
+process_msg	namenode.cpp	/^void NameNode::process_msg(SPMsg) {$/;"	f	class:NameNode
+process_msg	server.cpp	/^void Server::process_msg(SPMsg) {$/;"	f	class:Server
+process_msg	worker.cpp	/^void Worker::process_msg(SPMsg msg) {$/;"	f	class:Worker
+process_sys_msg	namenode.cpp	/^void NameNode::process_sys_msg(SPMsg) {$/;"	f	class:NameNode
+process_sys_msg	server.cpp	/^void Server::process_sys_msg(SPMsg) {$/;"	f	class:Server
+process_sys_msg	worker.cpp	/^void Worker::process_sys_msg(SPMsg msg) {$/;"	f	class:Worker
+process_thread	tracker.cpp	/^void Tracker::process_thread(SPMsg msg) {$/;"	f	class:Tracker
+process_usr_msg	namenode.cpp	/^void NameNode::process_usr_msg(SPMsg) {$/;"	f	class:NameNode
+process_usr_msg	server.cpp	/^void Server::process_usr_msg(SPMsg) {$/;"	f	class:Server
+process_usr_msg	worker.cpp	/^void Worker::process_usr_msg(SPMsg msg) {$/;"	f	class:Worker
+protobuf	message_header.pb.h	/^namespace protobuf {$/;"	n	namespace:google
+protobuf_AddDesc_message_5fheader_2eproto	message_header.pb.cc	/^void protobuf_AddDesc_message_5fheader_2eproto() {$/;"	f
+protobuf_AssignDesc_message_5fheader_2eproto	message_header.pb.cc	/^void protobuf_AssignDesc_message_5fheader_2eproto() {$/;"	f
+protobuf_AssignDescriptorsOnce	message_header.pb.cc	/^inline void protobuf_AssignDescriptorsOnce() {$/;"	f	namespace:__anon2
+protobuf_RegisterTypes	message_header.pb.cc	/^void protobuf_RegisterTypes(const ::std::string&) {$/;"	f	namespace:__anon2
+protobuf_ShutdownFile_message_5fheader_2eproto	message_header.pb.cc	/^void protobuf_ShutdownFile_message_5fheader_2eproto() {$/;"	f
+push_into_pending_msg	tracker.cpp	/^int Tracker::push_into_pending_msg(SPMsg) {$/;"	f	class:Tracker
+receiver	bus.h	/^	void *receiver;$/;"	m	class:Bus
+recvQueue	bus.h	/^	boost::lockfree::queue< SPMsg > recvQueue;$/;"	m	class:Bus
+recv_thread	bus.cpp	/^void Bus::recv_thread() {$/;"	f	class:Bus
+recv_thread_t	bus.h	/^	std::thread *send_thread_t, *recv_thread_t;$/;"	m	class:Bus
+release_from_ip	message_header.pb.h	/^inline ::std::string* MessageHeader::release_from_ip() {$/;"	f	class:MessageHeader
+release_to_ip	message_header.pb.h	/^inline ::std::string* MessageHeader::release_to_ip() {$/;"	f	class:MessageHeader
+role	node.h	/^    Role role;$/;"	m	class:NodeInfo
+rpl_tracker_id	message_header.pb.h	/^inline ::google::protobuf::int64 MessageHeader::rpl_tracker_id() const {$/;"	f	class:MessageHeader
+rpl_tracker_id_	message_header.pb.h	/^  ::google::protobuf::int64 rpl_tracker_id_;$/;"	m	class:MessageHeader
+run	bus.cpp	/^void Bus::run() {$/;"	f	class:Bus
+run	namenode.cpp	/^void NameNode::run() {$/;"	f	class:NameNode
+run	server.cpp	/^void Server::run() {$/;"	f	class:Server
+run	tracker.cpp	/^int Tracker::run() {$/;"	f	class:Tracker
+run	worker.cpp	/^void Worker::run() {$/;"	f	class:Worker
+send_msg	bus.cpp	/^bool Bus::send_msg(SPMsg msg, int priority = (PRIORITY_LEVEL - 1) \/ 2) {$/;"	f	class:Bus
+send_msg	tracker.cpp	/^int Tracker::send_msg(SPMsg msg) {$/;"	f	class:Tracker
+send_msg	tracker.cpp	/^int Tracker::send_msg(SPMsg msg, std::function<void(void)> callback_function) {$/;"	f	class:Tracker
+send_thread	bus.cpp	/^void Bus::send_thread() {$/;"	f	class:Bus
+send_thread_t	bus.h	/^	std::thread *send_thread_t, *recv_thread_t;$/;"	m	class:Bus
+senders	bus.h	/^	std::unordered_map<NodeId, void *> senders;$/;"	m	class:Bus
+serialize	node_info.cpp	/^void NodeInfo::serialize(Archive & ar, const unsigned int version) {$/;"	f	class:NodeInfo
+set_allocated_from_ip	message_header.pb.h	/^inline void MessageHeader::set_allocated_from_ip(::std::string* from_ip) {$/;"	f	class:MessageHeader
+set_allocated_to_ip	message_header.pb.h	/^inline void MessageHeader::set_allocated_to_ip(::std::string* to_ip) {$/;"	f	class:MessageHeader
+set_from_id	message_header.pb.h	/^inline void MessageHeader::set_from_id(::google::protobuf::int32 value) {$/;"	f	class:MessageHeader
+set_from_ip	message_header.pb.h	/^inline void MessageHeader::set_from_ip(const ::std::string& value) {$/;"	f	class:MessageHeader
+set_from_ip	message_header.pb.h	/^inline void MessageHeader::set_from_ip(const char* value) {$/;"	f	class:MessageHeader
+set_from_ip	message_header.pb.h	/^inline void MessageHeader::set_from_ip(const char* value, size_t size) {$/;"	f	class:MessageHeader
+set_from_obj_type	message_header.pb.h	/^inline void MessageHeader::set_from_obj_type(::MessageHeader_ObjType value) {$/;"	f	class:MessageHeader
+set_from_port	message_header.pb.h	/^inline void MessageHeader::set_from_port(::google::protobuf::int32 value) {$/;"	f	class:MessageHeader
+set_has_from_id	message_header.pb.h	/^inline void MessageHeader::set_has_from_id() {$/;"	f	class:MessageHeader
+set_has_from_ip	message_header.pb.h	/^inline void MessageHeader::set_has_from_ip() {$/;"	f	class:MessageHeader
+set_has_from_obj_type	message_header.pb.h	/^inline void MessageHeader::set_has_from_obj_type() {$/;"	f	class:MessageHeader
+set_has_from_port	message_header.pb.h	/^inline void MessageHeader::set_has_from_port() {$/;"	f	class:MessageHeader
+set_has_msg_level	message_header.pb.h	/^inline void MessageHeader::set_has_msg_level() {$/;"	f	class:MessageHeader
+set_has_pkg_type	message_header.pb.h	/^inline void MessageHeader::set_has_pkg_type() {$/;"	f	class:MessageHeader
+set_has_priority	message_header.pb.h	/^inline void MessageHeader::set_has_priority() {$/;"	f	class:MessageHeader
+set_has_rpl_tracker_id	message_header.pb.h	/^inline void MessageHeader::set_has_rpl_tracker_id() {$/;"	f	class:MessageHeader
+set_has_sys_msg_type	message_header.pb.h	/^inline void MessageHeader::set_has_sys_msg_type() {$/;"	f	class:MessageHeader
+set_has_to_id	message_header.pb.h	/^inline void MessageHeader::set_has_to_id() {$/;"	f	class:MessageHeader
+set_has_to_ip	message_header.pb.h	/^inline void MessageHeader::set_has_to_ip() {$/;"	f	class:MessageHeader
+set_has_to_obj_type	message_header.pb.h	/^inline void MessageHeader::set_has_to_obj_type() {$/;"	f	class:MessageHeader
+set_has_to_port	message_header.pb.h	/^inline void MessageHeader::set_has_to_port() {$/;"	f	class:MessageHeader
+set_has_tracker_id	message_header.pb.h	/^inline void MessageHeader::set_has_tracker_id() {$/;"	f	class:MessageHeader
+set_msg_level	message_header.pb.h	/^inline void MessageHeader::set_msg_level(::MessageHeader_MsgLevel value) {$/;"	f	class:MessageHeader
+set_pkg_type	message_header.pb.h	/^inline void MessageHeader::set_pkg_type(::MessageHeader_PkgType value) {$/;"	f	class:MessageHeader
+set_priority	message_header.pb.h	/^inline void MessageHeader::set_priority(::google::protobuf::int32 value) {$/;"	f	class:MessageHeader
+set_rpl_tracker_id	message_header.pb.h	/^inline void MessageHeader::set_rpl_tracker_id(::google::protobuf::int64 value) {$/;"	f	class:MessageHeader
+set_sys_msg_type	message_header.pb.h	/^inline void MessageHeader::set_sys_msg_type(::MessageHeader_SysMsgType value) {$/;"	f	class:MessageHeader
+set_to_id	message_header.pb.h	/^inline void MessageHeader::set_to_id(::google::protobuf::int32 value) {$/;"	f	class:MessageHeader
+set_to_ip	message_header.pb.h	/^inline void MessageHeader::set_to_ip(const ::std::string& value) {$/;"	f	class:MessageHeader
+set_to_ip	message_header.pb.h	/^inline void MessageHeader::set_to_ip(const char* value) {$/;"	f	class:MessageHeader
+set_to_ip	message_header.pb.h	/^inline void MessageHeader::set_to_ip(const char* value, size_t size) {$/;"	f	class:MessageHeader
+set_to_obj_type	message_header.pb.h	/^inline void MessageHeader::set_to_obj_type(::MessageHeader_ObjType value) {$/;"	f	class:MessageHeader
+set_to_port	message_header.pb.h	/^inline void MessageHeader::set_to_port(::google::protobuf::int32 value) {$/;"	f	class:MessageHeader
+set_tracker_id	message_header.pb.h	/^inline void MessageHeader::set_tracker_id(::google::protobuf::int64 value) {$/;"	f	class:MessageHeader
+sp_name_node_info	node.h	/^    std::shared_ptr<NodeInfo> sp_name_node_info;$/;"	m	class:Server
+sp_name_node_info	node.h	/^    std::shared_ptr<NodeInfo> sp_name_node_info;$/;"	m	class:Worker
+state	node.h	/^    NodeState state;$/;"	m	class:Node
+static_descriptor_initializer_message_5fheader_2eproto_	message_header.pb.cc	/^} static_descriptor_initializer_message_5fheader_2eproto_;$/;"	v	typeref:struct:StaticDescriptorInitializer_message_5fheader_2eproto
+sys_msg_type	message_header.pb.h	/^inline ::MessageHeader_SysMsgType MessageHeader::sys_msg_type() const {$/;"	f	class:MessageHeader
+sys_msg_type_	message_header.pb.h	/^  int sys_msg_type_;$/;"	m	class:MessageHeader
+to_id	message_header.pb.h	/^inline ::google::protobuf::int32 MessageHeader::to_id() const {$/;"	f	class:MessageHeader
+to_id_	message_header.pb.h	/^  ::google::protobuf::int32 to_id_;$/;"	m	class:MessageHeader
+to_ip	message_header.pb.h	/^inline const ::std::string& MessageHeader::to_ip() const {$/;"	f	class:MessageHeader
+to_ip_	message_header.pb.h	/^  ::std::string* to_ip_;$/;"	m	class:MessageHeader
+to_obj_type	message_header.pb.h	/^inline ::MessageHeader_ObjType MessageHeader::to_obj_type() const {$/;"	f	class:MessageHeader
+to_obj_type_	message_header.pb.h	/^  int to_obj_type_;$/;"	m	class:MessageHeader
+to_port	message_header.pb.h	/^inline ::google::protobuf::int32 MessageHeader::to_port() const {$/;"	f	class:MessageHeader
+to_port_	message_header.pb.h	/^  ::google::protobuf::int32 to_port_;$/;"	m	class:MessageHeader
+tracker	bus.h	/^	Tracker *tracker;	$/;"	m	class:Bus
+tracker_id	message_header.pb.h	/^inline ::google::protobuf::int64 MessageHeader::tracker_id() const {$/;"	f	class:MessageHeader
+tracker_id	tracker.h	/^	int tracker_id;$/;"	m	class:Tracker
+tracker_id_	message_header.pb.h	/^  ::google::protobuf::int64 tracker_id_;$/;"	m	class:MessageHeader
+unknown_fields	message_header.pb.h	/^  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {$/;"	f	class:MessageHeader
+~MessageHeader	message_header.pb.cc	/^MessageHeader::~MessageHeader() {$/;"	f	class:MessageHeader
+~NameNode	namenode.cpp	/^NameNode::~NameNode() {$/;"	f	class:NameNode
+~Server	server.cpp	/^Server::~Server() {$/;"	f	class:Server
+~Worker	worker.cpp	/^Worker::~Worker() {$/;"	f	class:Worker

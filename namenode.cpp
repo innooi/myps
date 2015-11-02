@@ -5,12 +5,10 @@
 void NameNode::process_msg(SPMsg) {
 	if (msg->msg_header.msg_level() == MessagesHeader::SYS_MSG) {
 		process_sys_msg(msg);
-	}
-	else if (msg->msg_header.msg_level() == MessagesHeader::USR_MSG) {
+	} else if (msg->msg_header.msg_level() == MessagesHeader::USR_MSG) {
 		//process user-defined msg
 		process_usr_msg(msg);
-	}
-	else {
+	} else {
 		LOG(ERROR) << "[NameNode::process_msg]: Invalid msg_level.";
 		return;
 	}
@@ -27,8 +25,7 @@ void NameNode::process_sys_msg(SPMsg) {
 				ia >> *p_node_info;
 				node_list.push_back(p_node_info);
 				LOG(INFO) << "[NameNode::process_sys_msg]: Get a REGISTER from" + p_node_info->node_id;
-			}
-			else {
+			} else {
 				LOG(ERROR) << "[NameNode::process_sys_msg]: Invalid pkg_type when got a REGISTER msg";
 				return;
 			}
@@ -41,12 +38,10 @@ void NameNode::process_sys_msg(SPMsg) {
 				if (++num_got_node_list_ack == node_list.size()) {
 					lock.unlock();
 					cond_got_all_node_list_ack.notify_one();
-				}
-				else {
+				} else {
 					lock.unlock();
 				}
-			}
-			else {
+			} else {
 				LOG(ERROR) << "[NameNode::process_sys_msg]: Invalid pkg_type when got a NODE_LIST_ACK";
 				return;
 			}
@@ -64,8 +59,6 @@ void NameNode::process_usr_msg(SPMsg) {
 }
 
 void NameNode::init(NodeId p_node_id, const std::string &p_ip, uint32_t p_port) {
-	//how to get the node_id of namenode?
-
 	role = Role::NAMENODE;
 	node_id = p_node_id;
 	ip = p_ip;
@@ -74,7 +67,9 @@ void NameNode::init(NodeId p_node_id, const std::string &p_ip, uint32_t p_port) 
 	node_list.clear();
 	id_map_to_info.clear();
 	num_got_node_list_ack = 0;
+}
 
+void NameNode::run() {
 	state = NodeState::LISTENING_REGISTER;
 	LOG(INFO) << "[NameNode::init]: LISTENING_REGISTER";
 	//wait for register, shuold use sleep
@@ -123,10 +118,6 @@ void NameNode::init(NodeId p_node_id, const std::string &p_ip, uint32_t p_port) 
 	}
 	state = NodeState::LISTENING_JOB;
 	LOG(INFO) << "[NameNode::init]: LISTENING_JOB";
-}
-
-void NameNode::run() {
-
 }
 
 NameNode::~NameNode() {

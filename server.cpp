@@ -5,12 +5,10 @@
 void Server::process_msg(SPMsg) {
 	if (msg->msg_header.msg_level() == MessagesHeader::SYS_MSG) {
 		process_sys_msg(msg);
-	}
-	else if (msg->msg_header.msg_level() == MessagesHeader::USR_MSG) {
+	} else if (msg->msg_header.msg_level() == MessagesHeader::USR_MSG) {
 		//process user-defined msg
 		process_usr_msg(msg);
-	}
-	else {
+	} else {
 		LOG(ERROR) << "[Server::process_msg]: Invalid msg_level.";
 		return;
 	}
@@ -45,8 +43,7 @@ void Server::process_sys_msg(SPMsg) {
 													MessagesHeader::NODE_LIST_ACK);
 				tracker_ins.send_msg(msg);
 				LOG(INFO) << "[Server::process_sys_msg]: Send NODE_LIST_ACK";
-			}
-			else {
+			} else {
 				LOG(ERROR) << "[Server::process_sys_msg]: Invalid pkg_type for NODE_LIST_DATA";
 				return;
 			}
@@ -60,8 +57,7 @@ void Server::process_sys_msg(SPMsg) {
 					return;
 				}
 				state = NodeState::LISTENING_JOB;
-			}
-			else {
+			} else {
 				LOG(ERROR) << "[Server::process_sys_msg]: Invalid pkg_type for STARTUP_READY";
 				return;	
 			}
@@ -78,8 +74,13 @@ void Server::process_usr_msg(SPMsg) {
 
 }
 
-void Server::init(NodeId p_node_id, const std::string &p_ip, uint32_t p_port) {
-	//how to get the node_id of namenode?
+void Server::init(NodeId p_node_id, const std::string &p_ip, uint32_t p_port,
+	NodeId p_name_node_id, const std::string &p_name_node_ip, uint32_t p_name_node_port, ) {
+    //how to get the node_id of namenode?
+    sp_name_node_info = std::make_shared(new NodeInfo(Role::NAMENODE, p_name_node_id,
+        p_name_node_ip, p_name_node_port));
+    node_list.push(sp_name_node_info);
+    id_map_to_info[p_name_node_id] = sp_name_node_info; 
 
 	role = Role::SERVER;
 	node_id = p_node_id;
@@ -88,11 +89,13 @@ void Server::init(NodeId p_node_id, const std::string &p_ip, uint32_t p_port) {
 	state = NodeState::CLOSED;
 	node_list.clear();
 	id_map_to_info.clear();
+}
 
+void Server::run() {
 	//register start
 	auto& tracker_ins = Tracker::get_mutable_instance();
 	SPMsg msg = tracker_ins.create_sys_msg(	MessagesHeader::NODE,
-											namenode_id,
+											sp_name_node_info->node_id,
 											MessagesHeader::NODE,
 											MessagesHeader::PUSH,
 											MessagesHeader::REGISTER_NODE);
@@ -101,10 +104,6 @@ void Server::init(NodeId p_node_id, const std::string &p_ip, uint32_t p_port) {
 	state = NodeState::REGISTER_SENT;
 	LOG(INFO) << "[Server::init]: REGISTER_SENT";
 	//wait the node_list sent from namenode
-}
-
-void Server::run() {
-
 }
 
 Server::~Server() {
