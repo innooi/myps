@@ -1,49 +1,51 @@
 CC = g++
-CFLAGS = -Wall -std=c++11 -O2
+CFLAGS = -std=c++11 -O2
 
 LDFLAGS = -L/usr/local/lib -lzmq -lglog -lgflags -lprotobuf -lboost_system \
 -lboost_filesystem -lboost_thread -lboost_serialization -lyaml-cpp
 
 INCLUDE_PATH = -I./ -I/usr/local/boost_1_58_0/boost -I/usr/local/include
 
-SRC = bus.cpp name_node.cpp name_node_ins.cpp node_info.cpp server.cpp \
-server_ins.cpp tracker.cpp worker.cpp worker_ins.cpp
+HEADER = $(wildcard *.h) message_header.pb.h
 
-OBJ = bus.o name_node.o name_node_ins.o node_info.o server.o \
-server_ins.o tracker.o worker.o worker_ins.o
+CPP_SRC = $(wildcard *.cc)
 
-EXE = name_node_ins server_ins worker_ins
+CPP_OBJ = ${CPP_SRC:.cc=.o} message_header.pb.o
+
+#EXE = namenode_ins server_ins worker_ins
+EXE = main
 
 PROTOC = protoc -I=./ --cpp_out=./ 
 
 all: ${EXE}
 
-bus.o: bus.cpp commom.h node.h tracker.h message.h
-	${CC} ${CFLAGS} ${INCLUDE_PATH} -c bus.cpp
-
-name_node.o: name_node.cpp commom.h node.h tracker.h message.h
-	${CC} ${CFLAGS} ${INCLUDE_PATH} -c bus.cpp
-
-${EXE}: %: %.o worker.o message_header.pb.o node_info.o
-	${CC} ${LDFLAGS} -o $@ $< worker.o message_header.pb.o \
-	node_info.o
-
-node_info.o: node_info.cpp common.h
-	${CC} ${CFLAGS} ${INCLUDE_PATH} -c node_info.cpp
-
-worker.o: worker.cpp common.h node.h message_header.pb.h
-	${CC} ${CFLAGS} ${INCLUDE_PATH} -c worker.cpp
-
-main.o: main.cpp common.h node.h
-	${CC} ${CFLAGS} ${INCLUDE_PATH} -c main.cpp
-
-message_header.pb.o: message_header.pb.cc message_header.pb.h
-	${CC} ${CFLAGS} ${INCLUDE_PATH} -c message_header.pb.cc
-
-message_header.pb.h: message_header.proto
+message_header.pb.h message_header.pb.cc: message_header.proto
 	${PROTOC} message_header.proto
 
+${CPP_OBJ}: %.o: %.cc ${HEADER}
+	${CC} ${CFLAGS} ${INCLUDE_PATH} -c $<
+
+main: main.o bus.o namenode.o worker.o node.o server.o\
+	message_header.pb.o node_info.o tracker.o
+	${CC} ${LDFLAGS} -o main main.o bus.o node.o \
+	namenode.o worker.o server.o message_header.pb.o node_info.o tracker.o
+
+namenode_ins: namenode_ins.o bus.o namenode.o worker.o server.o node.o \
+	message_header.pb.o node_info.o tracker.o
+	${CC} ${LDFLAGS} -o namenode_ins namenode_ins.o bus.o server.o node.o \
+	namenode.o worker.o message_header.pb.o node_info.o tracker.o
+
+server_ins: server_ins.o bus.o namenode.o worker.o server.o \
+	message_header.pb.o node.o node_info.o tracker.o
+	${CC} ${LDFLAGS} -o server_ins server_ins.o bus.o namenode.o \
+	node.o worker.o message_header.pb.o node_info.o tracker.o
+
+worker_ins: worker_ins.o bus.o namenode.o worker.o server.o message_header.pb.o \
+	node.o node_info.o tracker.o
+	${CC} ${LDFLAGS} -o worker_ins worker_ins.o bus.o namenode.o \
+	node.o server.o worker.o message_header.pb.o node_info.o tracker.o
+
 clean:
-	rm -rf *.o
+	rm -rf *.o message_header.pb.cc
 
 .PHONY: clean

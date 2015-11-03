@@ -23,7 +23,7 @@ class NodeInfo {
     friend class boost::serialization::access;
 
     template<class Archive>
-    void serialize(Archive & ar, const unsigned int version);
+    void serialize(Archive & ar, unsigned int version);
 public:
     Role role;
     NodeId node_id;
@@ -36,19 +36,19 @@ public:
 };
 
 class Node {
-protected:
+public:
+    NodeInfo my_info;
     NodeState state;
     std::vector< std::shared_ptr<NodeInfo> > node_list;
-    std::unordered<NodeId, std::shared_ptr<NodeInfo> > id_map_to_info;
-public:
-    virtual void process_msg(SPMsg) = 0;
-    virtual void init(NodeId, const std::string &, uint32_t) = 0;
-    virtual void run() = 0;  
-    virtual ~Node() = 0;
+    std::unordered_map<NodeId, std::shared_ptr<NodeInfo> > id_map_to_info;
+    virtual void process_msg(SPMsg);
+    //virtual void init(NodeId, const std::string &, uint32_t) = 0;
+    virtual void run();
+    Node();
+    virtual ~Node();
 };
 
-class Worker:   public NodeInfo, 
-    public Node, 
+class Worker: public Node, 
     public boost::serialization::singleton<Worker> {
 private:
     std::shared_ptr<NodeInfo> sp_name_node_info;
@@ -61,8 +61,7 @@ public:
     virtual ~Worker();
 };
 
-class Server : public NodeInfo, 
-    public Node, 
+class Server : public Node, 
     public boost::serialization::singleton<Server> {
 private:
     std::shared_ptr<NodeInfo> sp_name_node_info;
@@ -75,8 +74,7 @@ public:
     virtual ~Server();
 };
 
-class NameNode : public NodeInfo, 
-    public Node, 
+class NameNode : public Node,
     public boost::serialization::singleton<NameNode> {
 private:
     uint32_t num_got_node_list_ack;

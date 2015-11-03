@@ -56,12 +56,12 @@ inline bool MessageHeader_ObjType_Parse(
     MessageHeader_ObjType_descriptor(), name, value);
 }
 enum MessageHeader_MsgLevel {
-  MessageHeader_MsgLevel_SYS = 0,
-  MessageHeader_MsgLevel_USR = 1
+  MessageHeader_MsgLevel_SYS_MSG = 0,
+  MessageHeader_MsgLevel_USR_MSG = 1
 };
 bool MessageHeader_MsgLevel_IsValid(int value);
-const MessageHeader_MsgLevel MessageHeader_MsgLevel_MsgLevel_MIN = MessageHeader_MsgLevel_SYS;
-const MessageHeader_MsgLevel MessageHeader_MsgLevel_MsgLevel_MAX = MessageHeader_MsgLevel_USR;
+const MessageHeader_MsgLevel MessageHeader_MsgLevel_MsgLevel_MIN = MessageHeader_MsgLevel_SYS_MSG;
+const MessageHeader_MsgLevel MessageHeader_MsgLevel_MsgLevel_MAX = MessageHeader_MsgLevel_USR_MSG;
 const int MessageHeader_MsgLevel_MsgLevel_ARRAYSIZE = MessageHeader_MsgLevel_MsgLevel_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* MessageHeader_MsgLevel_descriptor();
@@ -73,27 +73,6 @@ inline bool MessageHeader_MsgLevel_Parse(
     const ::std::string& name, MessageHeader_MsgLevel* value) {
   return ::google::protobuf::internal::ParseNamedEnum<MessageHeader_MsgLevel>(
     MessageHeader_MsgLevel_descriptor(), name, value);
-}
-enum MessageHeader_SysMsgType {
-  MessageHeader_SysMsgType_PARA_DATA = 0,
-  MessageHeader_SysMsgType_REGIST = 1,
-  MessageHeader_SysMsgType_NODE_LIST_DATA = 2,
-  MessageHeader_SysMsgType_STARTUP_READY = 3
-};
-bool MessageHeader_SysMsgType_IsValid(int value);
-const MessageHeader_SysMsgType MessageHeader_SysMsgType_SysMsgType_MIN = MessageHeader_SysMsgType_PARA_DATA;
-const MessageHeader_SysMsgType MessageHeader_SysMsgType_SysMsgType_MAX = MessageHeader_SysMsgType_STARTUP_READY;
-const int MessageHeader_SysMsgType_SysMsgType_ARRAYSIZE = MessageHeader_SysMsgType_SysMsgType_MAX + 1;
-
-const ::google::protobuf::EnumDescriptor* MessageHeader_SysMsgType_descriptor();
-inline const ::std::string& MessageHeader_SysMsgType_Name(MessageHeader_SysMsgType value) {
-  return ::google::protobuf::internal::NameOfEnum(
-    MessageHeader_SysMsgType_descriptor(), value);
-}
-inline bool MessageHeader_SysMsgType_Parse(
-    const ::std::string& name, MessageHeader_SysMsgType* value) {
-  return ::google::protobuf::internal::ParseNamedEnum<MessageHeader_SysMsgType>(
-    MessageHeader_SysMsgType_descriptor(), name, value);
 }
 enum MessageHeader_PkgType {
   MessageHeader_PkgType_REQ = 0,
@@ -114,6 +93,27 @@ inline bool MessageHeader_PkgType_Parse(
     const ::std::string& name, MessageHeader_PkgType* value) {
   return ::google::protobuf::internal::ParseNamedEnum<MessageHeader_PkgType>(
     MessageHeader_PkgType_descriptor(), name, value);
+}
+enum MessageHeader_SysMsgType {
+  MessageHeader_SysMsgType_REGISTER_NODE = 0,
+  MessageHeader_SysMsgType_NODE_LIST_DATA = 1,
+  MessageHeader_SysMsgType_NODE_LIST_ACK = 2,
+  MessageHeader_SysMsgType_STARTUP_READY = 3
+};
+bool MessageHeader_SysMsgType_IsValid(int value);
+const MessageHeader_SysMsgType MessageHeader_SysMsgType_SysMsgType_MIN = MessageHeader_SysMsgType_REGISTER_NODE;
+const MessageHeader_SysMsgType MessageHeader_SysMsgType_SysMsgType_MAX = MessageHeader_SysMsgType_STARTUP_READY;
+const int MessageHeader_SysMsgType_SysMsgType_ARRAYSIZE = MessageHeader_SysMsgType_SysMsgType_MAX + 1;
+
+const ::google::protobuf::EnumDescriptor* MessageHeader_SysMsgType_descriptor();
+inline const ::std::string& MessageHeader_SysMsgType_Name(MessageHeader_SysMsgType value) {
+  return ::google::protobuf::internal::NameOfEnum(
+    MessageHeader_SysMsgType_descriptor(), value);
+}
+inline bool MessageHeader_SysMsgType_Parse(
+    const ::std::string& name, MessageHeader_SysMsgType* value) {
+  return ::google::protobuf::internal::ParseNamedEnum<MessageHeader_SysMsgType>(
+    MessageHeader_SysMsgType_descriptor(), name, value);
 }
 // ===================================================================
 
@@ -195,8 +195,8 @@ class MessageHeader : public ::google::protobuf::Message {
   }
 
   typedef MessageHeader_MsgLevel MsgLevel;
-  static const MsgLevel SYS = MessageHeader_MsgLevel_SYS;
-  static const MsgLevel USR = MessageHeader_MsgLevel_USR;
+  static const MsgLevel SYS_MSG = MessageHeader_MsgLevel_SYS_MSG;
+  static const MsgLevel USR_MSG = MessageHeader_MsgLevel_USR_MSG;
   static inline bool MsgLevel_IsValid(int value) {
     return MessageHeader_MsgLevel_IsValid(value);
   }
@@ -216,32 +216,6 @@ class MessageHeader : public ::google::protobuf::Message {
   static inline bool MsgLevel_Parse(const ::std::string& name,
       MsgLevel* value) {
     return MessageHeader_MsgLevel_Parse(name, value);
-  }
-
-  typedef MessageHeader_SysMsgType SysMsgType;
-  static const SysMsgType PARA_DATA = MessageHeader_SysMsgType_PARA_DATA;
-  static const SysMsgType REGIST = MessageHeader_SysMsgType_REGIST;
-  static const SysMsgType NODE_LIST_DATA = MessageHeader_SysMsgType_NODE_LIST_DATA;
-  static const SysMsgType STARTUP_READY = MessageHeader_SysMsgType_STARTUP_READY;
-  static inline bool SysMsgType_IsValid(int value) {
-    return MessageHeader_SysMsgType_IsValid(value);
-  }
-  static const SysMsgType SysMsgType_MIN =
-    MessageHeader_SysMsgType_SysMsgType_MIN;
-  static const SysMsgType SysMsgType_MAX =
-    MessageHeader_SysMsgType_SysMsgType_MAX;
-  static const int SysMsgType_ARRAYSIZE =
-    MessageHeader_SysMsgType_SysMsgType_ARRAYSIZE;
-  static inline const ::google::protobuf::EnumDescriptor*
-  SysMsgType_descriptor() {
-    return MessageHeader_SysMsgType_descriptor();
-  }
-  static inline const ::std::string& SysMsgType_Name(SysMsgType value) {
-    return MessageHeader_SysMsgType_Name(value);
-  }
-  static inline bool SysMsgType_Parse(const ::std::string& name,
-      SysMsgType* value) {
-    return MessageHeader_SysMsgType_Parse(name, value);
   }
 
   typedef MessageHeader_PkgType PkgType;
@@ -269,14 +243,45 @@ class MessageHeader : public ::google::protobuf::Message {
     return MessageHeader_PkgType_Parse(name, value);
   }
 
+  typedef MessageHeader_SysMsgType SysMsgType;
+  static const SysMsgType REGISTER_NODE = MessageHeader_SysMsgType_REGISTER_NODE;
+  static const SysMsgType NODE_LIST_DATA = MessageHeader_SysMsgType_NODE_LIST_DATA;
+  static const SysMsgType NODE_LIST_ACK = MessageHeader_SysMsgType_NODE_LIST_ACK;
+  static const SysMsgType STARTUP_READY = MessageHeader_SysMsgType_STARTUP_READY;
+  static inline bool SysMsgType_IsValid(int value) {
+    return MessageHeader_SysMsgType_IsValid(value);
+  }
+  static const SysMsgType SysMsgType_MIN =
+    MessageHeader_SysMsgType_SysMsgType_MIN;
+  static const SysMsgType SysMsgType_MAX =
+    MessageHeader_SysMsgType_SysMsgType_MAX;
+  static const int SysMsgType_ARRAYSIZE =
+    MessageHeader_SysMsgType_SysMsgType_ARRAYSIZE;
+  static inline const ::google::protobuf::EnumDescriptor*
+  SysMsgType_descriptor() {
+    return MessageHeader_SysMsgType_descriptor();
+  }
+  static inline const ::std::string& SysMsgType_Name(SysMsgType value) {
+    return MessageHeader_SysMsgType_Name(value);
+  }
+  static inline bool SysMsgType_Parse(const ::std::string& name,
+      SysMsgType* value) {
+    return MessageHeader_SysMsgType_Parse(name, value);
+  }
+
   // accessors -------------------------------------------------------
 
-  // optional int32 from_id = 1;
+  // optional string from_id = 1;
   inline bool has_from_id() const;
   inline void clear_from_id();
   static const int kFromIdFieldNumber = 1;
-  inline ::google::protobuf::int32 from_id() const;
-  inline void set_from_id(::google::protobuf::int32 value);
+  inline const ::std::string& from_id() const;
+  inline void set_from_id(const ::std::string& value);
+  inline void set_from_id(const char* value);
+  inline void set_from_id(const char* value, size_t size);
+  inline ::std::string* mutable_from_id();
+  inline ::std::string* release_from_id();
+  inline void set_allocated_from_id(::std::string* from_id);
 
   // optional string from_ip = 2;
   inline bool has_from_ip() const;
@@ -304,12 +309,17 @@ class MessageHeader : public ::google::protobuf::Message {
   inline ::MessageHeader_ObjType from_obj_type() const;
   inline void set_from_obj_type(::MessageHeader_ObjType value);
 
-  // required int32 to_id = 5;
+  // required string to_id = 5;
   inline bool has_to_id() const;
   inline void clear_to_id();
   static const int kToIdFieldNumber = 5;
-  inline ::google::protobuf::int32 to_id() const;
-  inline void set_to_id(::google::protobuf::int32 value);
+  inline const ::std::string& to_id() const;
+  inline void set_to_id(const ::std::string& value);
+  inline void set_to_id(const char* value);
+  inline void set_to_id(const char* value, size_t size);
+  inline ::std::string* mutable_to_id();
+  inline ::std::string* release_to_id();
+  inline void set_allocated_to_id(::std::string* to_id);
 
   // required string to_ip = 6;
   inline bool has_to_ip() const;
@@ -344,19 +354,19 @@ class MessageHeader : public ::google::protobuf::Message {
   inline ::MessageHeader_MsgLevel msg_level() const;
   inline void set_msg_level(::MessageHeader_MsgLevel value);
 
-  // required .MessageHeader.SysMsgType sys_msg_type = 10;
-  inline bool has_sys_msg_type() const;
-  inline void clear_sys_msg_type();
-  static const int kSysMsgTypeFieldNumber = 10;
-  inline ::MessageHeader_SysMsgType sys_msg_type() const;
-  inline void set_sys_msg_type(::MessageHeader_SysMsgType value);
-
-  // required .MessageHeader.PkgType pkg_type = 11;
+  // required .MessageHeader.PkgType pkg_type = 10;
   inline bool has_pkg_type() const;
   inline void clear_pkg_type();
-  static const int kPkgTypeFieldNumber = 11;
+  static const int kPkgTypeFieldNumber = 10;
   inline ::MessageHeader_PkgType pkg_type() const;
   inline void set_pkg_type(::MessageHeader_PkgType value);
+
+  // required .MessageHeader.SysMsgType sys_msg_type = 11;
+  inline bool has_sys_msg_type() const;
+  inline void clear_sys_msg_type();
+  static const int kSysMsgTypeFieldNumber = 11;
+  inline ::MessageHeader_SysMsgType sys_msg_type() const;
+  inline void set_sys_msg_type(::MessageHeader_SysMsgType value);
 
   // optional int32 priority = 12;
   inline bool has_priority() const;
@@ -399,10 +409,10 @@ class MessageHeader : public ::google::protobuf::Message {
   inline void clear_has_to_obj_type();
   inline void set_has_msg_level();
   inline void clear_has_msg_level();
-  inline void set_has_sys_msg_type();
-  inline void clear_has_sys_msg_type();
   inline void set_has_pkg_type();
   inline void clear_has_pkg_type();
+  inline void set_has_sys_msg_type();
+  inline void clear_has_sys_msg_type();
   inline void set_has_priority();
   inline void clear_has_priority();
   inline void set_has_tracker_id();
@@ -414,17 +424,17 @@ class MessageHeader : public ::google::protobuf::Message {
 
   ::google::protobuf::uint32 _has_bits_[1];
   mutable int _cached_size_;
+  ::std::string* from_id_;
   ::std::string* from_ip_;
-  ::google::protobuf::int32 from_id_;
   ::google::protobuf::int32 from_port_;
   int from_obj_type_;
-  ::google::protobuf::int32 to_id_;
+  ::std::string* to_id_;
   ::std::string* to_ip_;
   ::google::protobuf::int32 to_port_;
   int to_obj_type_;
   int msg_level_;
-  int sys_msg_type_;
   int pkg_type_;
+  int sys_msg_type_;
   ::google::protobuf::int32 priority_;
   ::google::protobuf::int64 tracker_id_;
   ::google::protobuf::int64 rpl_tracker_id_;
@@ -442,7 +452,7 @@ class MessageHeader : public ::google::protobuf::Message {
 
 // MessageHeader
 
-// optional int32 from_id = 1;
+// optional string from_id = 1;
 inline bool MessageHeader::has_from_id() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
@@ -453,17 +463,69 @@ inline void MessageHeader::clear_has_from_id() {
   _has_bits_[0] &= ~0x00000001u;
 }
 inline void MessageHeader::clear_from_id() {
-  from_id_ = 0;
+  if (from_id_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    from_id_->clear();
+  }
   clear_has_from_id();
 }
-inline ::google::protobuf::int32 MessageHeader::from_id() const {
+inline const ::std::string& MessageHeader::from_id() const {
   // @@protoc_insertion_point(field_get:MessageHeader.from_id)
+  return *from_id_;
+}
+inline void MessageHeader::set_from_id(const ::std::string& value) {
+  set_has_from_id();
+  if (from_id_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    from_id_ = new ::std::string;
+  }
+  from_id_->assign(value);
+  // @@protoc_insertion_point(field_set:MessageHeader.from_id)
+}
+inline void MessageHeader::set_from_id(const char* value) {
+  set_has_from_id();
+  if (from_id_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    from_id_ = new ::std::string;
+  }
+  from_id_->assign(value);
+  // @@protoc_insertion_point(field_set_char:MessageHeader.from_id)
+}
+inline void MessageHeader::set_from_id(const char* value, size_t size) {
+  set_has_from_id();
+  if (from_id_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    from_id_ = new ::std::string;
+  }
+  from_id_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:MessageHeader.from_id)
+}
+inline ::std::string* MessageHeader::mutable_from_id() {
+  set_has_from_id();
+  if (from_id_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    from_id_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:MessageHeader.from_id)
   return from_id_;
 }
-inline void MessageHeader::set_from_id(::google::protobuf::int32 value) {
-  set_has_from_id();
-  from_id_ = value;
-  // @@protoc_insertion_point(field_set:MessageHeader.from_id)
+inline ::std::string* MessageHeader::release_from_id() {
+  clear_has_from_id();
+  if (from_id_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = from_id_;
+    from_id_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void MessageHeader::set_allocated_from_id(::std::string* from_id) {
+  if (from_id_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete from_id_;
+  }
+  if (from_id) {
+    set_has_from_id();
+    from_id_ = from_id;
+  } else {
+    clear_has_from_id();
+    from_id_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:MessageHeader.from_id)
 }
 
 // optional string from_ip = 2;
@@ -591,7 +653,7 @@ inline void MessageHeader::set_from_obj_type(::MessageHeader_ObjType value) {
   // @@protoc_insertion_point(field_set:MessageHeader.from_obj_type)
 }
 
-// required int32 to_id = 5;
+// required string to_id = 5;
 inline bool MessageHeader::has_to_id() const {
   return (_has_bits_[0] & 0x00000010u) != 0;
 }
@@ -602,17 +664,69 @@ inline void MessageHeader::clear_has_to_id() {
   _has_bits_[0] &= ~0x00000010u;
 }
 inline void MessageHeader::clear_to_id() {
-  to_id_ = 0;
+  if (to_id_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    to_id_->clear();
+  }
   clear_has_to_id();
 }
-inline ::google::protobuf::int32 MessageHeader::to_id() const {
+inline const ::std::string& MessageHeader::to_id() const {
   // @@protoc_insertion_point(field_get:MessageHeader.to_id)
+  return *to_id_;
+}
+inline void MessageHeader::set_to_id(const ::std::string& value) {
+  set_has_to_id();
+  if (to_id_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    to_id_ = new ::std::string;
+  }
+  to_id_->assign(value);
+  // @@protoc_insertion_point(field_set:MessageHeader.to_id)
+}
+inline void MessageHeader::set_to_id(const char* value) {
+  set_has_to_id();
+  if (to_id_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    to_id_ = new ::std::string;
+  }
+  to_id_->assign(value);
+  // @@protoc_insertion_point(field_set_char:MessageHeader.to_id)
+}
+inline void MessageHeader::set_to_id(const char* value, size_t size) {
+  set_has_to_id();
+  if (to_id_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    to_id_ = new ::std::string;
+  }
+  to_id_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:MessageHeader.to_id)
+}
+inline ::std::string* MessageHeader::mutable_to_id() {
+  set_has_to_id();
+  if (to_id_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    to_id_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:MessageHeader.to_id)
   return to_id_;
 }
-inline void MessageHeader::set_to_id(::google::protobuf::int32 value) {
-  set_has_to_id();
-  to_id_ = value;
-  // @@protoc_insertion_point(field_set:MessageHeader.to_id)
+inline ::std::string* MessageHeader::release_to_id() {
+  clear_has_to_id();
+  if (to_id_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = to_id_;
+    to_id_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void MessageHeader::set_allocated_to_id(::std::string* to_id) {
+  if (to_id_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete to_id_;
+  }
+  if (to_id) {
+    set_has_to_id();
+    to_id_ = to_id;
+  } else {
+    clear_has_to_id();
+    to_id_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:MessageHeader.to_id)
 }
 
 // required string to_ip = 6;
@@ -765,40 +879,15 @@ inline void MessageHeader::set_msg_level(::MessageHeader_MsgLevel value) {
   // @@protoc_insertion_point(field_set:MessageHeader.msg_level)
 }
 
-// required .MessageHeader.SysMsgType sys_msg_type = 10;
-inline bool MessageHeader::has_sys_msg_type() const {
+// required .MessageHeader.PkgType pkg_type = 10;
+inline bool MessageHeader::has_pkg_type() const {
   return (_has_bits_[0] & 0x00000200u) != 0;
 }
-inline void MessageHeader::set_has_sys_msg_type() {
+inline void MessageHeader::set_has_pkg_type() {
   _has_bits_[0] |= 0x00000200u;
 }
-inline void MessageHeader::clear_has_sys_msg_type() {
-  _has_bits_[0] &= ~0x00000200u;
-}
-inline void MessageHeader::clear_sys_msg_type() {
-  sys_msg_type_ = 0;
-  clear_has_sys_msg_type();
-}
-inline ::MessageHeader_SysMsgType MessageHeader::sys_msg_type() const {
-  // @@protoc_insertion_point(field_get:MessageHeader.sys_msg_type)
-  return static_cast< ::MessageHeader_SysMsgType >(sys_msg_type_);
-}
-inline void MessageHeader::set_sys_msg_type(::MessageHeader_SysMsgType value) {
-  assert(::MessageHeader_SysMsgType_IsValid(value));
-  set_has_sys_msg_type();
-  sys_msg_type_ = value;
-  // @@protoc_insertion_point(field_set:MessageHeader.sys_msg_type)
-}
-
-// required .MessageHeader.PkgType pkg_type = 11;
-inline bool MessageHeader::has_pkg_type() const {
-  return (_has_bits_[0] & 0x00000400u) != 0;
-}
-inline void MessageHeader::set_has_pkg_type() {
-  _has_bits_[0] |= 0x00000400u;
-}
 inline void MessageHeader::clear_has_pkg_type() {
-  _has_bits_[0] &= ~0x00000400u;
+  _has_bits_[0] &= ~0x00000200u;
 }
 inline void MessageHeader::clear_pkg_type() {
   pkg_type_ = 0;
@@ -813,6 +902,31 @@ inline void MessageHeader::set_pkg_type(::MessageHeader_PkgType value) {
   set_has_pkg_type();
   pkg_type_ = value;
   // @@protoc_insertion_point(field_set:MessageHeader.pkg_type)
+}
+
+// required .MessageHeader.SysMsgType sys_msg_type = 11;
+inline bool MessageHeader::has_sys_msg_type() const {
+  return (_has_bits_[0] & 0x00000400u) != 0;
+}
+inline void MessageHeader::set_has_sys_msg_type() {
+  _has_bits_[0] |= 0x00000400u;
+}
+inline void MessageHeader::clear_has_sys_msg_type() {
+  _has_bits_[0] &= ~0x00000400u;
+}
+inline void MessageHeader::clear_sys_msg_type() {
+  sys_msg_type_ = 0;
+  clear_has_sys_msg_type();
+}
+inline ::MessageHeader_SysMsgType MessageHeader::sys_msg_type() const {
+  // @@protoc_insertion_point(field_get:MessageHeader.sys_msg_type)
+  return static_cast< ::MessageHeader_SysMsgType >(sys_msg_type_);
+}
+inline void MessageHeader::set_sys_msg_type(::MessageHeader_SysMsgType value) {
+  assert(::MessageHeader_SysMsgType_IsValid(value));
+  set_has_sys_msg_type();
+  sys_msg_type_ = value;
+  // @@protoc_insertion_point(field_set:MessageHeader.sys_msg_type)
 }
 
 // optional int32 priority = 12;
@@ -904,15 +1018,15 @@ template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::MessageHeader_MsgLevel>() {
   return ::MessageHeader_MsgLevel_descriptor();
 }
-template <> struct is_proto_enum< ::MessageHeader_SysMsgType> : ::google::protobuf::internal::true_type {};
-template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::MessageHeader_SysMsgType>() {
-  return ::MessageHeader_SysMsgType_descriptor();
-}
 template <> struct is_proto_enum< ::MessageHeader_PkgType> : ::google::protobuf::internal::true_type {};
 template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::MessageHeader_PkgType>() {
   return ::MessageHeader_PkgType_descriptor();
+}
+template <> struct is_proto_enum< ::MessageHeader_SysMsgType> : ::google::protobuf::internal::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::MessageHeader_SysMsgType>() {
+  return ::MessageHeader_SysMsgType_descriptor();
 }
 
 }  // namespace google

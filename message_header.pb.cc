@@ -23,8 +23,8 @@ const ::google::protobuf::internal::GeneratedMessageReflection*
   MessageHeader_reflection_ = NULL;
 const ::google::protobuf::EnumDescriptor* MessageHeader_ObjType_descriptor_ = NULL;
 const ::google::protobuf::EnumDescriptor* MessageHeader_MsgLevel_descriptor_ = NULL;
-const ::google::protobuf::EnumDescriptor* MessageHeader_SysMsgType_descriptor_ = NULL;
 const ::google::protobuf::EnumDescriptor* MessageHeader_PkgType_descriptor_ = NULL;
+const ::google::protobuf::EnumDescriptor* MessageHeader_SysMsgType_descriptor_ = NULL;
 
 }  // namespace
 
@@ -46,8 +46,8 @@ void protobuf_AssignDesc_message_5fheader_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(MessageHeader, to_port_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(MessageHeader, to_obj_type_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(MessageHeader, msg_level_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(MessageHeader, sys_msg_type_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(MessageHeader, pkg_type_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(MessageHeader, sys_msg_type_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(MessageHeader, priority_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(MessageHeader, tracker_id_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(MessageHeader, rpl_tracker_id_),
@@ -65,8 +65,8 @@ void protobuf_AssignDesc_message_5fheader_2eproto() {
       sizeof(MessageHeader));
   MessageHeader_ObjType_descriptor_ = MessageHeader_descriptor_->enum_type(0);
   MessageHeader_MsgLevel_descriptor_ = MessageHeader_descriptor_->enum_type(1);
-  MessageHeader_SysMsgType_descriptor_ = MessageHeader_descriptor_->enum_type(2);
-  MessageHeader_PkgType_descriptor_ = MessageHeader_descriptor_->enum_type(3);
+  MessageHeader_PkgType_descriptor_ = MessageHeader_descriptor_->enum_type(2);
+  MessageHeader_SysMsgType_descriptor_ = MessageHeader_descriptor_->enum_type(3);
 }
 
 namespace {
@@ -97,22 +97,23 @@ void protobuf_AddDesc_message_5fheader_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-    "\n\024message_header.proto\"\340\004\n\rMessageHeader"
-    "\022\017\n\007from_id\030\001 \001(\005\022\017\n\007from_ip\030\002 \001(\t\022\021\n\tfr"
+    "\n\024message_header.proto\"\363\004\n\rMessageHeader"
+    "\022\017\n\007from_id\030\001 \001(\t\022\017\n\007from_ip\030\002 \001(\t\022\021\n\tfr"
     "om_port\030\003 \001(\005\022-\n\rfrom_obj_type\030\004 \001(\0162\026.M"
-    "essageHeader.ObjType\022\r\n\005to_id\030\005 \002(\005\022\r\n\005t"
+    "essageHeader.ObjType\022\r\n\005to_id\030\005 \002(\t\022\r\n\005t"
     "o_ip\030\006 \002(\t\022\017\n\007to_port\030\007 \002(\005\022+\n\013to_obj_ty"
     "pe\030\010 \002(\0162\026.MessageHeader.ObjType\022*\n\tmsg_"
-    "level\030\t \002(\0162\027.MessageHeader.MsgLevel\022/\n\014"
-    "sys_msg_type\030\n \002(\0162\031.MessageHeader.SysMs"
-    "gType\022(\n\010pkg_type\030\013 \002(\0162\026.MessageHeader."
-    "PkgType\022\020\n\010priority\030\014 \001(\005\022\022\n\ntracker_id\030"
+    "level\030\t \002(\0162\027.MessageHeader.MsgLevel\022(\n\010"
+    "pkg_type\030\n \002(\0162\026.MessageHeader.PkgType\022/"
+    "\n\014sys_msg_type\030\013 \002(\0162\031.MessageHeader.Sys"
+    "MsgType\022\020\n\010priority\030\014 \001(\005\022\022\n\ntracker_id\030"
     "\r \001(\003\022\026\n\016rpl_tracker_id\030\016 \001(\003\"5\n\007ObjType"
     "\022\010\n\004NODE\020\000\022\t\n\005FILED\020\001\022\t\n\005CACHE\020\002\022\n\n\006ENGI"
-    "NE\020\003\"\034\n\010MsgLevel\022\007\n\003SYS\020\000\022\007\n\003USR\020\001\"N\n\nSy"
-    "sMsgType\022\r\n\tPARA_DATA\020\000\022\n\n\006REGIST\020\001\022\022\n\016N"
-    "ODE_LIST_DATA\020\002\022\021\n\rSTARTUP_READY\020\003\"%\n\007Pk"
-    "gType\022\007\n\003REQ\020\000\022\007\n\003RPL\020\001\022\010\n\004PUSH\020\002", 633);
+    "NE\020\003\"$\n\010MsgLevel\022\013\n\007SYS_MSG\020\000\022\013\n\007USR_MSG"
+    "\020\001\"%\n\007PkgType\022\007\n\003REQ\020\000\022\007\n\003RPL\020\001\022\010\n\004PUSH\020"
+    "\002\"Y\n\nSysMsgType\022\021\n\rREGISTER_NODE\020\000\022\022\n\016NO"
+    "DE_LIST_DATA\020\001\022\021\n\rNODE_LIST_ACK\020\002\022\021\n\rSTA"
+    "RTUP_READY\020\003", 652);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "message_header.proto", &protobuf_RegisterTypes);
   MessageHeader::default_instance_ = new MessageHeader();
@@ -169,36 +170,11 @@ bool MessageHeader_MsgLevel_IsValid(int value) {
 }
 
 #ifndef _MSC_VER
-const MessageHeader_MsgLevel MessageHeader::SYS;
-const MessageHeader_MsgLevel MessageHeader::USR;
+const MessageHeader_MsgLevel MessageHeader::SYS_MSG;
+const MessageHeader_MsgLevel MessageHeader::USR_MSG;
 const MessageHeader_MsgLevel MessageHeader::MsgLevel_MIN;
 const MessageHeader_MsgLevel MessageHeader::MsgLevel_MAX;
 const int MessageHeader::MsgLevel_ARRAYSIZE;
-#endif  // _MSC_VER
-const ::google::protobuf::EnumDescriptor* MessageHeader_SysMsgType_descriptor() {
-  protobuf_AssignDescriptorsOnce();
-  return MessageHeader_SysMsgType_descriptor_;
-}
-bool MessageHeader_SysMsgType_IsValid(int value) {
-  switch(value) {
-    case 0:
-    case 1:
-    case 2:
-    case 3:
-      return true;
-    default:
-      return false;
-  }
-}
-
-#ifndef _MSC_VER
-const MessageHeader_SysMsgType MessageHeader::PARA_DATA;
-const MessageHeader_SysMsgType MessageHeader::REGIST;
-const MessageHeader_SysMsgType MessageHeader::NODE_LIST_DATA;
-const MessageHeader_SysMsgType MessageHeader::STARTUP_READY;
-const MessageHeader_SysMsgType MessageHeader::SysMsgType_MIN;
-const MessageHeader_SysMsgType MessageHeader::SysMsgType_MAX;
-const int MessageHeader::SysMsgType_ARRAYSIZE;
 #endif  // _MSC_VER
 const ::google::protobuf::EnumDescriptor* MessageHeader_PkgType_descriptor() {
   protobuf_AssignDescriptorsOnce();
@@ -223,6 +199,31 @@ const MessageHeader_PkgType MessageHeader::PkgType_MIN;
 const MessageHeader_PkgType MessageHeader::PkgType_MAX;
 const int MessageHeader::PkgType_ARRAYSIZE;
 #endif  // _MSC_VER
+const ::google::protobuf::EnumDescriptor* MessageHeader_SysMsgType_descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return MessageHeader_SysMsgType_descriptor_;
+}
+bool MessageHeader_SysMsgType_IsValid(int value) {
+  switch(value) {
+    case 0:
+    case 1:
+    case 2:
+    case 3:
+      return true;
+    default:
+      return false;
+  }
+}
+
+#ifndef _MSC_VER
+const MessageHeader_SysMsgType MessageHeader::REGISTER_NODE;
+const MessageHeader_SysMsgType MessageHeader::NODE_LIST_DATA;
+const MessageHeader_SysMsgType MessageHeader::NODE_LIST_ACK;
+const MessageHeader_SysMsgType MessageHeader::STARTUP_READY;
+const MessageHeader_SysMsgType MessageHeader::SysMsgType_MIN;
+const MessageHeader_SysMsgType MessageHeader::SysMsgType_MAX;
+const int MessageHeader::SysMsgType_ARRAYSIZE;
+#endif  // _MSC_VER
 #ifndef _MSC_VER
 const int MessageHeader::kFromIdFieldNumber;
 const int MessageHeader::kFromIpFieldNumber;
@@ -233,8 +234,8 @@ const int MessageHeader::kToIpFieldNumber;
 const int MessageHeader::kToPortFieldNumber;
 const int MessageHeader::kToObjTypeFieldNumber;
 const int MessageHeader::kMsgLevelFieldNumber;
-const int MessageHeader::kSysMsgTypeFieldNumber;
 const int MessageHeader::kPkgTypeFieldNumber;
+const int MessageHeader::kSysMsgTypeFieldNumber;
 const int MessageHeader::kPriorityFieldNumber;
 const int MessageHeader::kTrackerIdFieldNumber;
 const int MessageHeader::kRplTrackerIdFieldNumber;
@@ -259,17 +260,17 @@ MessageHeader::MessageHeader(const MessageHeader& from)
 void MessageHeader::SharedCtor() {
   ::google::protobuf::internal::GetEmptyString();
   _cached_size_ = 0;
-  from_id_ = 0;
+  from_id_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   from_ip_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   from_port_ = 0;
   from_obj_type_ = 0;
-  to_id_ = 0;
+  to_id_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   to_ip_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   to_port_ = 0;
   to_obj_type_ = 0;
   msg_level_ = 0;
-  sys_msg_type_ = 0;
   pkg_type_ = 0;
+  sys_msg_type_ = 0;
   priority_ = 0;
   tracker_id_ = GOOGLE_LONGLONG(0);
   rpl_tracker_id_ = GOOGLE_LONGLONG(0);
@@ -282,8 +283,14 @@ MessageHeader::~MessageHeader() {
 }
 
 void MessageHeader::SharedDtor() {
+  if (from_id_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete from_id_;
+  }
   if (from_ip_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
     delete from_ip_;
+  }
+  if (to_id_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete to_id_;
   }
   if (to_ip_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
     delete to_ip_;
@@ -325,11 +332,21 @@ void MessageHeader::Clear() {
   } while (0)
 
   if (_has_bits_[0 / 32] & 255) {
-    ZR_(from_id_, to_id_);
+    ZR_(from_port_, from_obj_type_);
     ZR_(to_port_, to_obj_type_);
+    if (has_from_id()) {
+      if (from_id_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        from_id_->clear();
+      }
+    }
     if (has_from_ip()) {
       if (from_ip_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
         from_ip_->clear();
+      }
+    }
+    if (has_to_id()) {
+      if (to_id_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        to_id_->clear();
       }
     }
     if (has_to_ip()) {
@@ -359,13 +376,15 @@ bool MessageHeader::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional int32 from_id = 1;
+      // optional string from_id = 1;
       case 1: {
-        if (tag == 8) {
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
-                 input, &from_id_)));
-          set_has_from_id();
+        if (tag == 10) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_from_id()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->from_id().data(), this->from_id().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "from_id");
         } else {
           goto handle_unusual;
         }
@@ -421,18 +440,20 @@ bool MessageHeader::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(40)) goto parse_to_id;
+        if (input->ExpectTag(42)) goto parse_to_id;
         break;
       }
 
-      // required int32 to_id = 5;
+      // required string to_id = 5;
       case 5: {
-        if (tag == 40) {
+        if (tag == 42) {
          parse_to_id:
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
-                 input, &to_id_)));
-          set_has_to_id();
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_to_id()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->to_id().data(), this->to_id().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "to_id");
         } else {
           goto handle_unusual;
         }
@@ -508,33 +529,13 @@ bool MessageHeader::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(80)) goto parse_sys_msg_type;
+        if (input->ExpectTag(80)) goto parse_pkg_type;
         break;
       }
 
-      // required .MessageHeader.SysMsgType sys_msg_type = 10;
+      // required .MessageHeader.PkgType pkg_type = 10;
       case 10: {
         if (tag == 80) {
-         parse_sys_msg_type:
-          int value;
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
-                 input, &value)));
-          if (::MessageHeader_SysMsgType_IsValid(value)) {
-            set_sys_msg_type(static_cast< ::MessageHeader_SysMsgType >(value));
-          } else {
-            mutable_unknown_fields()->AddVarint(10, value);
-          }
-        } else {
-          goto handle_unusual;
-        }
-        if (input->ExpectTag(88)) goto parse_pkg_type;
-        break;
-      }
-
-      // required .MessageHeader.PkgType pkg_type = 11;
-      case 11: {
-        if (tag == 88) {
          parse_pkg_type:
           int value;
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
@@ -542,6 +543,26 @@ bool MessageHeader::MergePartialFromCodedStream(
                  input, &value)));
           if (::MessageHeader_PkgType_IsValid(value)) {
             set_pkg_type(static_cast< ::MessageHeader_PkgType >(value));
+          } else {
+            mutable_unknown_fields()->AddVarint(10, value);
+          }
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(88)) goto parse_sys_msg_type;
+        break;
+      }
+
+      // required .MessageHeader.SysMsgType sys_msg_type = 11;
+      case 11: {
+        if (tag == 88) {
+         parse_sys_msg_type:
+          int value;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          if (::MessageHeader_SysMsgType_IsValid(value)) {
+            set_sys_msg_type(static_cast< ::MessageHeader_SysMsgType >(value));
           } else {
             mutable_unknown_fields()->AddVarint(11, value);
           }
@@ -622,9 +643,14 @@ failure:
 void MessageHeader::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:MessageHeader)
-  // optional int32 from_id = 1;
+  // optional string from_id = 1;
   if (has_from_id()) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->from_id(), output);
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->from_id().data(), this->from_id().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "from_id");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      1, this->from_id(), output);
   }
 
   // optional string from_ip = 2;
@@ -648,9 +674,14 @@ void MessageHeader::SerializeWithCachedSizes(
       4, this->from_obj_type(), output);
   }
 
-  // required int32 to_id = 5;
+  // required string to_id = 5;
   if (has_to_id()) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(5, this->to_id(), output);
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->to_id().data(), this->to_id().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "to_id");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      5, this->to_id(), output);
   }
 
   // required string to_ip = 6;
@@ -680,16 +711,16 @@ void MessageHeader::SerializeWithCachedSizes(
       9, this->msg_level(), output);
   }
 
-  // required .MessageHeader.SysMsgType sys_msg_type = 10;
-  if (has_sys_msg_type()) {
-    ::google::protobuf::internal::WireFormatLite::WriteEnum(
-      10, this->sys_msg_type(), output);
-  }
-
-  // required .MessageHeader.PkgType pkg_type = 11;
+  // required .MessageHeader.PkgType pkg_type = 10;
   if (has_pkg_type()) {
     ::google::protobuf::internal::WireFormatLite::WriteEnum(
-      11, this->pkg_type(), output);
+      10, this->pkg_type(), output);
+  }
+
+  // required .MessageHeader.SysMsgType sys_msg_type = 11;
+  if (has_sys_msg_type()) {
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      11, this->sys_msg_type(), output);
   }
 
   // optional int32 priority = 12;
@@ -717,9 +748,15 @@ void MessageHeader::SerializeWithCachedSizes(
 ::google::protobuf::uint8* MessageHeader::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:MessageHeader)
-  // optional int32 from_id = 1;
+  // optional string from_id = 1;
   if (has_from_id()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->from_id(), target);
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->from_id().data(), this->from_id().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "from_id");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        1, this->from_id(), target);
   }
 
   // optional string from_ip = 2;
@@ -744,9 +781,15 @@ void MessageHeader::SerializeWithCachedSizes(
       4, this->from_obj_type(), target);
   }
 
-  // required int32 to_id = 5;
+  // required string to_id = 5;
   if (has_to_id()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(5, this->to_id(), target);
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->to_id().data(), this->to_id().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "to_id");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        5, this->to_id(), target);
   }
 
   // required string to_ip = 6;
@@ -777,16 +820,16 @@ void MessageHeader::SerializeWithCachedSizes(
       9, this->msg_level(), target);
   }
 
-  // required .MessageHeader.SysMsgType sys_msg_type = 10;
-  if (has_sys_msg_type()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
-      10, this->sys_msg_type(), target);
-  }
-
-  // required .MessageHeader.PkgType pkg_type = 11;
+  // required .MessageHeader.PkgType pkg_type = 10;
   if (has_pkg_type()) {
     target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
-      11, this->pkg_type(), target);
+      10, this->pkg_type(), target);
+  }
+
+  // required .MessageHeader.SysMsgType sys_msg_type = 11;
+  if (has_sys_msg_type()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      11, this->sys_msg_type(), target);
   }
 
   // optional int32 priority = 12;
@@ -816,10 +859,10 @@ int MessageHeader::ByteSize() const {
   int total_size = 0;
 
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    // optional int32 from_id = 1;
+    // optional string from_id = 1;
     if (has_from_id()) {
       total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::Int32Size(
+        ::google::protobuf::internal::WireFormatLite::StringSize(
           this->from_id());
     }
 
@@ -843,10 +886,10 @@ int MessageHeader::ByteSize() const {
         ::google::protobuf::internal::WireFormatLite::EnumSize(this->from_obj_type());
     }
 
-    // required int32 to_id = 5;
+    // required string to_id = 5;
     if (has_to_id()) {
       total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::Int32Size(
+        ::google::protobuf::internal::WireFormatLite::StringSize(
           this->to_id());
     }
 
@@ -878,16 +921,16 @@ int MessageHeader::ByteSize() const {
         ::google::protobuf::internal::WireFormatLite::EnumSize(this->msg_level());
     }
 
-    // required .MessageHeader.SysMsgType sys_msg_type = 10;
-    if (has_sys_msg_type()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::EnumSize(this->sys_msg_type());
-    }
-
-    // required .MessageHeader.PkgType pkg_type = 11;
+    // required .MessageHeader.PkgType pkg_type = 10;
     if (has_pkg_type()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::EnumSize(this->pkg_type());
+    }
+
+    // required .MessageHeader.SysMsgType sys_msg_type = 11;
+    if (has_sys_msg_type()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::EnumSize(this->sys_msg_type());
     }
 
     // optional int32 priority = 12;
@@ -967,11 +1010,11 @@ void MessageHeader::MergeFrom(const MessageHeader& from) {
     if (from.has_msg_level()) {
       set_msg_level(from.msg_level());
     }
-    if (from.has_sys_msg_type()) {
-      set_sys_msg_type(from.sys_msg_type());
-    }
     if (from.has_pkg_type()) {
       set_pkg_type(from.pkg_type());
+    }
+    if (from.has_sys_msg_type()) {
+      set_sys_msg_type(from.sys_msg_type());
     }
     if (from.has_priority()) {
       set_priority(from.priority());
@@ -1015,8 +1058,8 @@ void MessageHeader::Swap(MessageHeader* other) {
     std::swap(to_port_, other->to_port_);
     std::swap(to_obj_type_, other->to_obj_type_);
     std::swap(msg_level_, other->msg_level_);
-    std::swap(sys_msg_type_, other->sys_msg_type_);
     std::swap(pkg_type_, other->pkg_type_);
+    std::swap(sys_msg_type_, other->sys_msg_type_);
     std::swap(priority_, other->priority_);
     std::swap(tracker_id_, other->tracker_id_);
     std::swap(rpl_tracker_id_, other->rpl_tracker_id_);

@@ -2,8 +2,8 @@
 
 #include "common.h"
 #include "node.h"
-#include "tracker.h"
 #include "message.h"
+#include "tracker.h"
 
 class Bus : public boost::serialization::singleton<Bus> {
 private:
@@ -18,23 +18,17 @@ private:
 	std::mutex mutex_queue; //prevent the queue
     //notify the sendthread to send elem
 	std::condition_variable cond_exist_elem_queue; 
-	boost::lockfree::queue< SPMsg > recvQueue;
 	std::thread *send_thread_t, *recv_thread_t;
 
 	void send_thread(); //daemon thread for sending msg
 	void recv_thread(); //daemon thread for receving msg
-	
-	Tracker *tracker;	
 public:
 	//add a msg into multi-level priority queue, the default priority level is 4
-	int send_msg(SPMsg msg, uint32_t priority_level = (PRIORITY_LEVEL - 1) / 2);
+	bool send_msg(SPMsg msg, uint32_t priority = (PRIORITY_LEVEL - 1) / 2);
 
 	void init(const NodeInfo &node_info);
 	void run();
 
 	bool connect(const NodeInfo &node_info);
     bool Disconnect(const NodeInfo &node_info);
-
-    void free_data(void *, void *);
-    void non_free_data(void *, void *);
 };
