@@ -63,7 +63,3 @@
 using NodeId = std::string;
 const int PRIORITY_LEVEL = 10;
 const unsigned int REGISTER_WAIT_TIME_IN_SEC = 10;
-
-void free_data(void *addr, void *hint) {
-	delete [] (char *)addr;
-}

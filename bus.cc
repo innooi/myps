@@ -140,7 +140,7 @@ void Bus::send_thread() {
             << msg->msg_header.ShortDebugString();
 
 		zmq_msg_t header_msg;
-		zmq_msg_init_data(&header_msg, header_buf, header_size, free_data, NULL);
+		zmq_msg_init_data(&header_msg, header_buf, header_size, nullptr, nullptr);
 
 		while (true) {
 			if (zmq_msg_send(&header_msg, socket, tag) == header_size) break;
@@ -148,6 +148,8 @@ void Bus::send_thread() {
 			LOG(ERROR) << "[Bus::send_thread] failed to send task message to node";
 			return;
 		}
+
+		delete [] header_buf;
 
 		LOG(INFO) << "[Bus::send_thread] have sent msg_header.";
 

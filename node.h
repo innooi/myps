@@ -23,7 +23,12 @@ class NodeInfo {
     friend class boost::serialization::access;
 
     template<class Archive>
-    void serialize(Archive & ar, unsigned int version);
+    void serialize(Archive & ar, unsigned int version) {
+        ar & role;
+        ar & node_id;
+        ar & ip;
+        ar & port;
+    }
 public:
     Role role;
     NodeId node_id;

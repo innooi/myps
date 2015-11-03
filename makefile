@@ -12,8 +12,8 @@ CPP_SRC = $(wildcard *.cc)
 
 CPP_OBJ = ${CPP_SRC:.cc=.o} message_header.pb.o
 
-#EXE = namenode_ins server_ins worker_ins
-EXE = main
+EXE = namenode_ins server_ins worker_ins
+#EXE = main
 
 PROTOC = protoc -I=./ --cpp_out=./ 
 
@@ -25,11 +25,6 @@ message_header.pb.h message_header.pb.cc: message_header.proto
 ${CPP_OBJ}: %.o: %.cc ${HEADER}
 	${CC} ${CFLAGS} ${INCLUDE_PATH} -c $<
 
-main: main.o bus.o namenode.o worker.o node.o server.o\
-	message_header.pb.o node_info.o tracker.o
-	${CC} ${LDFLAGS} -o main main.o bus.o node.o \
-	namenode.o worker.o server.o message_header.pb.o node_info.o tracker.o
-
 namenode_ins: namenode_ins.o bus.o namenode.o worker.o server.o node.o \
 	message_header.pb.o node_info.o tracker.o
 	${CC} ${LDFLAGS} -o namenode_ins namenode_ins.o bus.o server.o node.o \
@@ -38,7 +33,7 @@ namenode_ins: namenode_ins.o bus.o namenode.o worker.o server.o node.o \
 server_ins: server_ins.o bus.o namenode.o worker.o server.o \
 	message_header.pb.o node.o node_info.o tracker.o
 	${CC} ${LDFLAGS} -o server_ins server_ins.o bus.o namenode.o \
-	node.o worker.o message_header.pb.o node_info.o tracker.o
+	node.o worker.o server.o message_header.pb.o node_info.o tracker.o
 
 worker_ins: worker_ins.o bus.o namenode.o worker.o server.o message_header.pb.o \
 	node.o node_info.o tracker.o
