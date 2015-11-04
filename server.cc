@@ -76,12 +76,6 @@ void Server::process_usr_msg(SPMsg msg) {
 
 void Server::init(NodeId p_node_id, const std::string &p_ip, uint32_t p_port,
 	NodeId p_name_node_id, const std::string &p_name_node_ip, uint32_t p_name_node_port) {
-    //how to get the node_id of namenode?
-    sp_name_node_info = std::make_shared<NodeInfo>(Role::NAMENODE, p_name_node_id,
-        p_name_node_ip, p_name_node_port);
-    node_list.push_back(sp_name_node_info);
-    id_map_to_info[p_name_node_id] = sp_name_node_info; 
-
 	my_info.role = Role::SERVER;
 	my_info.node_id = p_node_id;
 	my_info.ip = p_ip;
@@ -89,6 +83,12 @@ void Server::init(NodeId p_node_id, const std::string &p_ip, uint32_t p_port,
 	state = NodeState::CLOSED;
 	node_list.clear();
 	id_map_to_info.clear();
+	
+    //how to get the node_id of namenode?
+    sp_name_node_info = std::make_shared<NodeInfo>(Role::NAMENODE, p_name_node_id,
+        p_name_node_ip, p_name_node_port);
+    node_list.push_back(sp_name_node_info);
+    id_map_to_info[p_name_node_id] = sp_name_node_info; 
 }
 
 void Server::run() {

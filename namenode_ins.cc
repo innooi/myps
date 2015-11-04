@@ -20,8 +20,8 @@ int main(int argc, char **argv) {
     auto& tracker_ins = Tracker::get_mutable_instance();
     tracker_ins.init(&name_node_ins, &bus_ins);
 
-    tracker_ins.run();
     bus_ins.run();
     name_node_ins.run();
+    tracker_ins.run();
     return 0;
 }

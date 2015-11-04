@@ -64,8 +64,9 @@ SPMsg Tracker::create_sys_msg(MessageHeader::ObjType p_from_obj_type,
 	ret->msg_header.set_from_port(node->my_info.port);
 	ret->msg_header.set_from_port(p_from_obj_type);
 	ret->msg_header.set_to_id(p_to_id);
+
 	if (node->id_map_to_info.find(p_to_id) == node->id_map_to_info.end()) {
-		LOG(ERROR) << "[Tracker::create_sys_msg]: Invalid to_node_id.";
+		LOG(ERROR) << "[Tracker::create_sys_msg]: Invalid to_node_id " + p_to_id;
 		ret.reset();
 		return ret;
 	}
@@ -98,12 +99,13 @@ int Tracker::run() {
 	}
 	if (nullptr == dispatch_thread_t) {
 		dispatch_thread_t = new std::thread(&Tracker::dispatch_thread, this);
-		dispatch_thread_t->detach();
 		LOG(INFO) << "[Tracker::run]: do_dispatch thread has started successfully.";
+		dispatch_thread_t->join();
 		return 0;
 	} else {
 		LOG(ERROR)
-			<< "[Tracker::run]: do_dispatch thread has not been started.";
+			<< "[Tracker::run]: do_dispatch thread has not been started," <<
+			" cause you have started before";
 		return 2;
 	}
 }

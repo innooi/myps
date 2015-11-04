@@ -26,7 +26,7 @@ void Bus::init(const NodeInfo &node_info) {
 	addr += std::to_string(node_info.port);
 	CHECK(zmq_bind(receiver, addr.c_str()) == 0)
 	        << "[Bus::Init] bind to " << addr << " failed: " << zmq_strerror(errno);
-	LOG(INFO) << "BIND address " << addr;
+	LOG(INFO) << "[Bus::Init]: BIND address " << addr;
 }
 
 bool Bus::connect(const NodeInfo& node_info) {
@@ -58,7 +58,7 @@ bool Bus::connect(const NodeInfo& node_info) {
 	}
 	senders[id] = the_sender;
 
-	LOG(INFO) << "Bus::Connect CONNECT to " << id << " [" << addr << "]";
+	LOG(INFO) << "[Bus::Connect] CONNECT to " << id << " [" << addr << "]";
 	return true;
 }
 
@@ -92,6 +92,7 @@ void Bus::run() {
 	recv_thread_t = new std::thread(std::bind(&Bus::recv_thread, this));
 	send_thread_t->detach();
 	recv_thread_t->detach();
+	LOG(INFO) << "[Bus::run] send_thread and recv_thread is running";
 }
 
 void Bus::send_thread() {
