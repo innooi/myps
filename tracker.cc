@@ -62,7 +62,7 @@ SPMsg Tracker::create_sys_msg(MessageHeader::ObjType p_from_obj_type,
 	ret->msg_header.set_from_id(node->my_info.node_id);
 	ret->msg_header.set_from_ip(node->my_info.ip);
 	ret->msg_header.set_from_port(node->my_info.port);
-	ret->msg_header.set_from_port(p_from_obj_type);
+	ret->msg_header.set_to_obj_type(p_from_obj_type);
 	ret->msg_header.set_to_id(p_to_id);
 
 	if (node->id_map_to_info.find(p_to_id) == node->id_map_to_info.end()) {
@@ -76,6 +76,7 @@ SPMsg Tracker::create_sys_msg(MessageHeader::ObjType p_from_obj_type,
 	ret->msg_header.set_to_port(p_info->port);
 	ret->msg_header.set_to_obj_type(p_to_obj_type);
 	ret->msg_header.set_msg_level(MessageHeader::SYS_MSG);
+	ret->msg_header.set_pkg_type(p_pkg_type);
 	ret->msg_header.set_sys_msg_type(p_sys_msg_type);
 	ret->msg_header.set_priority(priority);
 	return ret;
@@ -100,7 +101,7 @@ int Tracker::run() {
 	if (nullptr == dispatch_thread_t) {
 		dispatch_thread_t = new std::thread(&Tracker::dispatch_thread, this);
 		LOG(INFO) << "[Tracker::run]: do_dispatch thread has started successfully.";
-		dispatch_thread_t->join();
+		dispatch_thread_t->detach();
 		return 0;
 	} else {
 		LOG(ERROR)

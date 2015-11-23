@@ -9,7 +9,6 @@ DEFINE_int32(port, 0, "node bus port");
 
 int main(int argc, char **argv) {
     ::google::ParseCommandLineFlags(&argc, &argv, true);
-    LOG(INFO) << "NameNode " << FLAGS_id << " running on " << FLAGS_ip << " " << FLAGS_port;
 
     auto& name_node_ins = NameNode::get_mutable_instance();
     name_node_ins.init(FLAGS_id, FLAGS_ip, FLAGS_port);
@@ -21,7 +20,7 @@ int main(int argc, char **argv) {
     tracker_ins.init(&name_node_ins, &bus_ins);
 
     bus_ins.run();
-    name_node_ins.run();
     tracker_ins.run();
+    name_node_ins.run();
     return 0;
 }

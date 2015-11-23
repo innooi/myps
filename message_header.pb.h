@@ -309,7 +309,7 @@ class MessageHeader : public ::google::protobuf::Message {
   inline ::MessageHeader_ObjType from_obj_type() const;
   inline void set_from_obj_type(::MessageHeader_ObjType value);
 
-  // required string to_id = 5;
+  // optional string to_id = 5;
   inline bool has_to_id() const;
   inline void clear_to_id();
   static const int kToIdFieldNumber = 5;
@@ -321,7 +321,7 @@ class MessageHeader : public ::google::protobuf::Message {
   inline ::std::string* release_to_id();
   inline void set_allocated_to_id(::std::string* to_id);
 
-  // required string to_ip = 6;
+  // optional string to_ip = 6;
   inline bool has_to_ip() const;
   inline void clear_to_ip();
   static const int kToIpFieldNumber = 6;
@@ -333,35 +333,35 @@ class MessageHeader : public ::google::protobuf::Message {
   inline ::std::string* release_to_ip();
   inline void set_allocated_to_ip(::std::string* to_ip);
 
-  // required int32 to_port = 7;
+  // optional int32 to_port = 7;
   inline bool has_to_port() const;
   inline void clear_to_port();
   static const int kToPortFieldNumber = 7;
   inline ::google::protobuf::int32 to_port() const;
   inline void set_to_port(::google::protobuf::int32 value);
 
-  // required .MessageHeader.ObjType to_obj_type = 8;
+  // optional .MessageHeader.ObjType to_obj_type = 8;
   inline bool has_to_obj_type() const;
   inline void clear_to_obj_type();
   static const int kToObjTypeFieldNumber = 8;
   inline ::MessageHeader_ObjType to_obj_type() const;
   inline void set_to_obj_type(::MessageHeader_ObjType value);
 
-  // required .MessageHeader.MsgLevel msg_level = 9;
+  // optional .MessageHeader.MsgLevel msg_level = 9;
   inline bool has_msg_level() const;
   inline void clear_msg_level();
   static const int kMsgLevelFieldNumber = 9;
   inline ::MessageHeader_MsgLevel msg_level() const;
   inline void set_msg_level(::MessageHeader_MsgLevel value);
 
-  // required .MessageHeader.PkgType pkg_type = 10;
+  // optional .MessageHeader.PkgType pkg_type = 10;
   inline bool has_pkg_type() const;
   inline void clear_pkg_type();
   static const int kPkgTypeFieldNumber = 10;
   inline ::MessageHeader_PkgType pkg_type() const;
   inline void set_pkg_type(::MessageHeader_PkgType value);
 
-  // required .MessageHeader.SysMsgType sys_msg_type = 11;
+  // optional .MessageHeader.SysMsgType sys_msg_type = 11;
   inline bool has_sys_msg_type() const;
   inline void clear_sys_msg_type();
   static const int kSysMsgTypeFieldNumber = 11;
@@ -653,7 +653,7 @@ inline void MessageHeader::set_from_obj_type(::MessageHeader_ObjType value) {
   // @@protoc_insertion_point(field_set:MessageHeader.from_obj_type)
 }
 
-// required string to_id = 5;
+// optional string to_id = 5;
 inline bool MessageHeader::has_to_id() const {
   return (_has_bits_[0] & 0x00000010u) != 0;
 }
@@ -729,7 +729,7 @@ inline void MessageHeader::set_allocated_to_id(::std::string* to_id) {
   // @@protoc_insertion_point(field_set_allocated:MessageHeader.to_id)
 }
 
-// required string to_ip = 6;
+// optional string to_ip = 6;
 inline bool MessageHeader::has_to_ip() const {
   return (_has_bits_[0] & 0x00000020u) != 0;
 }
@@ -805,7 +805,7 @@ inline void MessageHeader::set_allocated_to_ip(::std::string* to_ip) {
   // @@protoc_insertion_point(field_set_allocated:MessageHeader.to_ip)
 }
 
-// required int32 to_port = 7;
+// optional int32 to_port = 7;
 inline bool MessageHeader::has_to_port() const {
   return (_has_bits_[0] & 0x00000040u) != 0;
 }
@@ -829,7 +829,7 @@ inline void MessageHeader::set_to_port(::google::protobuf::int32 value) {
   // @@protoc_insertion_point(field_set:MessageHeader.to_port)
 }
 
-// required .MessageHeader.ObjType to_obj_type = 8;
+// optional .MessageHeader.ObjType to_obj_type = 8;
 inline bool MessageHeader::has_to_obj_type() const {
   return (_has_bits_[0] & 0x00000080u) != 0;
 }
@@ -854,7 +854,7 @@ inline void MessageHeader::set_to_obj_type(::MessageHeader_ObjType value) {
   // @@protoc_insertion_point(field_set:MessageHeader.to_obj_type)
 }
 
-// required .MessageHeader.MsgLevel msg_level = 9;
+// optional .MessageHeader.MsgLevel msg_level = 9;
 inline bool MessageHeader::has_msg_level() const {
   return (_has_bits_[0] & 0x00000100u) != 0;
 }
@@ -879,7 +879,7 @@ inline void MessageHeader::set_msg_level(::MessageHeader_MsgLevel value) {
   // @@protoc_insertion_point(field_set:MessageHeader.msg_level)
 }
 
-// required .MessageHeader.PkgType pkg_type = 10;
+// optional .MessageHeader.PkgType pkg_type = 10;
 inline bool MessageHeader::has_pkg_type() const {
   return (_has_bits_[0] & 0x00000200u) != 0;
 }
@@ -904,7 +904,7 @@ inline void MessageHeader::set_pkg_type(::MessageHeader_PkgType value) {
   // @@protoc_insertion_point(field_set:MessageHeader.pkg_type)
 }
 
-// required .MessageHeader.SysMsgType sys_msg_type = 11;
+// optional .MessageHeader.SysMsgType sys_msg_type = 11;
 inline bool MessageHeader::has_sys_msg_type() const {
   return (_has_bits_[0] & 0x00000400u) != 0;
 }

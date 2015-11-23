@@ -88,7 +88,8 @@ void Server::init(NodeId p_node_id, const std::string &p_ip, uint32_t p_port,
     sp_name_node_info = std::make_shared<NodeInfo>(Role::NAMENODE, p_name_node_id,
         p_name_node_ip, p_name_node_port);
     node_list.push_back(sp_name_node_info);
-    id_map_to_info[p_name_node_id] = sp_name_node_info; 
+    id_map_to_info[p_name_node_id] = sp_name_node_info;
+    LOG(INFO) << "[Server::init]: " << p_node_id << " running on " << p_ip << ":" << p_port;
 }
 
 void Server::run() {

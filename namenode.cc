@@ -24,7 +24,8 @@ void NameNode::process_sys_msg(SPMsg msg) {
 				auto p_node_info = std::make_shared<NodeInfo>();
 				ia >> *p_node_info;
 				node_list.push_back(p_node_info);
-				LOG(INFO) << "[NameNode::process_sys_msg]: Get a REGISTER from" + p_node_info->node_id;
+				id_map_to_info[p_node_info->node_id] = p_node_info;
+				LOG(INFO) << "[NameNode::process_sys_msg]: Get a REGISTER from " + p_node_info->node_id;
 			} else {
 				LOG(ERROR) << "[NameNode::process_sys_msg]: Invalid pkg_type when got a REGISTER msg";
 				return;
@@ -67,11 +68,12 @@ void NameNode::init(NodeId p_node_id, const std::string &p_ip, uint32_t p_port) 
 	node_list.clear();
 	id_map_to_info.clear();
 	num_got_node_list_ack = 0;
+	LOG(INFO) << "[NameNode::init]: " << p_node_id << " running on " << p_ip << ":" << p_port;
 }
 
 void NameNode::run() {
 	state = NodeState::LISTENING_REGISTER;
-	LOG(INFO) << "[NameNode::init]: LISTENING_REGISTER";
+	LOG(INFO) << "[NameNode::run]: LISTENING_REGISTER";
 	//wait for register, shuold use sleep
 	sleep(REGISTER_WAIT_TIME_IN_SEC);
 	
@@ -98,8 +100,7 @@ void NameNode::run() {
 		tracker_ins.send_msg(msg);
 	}
 	state = NodeState::NODE_LIST_SENT;
-	LOG(INFO) << "[NameNode::init]: NODE_LIST_SENT";
-
+	LOG(INFO) << "[NameNode::run]: NODE_LIST_SENT";
 
 	num_got_node_list_ack = 0;
 	std::unique_lock<std::mutex> lck(mtx_node_list_ack);
@@ -117,7 +118,7 @@ void NameNode::run() {
 		tracker_ins.send_msg(msg);
 	}
 	state = NodeState::LISTENING_JOB;
-	LOG(INFO) << "[NameNode::init]: LISTENING_JOB";
+	LOG(INFO) << "[NameNode::run]: LISTENING_JOB";
 }
 
 NameNode::~NameNode() {

@@ -13,7 +13,6 @@ DEFINE_int32(name_node_port, 0, "name_node bus port");
 
 int main(int argc, char **argv) {
     ::google::ParseCommandLineFlags(&argc, &argv, true);
-    LOG(INFO) << "Worker " << FLAGS_id << " running on " << FLAGS_ip << " " << FLAGS_port;
 
     auto& worker_ins = Worker::get_mutable_instance();
     worker_ins.init(FLAGS_id, FLAGS_ip, FLAGS_port,
@@ -26,7 +25,8 @@ int main(int argc, char **argv) {
     tracker_ins.init(&worker_ins, &bus_ins);
 
     bus_ins.run();
-    worker_ins.run();
     tracker_ins.run();
+    worker_ins.run();
+    sleep(100);
     return 0;
 }

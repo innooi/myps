@@ -27,6 +27,7 @@ void Worker::process_sys_msg(SPMsg msg) {
                 state = NodeState::NODE_LIST_REVD;
                 LOG(INFO) << "[Worker::process_sys_msg]: Got node_list";
                 auto it_first_ele_in_list = msg->data_slice_list.begin();
+                LOG(INFO) << "[Worker::process_sys_msg]: " << *it_first_ele_in_list;
                 std::stringstream ss(*it_first_ele_in_list);
                 boost::archive::binary_iarchive ia(ss);
                 size_t size;
@@ -37,6 +38,7 @@ void Worker::process_sys_msg(SPMsg msg) {
                     node_list.push_back(p_node_info);
                     id_map_to_info[p_node_info->node_id] = p_node_info;
                 }
+                LOG(INFO) << "[Worker::process_sys_msg]: here";
                 auto& tracker_ins = Tracker::get_mutable_instance();
                 SPMsg msg = tracker_ins.create_sys_msg( MessageHeader::NODE,
                                                         sp_name_node_info->node_id,
@@ -94,6 +96,7 @@ void Worker::init(NodeId p_node_id, const std::string &p_ip, uint32_t p_port,
         p_name_node_ip, p_name_node_port);
     node_list.push_back(sp_name_node_info);
     id_map_to_info[p_name_node_id] = sp_name_node_info;
+    LOG(INFO) << "[Worker::init]: " << p_node_id << " running on " << p_ip << ":" << p_port;
 }
 
 void Worker::run() {
@@ -112,9 +115,10 @@ void Worker::run() {
     std::string my_node_info_str = ss.str();
     msg->data_slice_list.push_back(my_node_info_str);
 
+    LOG(INFO) << "[Worker::run]: Generate the msg";
     tracker_ins.send_msg(msg);
     state = NodeState::REGISTER_SENT;
-    LOG(INFO) << "[Worker::init]: REGISTER_SENT";
+    LOG(INFO) << "[Worker::run]: REGISTER_SENT";
     //wait the node_list sent from namenode
 }
 

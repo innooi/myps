@@ -18,7 +18,7 @@ void Bus::init(const NodeInfo &node_info) {
 	zmq_ctx_set(context, ZMQ_MAX_SOCKETS, 65536);
 	// zmq_ctx_set(context_, ZMQ_IO_THREADS, 4);
 
-	receiver = zmq_socket(context, ZMQ_ROUTER);
+	receiver = zmq_socket(context, ZMQ_PULL);
 	CHECK(receiver != NULL)
 	        << "[Bus::Init] create receiver socket failed: " << zmq_strerror(errno);
 
@@ -38,7 +38,7 @@ bool Bus::connect(const NodeInfo& node_info) {
 	if (senders.find(id) != senders.end()) {
 		return true;
 	}
-	void *the_sender = zmq_socket(context, ZMQ_DEALER);
+	void *the_sender = zmq_socket(context, ZMQ_PUSH);
 	CHECK(the_sender != NULL) << zmq_strerror(errno);
 	//uint32_t my_id = my_node_id; // address(my_node_);
 
@@ -66,7 +66,7 @@ bool Bus::send_msg(SPMsg msg, uint32_t priority) {
 	// find the socket
 	NodeId to_id = msg->msg_header.to_id();
 	if (senders.find(to_id) == senders.end()) {
-		LOG(WARNING) << "[Bus::Send] there is no socket to node " + to_id;
+		LOG(WARNING) << "[Bus::send_msg] there is no socket to node " + to_id;
 		return false;
 	}
 
@@ -83,7 +83,7 @@ bool Bus::send_msg(SPMsg msg, uint32_t priority) {
 	else {
 		lock.unlock();
 	}
-
+	LOG(INFO) << "[Bus::send_msg] push msg into queue successfully";
 	return true;
 }
 
@@ -136,9 +136,17 @@ void Bus::send_thread() {
 
 		int header_size = msg->msg_header.ByteSize();
 		char* header_buf = new char[header_size + 5];
+
 		CHECK(msg->msg_header.SerializeToArray(header_buf, header_size))
 		    << "[Bus::send_thread] failed to serialize " 
             << msg->msg_header.ShortDebugString();
+
+        std::cout << header_size << std::endl;
+
+		for (int i = 0; i < header_size; ++i) {
+			std::cout << header_buf[i];
+		}
+		std::cout << std::endl;
 
 		zmq_msg_t header_msg;
 		zmq_msg_init_data(&header_msg, header_buf, header_size, nullptr, nullptr);
@@ -207,7 +215,13 @@ void Bus::recv_thread() {
 			char* buf = CHECK_NOTNULL((char *)zmq_msg_data(zmsg)); //void * to char *
 			size_t size = zmq_msg_size(zmsg);
 
-			if (step == 0) {
+			if (0 == step) {
+				LOG(INFO) << "[Bus::recv_thread]: header_size = " << size;
+				for (int i = 0; i < size; ++i) {
+					std::cout << buf[i];
+				}
+				std::cout << std::endl;
+
 				CHECK(msg->msg_header.ParseFromArray(buf, size))
 					<< "[Bus::recv_thread]: failed to paser msg_header";
 				LOG(INFO) << "[Bus::recv_thread]: Got a msg from mode_id = "
@@ -223,4 +237,12 @@ void Bus::recv_thread() {
 		} while(more_flag); //sendmore
 		Tracker::get_mutable_instance().push_into_pending_msg(msg);
 	}
+}
+
+Bus::~Bus() {
+	for (auto item:senders) {
+		zmq_close(item.second);
+	}
+	zmq_close(receiver);
+	zmq_term(context);
 }

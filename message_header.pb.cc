@@ -100,12 +100,12 @@ void protobuf_AddDesc_message_5fheader_2eproto() {
     "\n\024message_header.proto\"\363\004\n\rMessageHeader"
     "\022\017\n\007from_id\030\001 \001(\t\022\017\n\007from_ip\030\002 \001(\t\022\021\n\tfr"
     "om_port\030\003 \001(\005\022-\n\rfrom_obj_type\030\004 \001(\0162\026.M"
-    "essageHeader.ObjType\022\r\n\005to_id\030\005 \002(\t\022\r\n\005t"
-    "o_ip\030\006 \002(\t\022\017\n\007to_port\030\007 \002(\005\022+\n\013to_obj_ty"
-    "pe\030\010 \002(\0162\026.MessageHeader.ObjType\022*\n\tmsg_"
-    "level\030\t \002(\0162\027.MessageHeader.MsgLevel\022(\n\010"
-    "pkg_type\030\n \002(\0162\026.MessageHeader.PkgType\022/"
-    "\n\014sys_msg_type\030\013 \002(\0162\031.MessageHeader.Sys"
+    "essageHeader.ObjType\022\r\n\005to_id\030\005 \001(\t\022\r\n\005t"
+    "o_ip\030\006 \001(\t\022\017\n\007to_port\030\007 \001(\005\022+\n\013to_obj_ty"
+    "pe\030\010 \001(\0162\026.MessageHeader.ObjType\022*\n\tmsg_"
+    "level\030\t \001(\0162\027.MessageHeader.MsgLevel\022(\n\010"
+    "pkg_type\030\n \001(\0162\026.MessageHeader.PkgType\022/"
+    "\n\014sys_msg_type\030\013 \001(\0162\031.MessageHeader.Sys"
     "MsgType\022\020\n\010priority\030\014 \001(\005\022\022\n\ntracker_id\030"
     "\r \001(\003\022\026\n\016rpl_tracker_id\030\016 \001(\003\"5\n\007ObjType"
     "\022\010\n\004NODE\020\000\022\t\n\005FILED\020\001\022\t\n\005CACHE\020\002\022\n\n\006ENGI"
@@ -444,7 +444,7 @@ bool MessageHeader::MergePartialFromCodedStream(
         break;
       }
 
-      // required string to_id = 5;
+      // optional string to_id = 5;
       case 5: {
         if (tag == 42) {
          parse_to_id:
@@ -461,7 +461,7 @@ bool MessageHeader::MergePartialFromCodedStream(
         break;
       }
 
-      // required string to_ip = 6;
+      // optional string to_ip = 6;
       case 6: {
         if (tag == 50) {
          parse_to_ip:
@@ -478,7 +478,7 @@ bool MessageHeader::MergePartialFromCodedStream(
         break;
       }
 
-      // required int32 to_port = 7;
+      // optional int32 to_port = 7;
       case 7: {
         if (tag == 56) {
          parse_to_port:
@@ -493,7 +493,7 @@ bool MessageHeader::MergePartialFromCodedStream(
         break;
       }
 
-      // required .MessageHeader.ObjType to_obj_type = 8;
+      // optional .MessageHeader.ObjType to_obj_type = 8;
       case 8: {
         if (tag == 64) {
          parse_to_obj_type:
@@ -513,7 +513,7 @@ bool MessageHeader::MergePartialFromCodedStream(
         break;
       }
 
-      // required .MessageHeader.MsgLevel msg_level = 9;
+      // optional .MessageHeader.MsgLevel msg_level = 9;
       case 9: {
         if (tag == 72) {
          parse_msg_level:
@@ -533,7 +533,7 @@ bool MessageHeader::MergePartialFromCodedStream(
         break;
       }
 
-      // required .MessageHeader.PkgType pkg_type = 10;
+      // optional .MessageHeader.PkgType pkg_type = 10;
       case 10: {
         if (tag == 80) {
          parse_pkg_type:
@@ -553,7 +553,7 @@ bool MessageHeader::MergePartialFromCodedStream(
         break;
       }
 
-      // required .MessageHeader.SysMsgType sys_msg_type = 11;
+      // optional .MessageHeader.SysMsgType sys_msg_type = 11;
       case 11: {
         if (tag == 88) {
          parse_sys_msg_type:
@@ -674,7 +674,7 @@ void MessageHeader::SerializeWithCachedSizes(
       4, this->from_obj_type(), output);
   }
 
-  // required string to_id = 5;
+  // optional string to_id = 5;
   if (has_to_id()) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->to_id().data(), this->to_id().length(),
@@ -684,7 +684,7 @@ void MessageHeader::SerializeWithCachedSizes(
       5, this->to_id(), output);
   }
 
-  // required string to_ip = 6;
+  // optional string to_ip = 6;
   if (has_to_ip()) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->to_ip().data(), this->to_ip().length(),
@@ -694,30 +694,30 @@ void MessageHeader::SerializeWithCachedSizes(
       6, this->to_ip(), output);
   }
 
-  // required int32 to_port = 7;
+  // optional int32 to_port = 7;
   if (has_to_port()) {
     ::google::protobuf::internal::WireFormatLite::WriteInt32(7, this->to_port(), output);
   }
 
-  // required .MessageHeader.ObjType to_obj_type = 8;
+  // optional .MessageHeader.ObjType to_obj_type = 8;
   if (has_to_obj_type()) {
     ::google::protobuf::internal::WireFormatLite::WriteEnum(
       8, this->to_obj_type(), output);
   }
 
-  // required .MessageHeader.MsgLevel msg_level = 9;
+  // optional .MessageHeader.MsgLevel msg_level = 9;
   if (has_msg_level()) {
     ::google::protobuf::internal::WireFormatLite::WriteEnum(
       9, this->msg_level(), output);
   }
 
-  // required .MessageHeader.PkgType pkg_type = 10;
+  // optional .MessageHeader.PkgType pkg_type = 10;
   if (has_pkg_type()) {
     ::google::protobuf::internal::WireFormatLite::WriteEnum(
       10, this->pkg_type(), output);
   }
 
-  // required .MessageHeader.SysMsgType sys_msg_type = 11;
+  // optional .MessageHeader.SysMsgType sys_msg_type = 11;
   if (has_sys_msg_type()) {
     ::google::protobuf::internal::WireFormatLite::WriteEnum(
       11, this->sys_msg_type(), output);
@@ -781,7 +781,7 @@ void MessageHeader::SerializeWithCachedSizes(
       4, this->from_obj_type(), target);
   }
 
-  // required string to_id = 5;
+  // optional string to_id = 5;
   if (has_to_id()) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->to_id().data(), this->to_id().length(),
@@ -792,7 +792,7 @@ void MessageHeader::SerializeWithCachedSizes(
         5, this->to_id(), target);
   }
 
-  // required string to_ip = 6;
+  // optional string to_ip = 6;
   if (has_to_ip()) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->to_ip().data(), this->to_ip().length(),
@@ -803,30 +803,30 @@ void MessageHeader::SerializeWithCachedSizes(
         6, this->to_ip(), target);
   }
 
-  // required int32 to_port = 7;
+  // optional int32 to_port = 7;
   if (has_to_port()) {
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(7, this->to_port(), target);
   }
 
-  // required .MessageHeader.ObjType to_obj_type = 8;
+  // optional .MessageHeader.ObjType to_obj_type = 8;
   if (has_to_obj_type()) {
     target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
       8, this->to_obj_type(), target);
   }
 
-  // required .MessageHeader.MsgLevel msg_level = 9;
+  // optional .MessageHeader.MsgLevel msg_level = 9;
   if (has_msg_level()) {
     target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
       9, this->msg_level(), target);
   }
 
-  // required .MessageHeader.PkgType pkg_type = 10;
+  // optional .MessageHeader.PkgType pkg_type = 10;
   if (has_pkg_type()) {
     target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
       10, this->pkg_type(), target);
   }
 
-  // required .MessageHeader.SysMsgType sys_msg_type = 11;
+  // optional .MessageHeader.SysMsgType sys_msg_type = 11;
   if (has_sys_msg_type()) {
     target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
       11, this->sys_msg_type(), target);
@@ -886,28 +886,28 @@ int MessageHeader::ByteSize() const {
         ::google::protobuf::internal::WireFormatLite::EnumSize(this->from_obj_type());
     }
 
-    // required string to_id = 5;
+    // optional string to_id = 5;
     if (has_to_id()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::StringSize(
           this->to_id());
     }
 
-    // required string to_ip = 6;
+    // optional string to_ip = 6;
     if (has_to_ip()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::StringSize(
           this->to_ip());
     }
 
-    // required int32 to_port = 7;
+    // optional int32 to_port = 7;
     if (has_to_port()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::Int32Size(
           this->to_port());
     }
 
-    // required .MessageHeader.ObjType to_obj_type = 8;
+    // optional .MessageHeader.ObjType to_obj_type = 8;
     if (has_to_obj_type()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::EnumSize(this->to_obj_type());
@@ -915,19 +915,19 @@ int MessageHeader::ByteSize() const {
 
   }
   if (_has_bits_[8 / 32] & (0xffu << (8 % 32))) {
-    // required .MessageHeader.MsgLevel msg_level = 9;
+    // optional .MessageHeader.MsgLevel msg_level = 9;
     if (has_msg_level()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::EnumSize(this->msg_level());
     }
 
-    // required .MessageHeader.PkgType pkg_type = 10;
+    // optional .MessageHeader.PkgType pkg_type = 10;
     if (has_pkg_type()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::EnumSize(this->pkg_type());
     }
 
-    // required .MessageHeader.SysMsgType sys_msg_type = 11;
+    // optional .MessageHeader.SysMsgType sys_msg_type = 11;
     if (has_sys_msg_type()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::EnumSize(this->sys_msg_type());
@@ -1042,7 +1042,6 @@ void MessageHeader::CopyFrom(const MessageHeader& from) {
 }
 
 bool MessageHeader::IsInitialized() const {
-  if ((_has_bits_[0] & 0x000007f0) != 0x000007f0) return false;
 
   return true;
 }

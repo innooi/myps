@@ -14,23 +14,23 @@ message MessageHeader {
 	optional ObjType from_obj_type = 4;
 
 	//fill up these in bus::send_msg based on the NodeId
-	required string to_id = 5;
-	required string to_ip = 6;
-	required int32 to_port = 7;
-	required ObjType to_obj_type = 8;
+	optional string to_id = 5;
+	optional string to_ip = 6;
+	optional int32 to_port = 7;
+	optional ObjType to_obj_type = 8;
 
 	enum MsgLevel {
 		SYS_MSG = 0;
 		USR_MSG = 1;
 	}
-	required MsgLevel msg_level = 9;
+	optional MsgLevel msg_level = 9;
 
 	enum PkgType {
 		REQ = 0; 	//need a reply
 		RPL = 1; 	//reply the request
 		PUSH = 2; 	//just push
 	}
-	required PkgType pkg_type = 10;
+	optional PkgType pkg_type = 10;
 
 	//if the msg is a sys message
 	enum SysMsgType {
@@ -39,7 +39,7 @@ message MessageHeader {
 		NODE_LIST_ACK = 2;
 		STARTUP_READY = 3;
 	}
-	required SysMsgType sys_msg_type = 11;
+	optional SysMsgType sys_msg_type = 11;
 
 	optional int32 priority = 12;
 

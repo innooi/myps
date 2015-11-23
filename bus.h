@@ -31,4 +31,5 @@ public:
 
 	bool connect(const NodeInfo &node_info);
     bool Disconnect(const NodeInfo &node_info);
+    ~Bus();
 };
