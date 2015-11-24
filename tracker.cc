@@ -49,6 +49,7 @@ void Tracker::dispatch_thread() {
 		std::thread *process_thread_t =
 			new std::thread( std::bind(&Tracker::process_thread, this, msg) );
 		process_thread_t->detach();
+		LOG(INFO) << "[Tracker::dispatch_thread]: process_thread has created.";
 	}
 }
 

@@ -33,3 +33,5 @@ public:
     bool Disconnect(const NodeInfo &node_info);
     ~Bus();
 };
+
+void FreeFunc(void *data, void *hint);

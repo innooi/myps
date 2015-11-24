@@ -1,5 +1,15 @@
 #include "bus.h"
 
+void FreeFunc(void *data, void *hint) {
+	delete[] static_cast<char *>(data);
+}
+
+void Func_to_dec_msg_ref_cnt(void *data, void *hint) {
+	SPMsg *ptr_to_dec_msg_ref_cnt = static_cast<SPMsg *>(hint);
+	(*ptr_to_dec_msg_ref_cnt).reset();
+	delete ptr_to_dec_msg_ref_cnt;
+}
+
 void Bus::init(const NodeInfo &node_info) {
     my_node_id = node_info.node_id;
     
@@ -141,15 +151,8 @@ void Bus::send_thread() {
 		    << "[Bus::send_thread] failed to serialize " 
             << msg->msg_header.ShortDebugString();
 
-        std::cout << header_size << std::endl;
-
-		for (int i = 0; i < header_size; ++i) {
-			std::cout << header_buf[i];
-		}
-		std::cout << std::endl;
-
 		zmq_msg_t header_msg;
-		zmq_msg_init_data(&header_msg, header_buf, header_size, nullptr, nullptr);
+		zmq_msg_init_data(&header_msg, header_buf, header_size, FreeFunc, nullptr);
 
 		while (true) {
 			if (zmq_msg_send(&header_msg, socket, tag) == header_size) break;
@@ -158,18 +161,21 @@ void Bus::send_thread() {
 			return;
 		}
 
-		delete [] header_buf;
-
 		LOG(INFO) << "[Bus::send_thread] have sent msg_header.";
 
-		// send the part of std::list<std::unique_ptr<string> > data_slice_list
+		LOG(INFO) << "[Bus::send_thread] There are " << msg->data_slice_list.size() << " slices";
+
+		// send the part of std::list<string> data_slice_list
 		if (msg->data_slice_list.size() > 0) {
 			auto it = msg->data_slice_list.begin();
 			for (int i = 0; i < msg->data_slice_list.size() - 1; ++i) {
 				tag = ZMQ_SNDMORE;
 				zmq_msg_t data_msg;
+				LOG(INFO) << "datalist item: " << *it;
+				SPMsg *ptr_to_inc_msg_ref_cnt = new SPMsg;
+				(*ptr_to_inc_msg_ref_cnt) = msg;
 				zmq_msg_init_data(&data_msg, (void *)((*it).c_str()), (*it).size(),
-					nullptr, nullptr);
+					Func_to_dec_msg_ref_cnt, ptr_to_inc_msg_ref_cnt);
 				//string to char *
 				while (true) {
 					if (zmq_msg_send(&data_msg, socket, tag) == (*it).size()) break;
@@ -182,8 +188,11 @@ void Bus::send_thread() {
 			}
 			tag = ZMQ_DONTWAIT;
 			zmq_msg_t data_msg;
-			zmq_msg_init_data(&data_msg, (void *)((*it).c_str()),
-				(*it).size(), nullptr, nullptr);
+			LOG(INFO) << "datalist item: " << *it;
+			SPMsg *ptr_to_inc_msg_ref_cnt = new SPMsg;
+			(*ptr_to_inc_msg_ref_cnt) = msg;
+			zmq_msg_init_data(&data_msg, (void *)((*it).c_str()), (*it).size(), 
+				Func_to_dec_msg_ref_cnt, ptr_to_inc_msg_ref_cnt);
 			while (true) {
 				if (zmq_msg_send(&data_msg, socket, tag) == (*it).size()) break;
 				if (errno == EINTR) continue;  // may be interupted by profiler

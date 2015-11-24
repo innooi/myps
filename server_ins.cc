@@ -32,5 +32,6 @@ int main(int argc, char **argv) {
     bus_ins.run();
     server_ins.run();
     tracker_ins.run();
+    sleep(1000);
     return 0;
 }

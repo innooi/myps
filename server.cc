@@ -57,6 +57,7 @@ void Server::process_sys_msg(SPMsg msg) {
 					return;
 				}
 				state = NodeState::LISTENING_JOB;
+				LOG(INFO) << "[Server::process_sys_msg]: Server is LISTENING_JOB now!";
 			} else {
 				LOG(ERROR) << "[Server::process_sys_msg]: Invalid pkg_type for STARTUP_READY";
 				return;	

@@ -38,7 +38,6 @@ void Worker::process_sys_msg(SPMsg msg) {
                     node_list.push_back(p_node_info);
                     id_map_to_info[p_node_info->node_id] = p_node_info;
                 }
-                LOG(INFO) << "[Worker::process_sys_msg]: here";
                 auto& tracker_ins = Tracker::get_mutable_instance();
                 SPMsg msg = tracker_ins.create_sys_msg( MessageHeader::NODE,
                                                         sp_name_node_info->node_id,
@@ -63,6 +62,7 @@ void Worker::process_sys_msg(SPMsg msg) {
                     return;
                 }
                 state = NodeState::LISTENING_JOB;
+                LOG(INFO) << "[Worker::process_sys_msg]: Worker is LISTENING_JOB now!";
             }
             else {
                 LOG(ERROR) << "[Worker::process_sys_msg]: Invalid pkg_type for STARTUP_READY";
@@ -114,8 +114,7 @@ void Worker::run() {
     oa << my_node_info;
     std::string my_node_info_str = ss.str();
     msg->data_slice_list.push_back(my_node_info_str);
-
-    LOG(INFO) << "[Worker::run]: Generate the msg";
+    
     tracker_ins.send_msg(msg);
     state = NodeState::REGISTER_SENT;
     LOG(INFO) << "[Worker::run]: REGISTER_SENT";

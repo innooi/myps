@@ -27,6 +27,6 @@ int main(int argc, char **argv) {
     bus_ins.run();
     tracker_ins.run();
     worker_ins.run();
-    sleep(100);
+    sleep(1000);
     return 0;
 }

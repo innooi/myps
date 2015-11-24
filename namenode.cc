@@ -89,6 +89,7 @@ void NameNode::run() {
 		oa << *node_list_ele;
 	}
 	std::string node_list_str = ss.str();
+	LOG(INFO) << "node_list_str: " << node_list_str;
 
 	for (auto node_list_ele:node_list) {
 		SPMsg msg = tracker_ins.create_sys_msg(	MessageHeader::NODE,
@@ -118,7 +119,7 @@ void NameNode::run() {
 		tracker_ins.send_msg(msg);
 	}
 	state = NodeState::LISTENING_JOB;
-	LOG(INFO) << "[NameNode::run]: LISTENING_JOB";
+	LOG(INFO) << "[NameNode::run]: NameNode is LISTENING_JOB now!";
 }
 
 NameNode::~NameNode() {
