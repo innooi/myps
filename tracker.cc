@@ -1,6 +1,6 @@
 #include "tracker.h"
 
-void Tracker::process_thread(SPMsg msg) {
+void Tracker::process_func(SPMsg msg) {
 	switch(msg->msg_header.to_obj_type()) {
 		case MessageHeader::NODE:
 			if (Role::WORKER == node->my_info.role) {
@@ -46,10 +46,11 @@ void Tracker::dispatch_thread() {
 		LOG(INFO) << "[Tracker::dispatch_thread]: dispatch_thread gets a msg.";
 		
 		//create a new thread to process
-		std::thread *process_thread_t =
-			new std::thread( std::bind(&Tracker::process_thread, this, msg) );
-		process_thread_t->detach();
-		LOG(INFO) << "[Tracker::dispatch_thread]: process_thread has created.";
+		auto process_task_t = std::async( [this, msg]()
+                                            {
+                                                process_func(msg);
+                                            });
+		LOG(INFO) << "[Tracker::dispatch_thread]: process_func has spwan.";
 	}
 }
 
@@ -152,3 +153,4 @@ int Tracker::push_into_pending_msg(SPMsg msg) {
 	}
 	return 0;
 }
+

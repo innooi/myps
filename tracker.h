@@ -12,7 +12,7 @@ private:
 	int tracker_id;
     std::unordered_map<uint64_t, std::function<void(void)> > msg_id_map_to_callback;
     std::thread *dispatch_thread_t;
-    void process_thread(SPMsg);
+    void process_func(SPMsg);
 	void dispatch_thread(); /* daemon thread for dispatching messages */
 	uint32_t num_pending_msg;
 	std::mutex pending_msg_mutex;

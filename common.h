@@ -19,6 +19,7 @@
 #include <netdb.h>
 //function
 #include <functional>
+#include <future>
 // smart pointers
 #include <memory>
 // stream
