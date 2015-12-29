@@ -244,7 +244,11 @@ void Bus::recv_thread() {
 			CHECK(zmq_getsockopt (receiver, ZMQ_RCVMORE, &more_flag, &size_more_flag) == 0)
 				<< zmq_strerror(errno);
 		} while(more_flag); //sendmore
-		Tracker::get_mutable_instance().push_into_pending_msg(msg);
+
+		auto process_task_t = std::async([=](){
+			Tracker::get_mutable_instance().process_func(msg);
+		});
+		LOG(INFO) << "[Bus::recv_thread]: Tracker::process_func has spwan.";
 	}
 }
 

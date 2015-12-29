@@ -32,28 +32,6 @@ void Tracker::process_func(SPMsg msg) {
 	//free SPMsg here
 }
 
-void Tracker::dispatch_thread() {
-	for (;;) {
-		std::unique_lock<std::mutex> lk(pending_msg_mutex);
-		for (; num_pending_msg == 0;) {
-			cond_exist_pending_msg.wait(lk);
-		}
-		SPMsg msg = pending_msg.front();
-		pending_msg.pop();
-		--num_pending_msg;
-		lk.unlock();
-		
-		LOG(INFO) << "[Tracker::dispatch_thread]: dispatch_thread gets a msg.";
-		
-		//create a new thread to process
-		auto process_task_t = std::async( [this, msg]()
-                                            {
-                                                process_func(msg);
-                                            });
-		LOG(INFO) << "[Tracker::dispatch_thread]: process_func has spwan.";
-	}
-}
-
 SPMsg Tracker::create_sys_msg(MessageHeader::ObjType p_from_obj_type,
 								NodeId p_to_id,
 								MessageHeader::ObjType p_to_obj_type,
@@ -87,9 +65,6 @@ SPMsg Tracker::create_sys_msg(MessageHeader::ObjType p_from_obj_type,
 int Tracker::init(Node *p_node, Bus *p_bus) {
 	tracker_id = 0;
 	msg_id_map_to_callback.clear();
-	dispatch_thread_t = nullptr;
-	num_pending_msg = 0;
-	while (pending_msg.empty() == false) pending_msg.pop();
 	node = p_node;
 	bus = p_bus;
 	return 0;
@@ -100,17 +75,7 @@ int Tracker::run() {
 		LOG(ERROR) << "[Tracker::run]: Uninitialized bus.";
 		return 1;
 	}
-	if (nullptr == dispatch_thread_t) {
-		dispatch_thread_t = new std::thread(&Tracker::dispatch_thread, this);
-		LOG(INFO) << "[Tracker::run]: do_dispatch thread has started successfully.";
-		dispatch_thread_t->detach();
-		return 0;
-	} else {
-		LOG(ERROR)
-			<< "[Tracker::run]: do_dispatch thread has not been started," <<
-			" cause you have started before";
-		return 2;
-	}
+	return 0;
 }
 
 int Tracker::send_msg(SPMsg msg) {
@@ -142,15 +107,3 @@ int Tracker::send_msg(SPMsg msg, std::function<void(void)> callback_function) {
 	}
 	return 0;
 }
-
-int Tracker::push_into_pending_msg(SPMsg msg) {
-	std::unique_lock<std::mutex> lk(pending_msg_mutex);
-	pending_msg.push(msg);
-	++num_pending_msg;
-	lk.unlock();
-	if (1 == num_pending_msg) {
-		cond_exist_pending_msg.notify_one();
-	}
-	return 0;
-}
-
